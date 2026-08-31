@@ -67,24 +67,32 @@ export function Navbar() {
           >
             <div
               style={{
-                width: '40px',
-                height: '40px',
-                border: '1.5px solid var(--accent-gold)',
+                height: '44px',
+                width: '44px',
+                borderRadius: '6px',
+                overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'rgba(179, 142, 93, 0.12)',
-                position: 'relative',
-                borderRadius: '3px'
+                backgroundColor: '#FFFFFF',
+                border: '1px solid rgba(179, 142, 93, 0.4)',
+                boxShadow: '0 2px 10px rgba(15, 23, 42, 0.08)',
+                padding: '2px',
+                flexShrink: 0
               }}
             >
-              <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--accent-gold)' }}>
-                BMD
-              </span>
-              <div style={{ position: 'absolute', top: -3, right: -3, width: 6, height: 6, backgroundColor: 'var(--accent-gold)' }} />
+              <img
+                src="/logo.png"
+                alt="BUILD MY DREAM Logo"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain'
+                }}
+              />
             </div>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.18rem', letterSpacing: '0.04em', textTransform: 'uppercase', lineHeight: 1, color: '#0F172A' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.2rem', letterSpacing: '0.04em', textTransform: 'uppercase', lineHeight: 1, color: '#0F172A' }}>
                 BUILD MY DREAM
               </div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.64rem', color: 'var(--accent-gold)', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '3px', fontWeight: 700 }}>

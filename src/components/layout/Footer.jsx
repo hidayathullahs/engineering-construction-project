@@ -61,12 +61,12 @@ export function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem' }}>
           {/* Col 1: Identity & Direct Contact */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <div style={{ width: '36px', height: '36px', border: '1.5px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(179, 142, 93, 0.15)', borderRadius: '3px' }}>
-                <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'var(--accent-gold)', fontSize: '0.95rem' }}>BMD</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+              <div style={{ width: '42px', height: '42px', border: '1px solid rgba(179, 142, 93, 0.4)', borderRadius: '6px', background: '#FFFFFF', padding: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <img src="/logo.png" alt="BUILD MY DREAM Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
               </div>
               <div>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, letterSpacing: '0.04em', fontSize: '1.1rem', color: '#FFFFFF' }}>BUILD MY DREAM</div>
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, letterSpacing: '0.04em', fontSize: '1.15rem', color: '#FFFFFF' }}>BUILD MY DREAM</div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', color: 'var(--accent-gold)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>From Vision to Reality</div>
               </div>
             </div>

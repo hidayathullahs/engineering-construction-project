@@ -72,12 +72,35 @@ export function WhoWeAreSection() {
 
           {/* Right Visual Bento Presentation */}
           <div style={{ position: 'relative' }}>
-            <div className="img-zoom-wrap" style={{ borderRadius: '6px', overflow: 'hidden', height: '480px', border: '1px solid rgba(15, 23, 42, 0.1)', boxShadow: '0 20px 45px rgba(15, 23, 42, 0.08)' }}>
+            <div className="img-zoom-wrap" style={{ borderRadius: '8px', overflow: 'hidden', height: '480px', border: '1px solid rgba(15, 23, 42, 0.1)', boxShadow: '0 20px 45px rgba(15, 23, 42, 0.08)' }}>
               <img
                 src="/frames/ezgif-frame-300.jpg"
                 alt="Build My Dream Luxury Villa Architecture"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
+            </div>
+
+            {/* Official Brand Badge Inset */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '-1.5rem',
+                right: '-1rem',
+                backgroundColor: '#FFFFFF',
+                borderRadius: '8px',
+                padding: '0.65rem 1rem',
+                border: '1px solid rgba(179, 142, 93, 0.35)',
+                boxShadow: '0 12px 30px rgba(15, 23, 42, 0.12)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem'
+              }}
+            >
+              <img src="/logo.png" alt="Build My Dream Insignia" style={{ height: '36px', width: 'auto', objectFit: 'contain' }} />
+              <div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.64rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase' }}>Official Brand</div>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.85rem', fontWeight: 800, color: '#0F172A' }}>Build My Dream</div>
+              </div>
             </div>
 
             {/* Floating Trust Card */}
@@ -90,7 +113,8 @@ export function WhoWeAreSection() {
                 padding: '1.5rem 2rem',
                 borderRadius: '6px',
                 maxWidth: '300px',
-                border: '1px solid rgba(179, 142, 93, 0.4)'
+                border: '1px solid rgba(179, 142, 93, 0.4)',
+                backgroundColor: '#FFFFFF'
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
