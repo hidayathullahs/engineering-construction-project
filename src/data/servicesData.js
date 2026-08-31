@@ -1,138 +1,194 @@
 export const SERVICES_DATA = [
   {
-    id: 's-01',
-    number: '01',
-    slug: 'civil-engineering',
-    title: 'Civil & Geotechnical Engineering',
-    tagline: 'Precision earthworks, subterranean shoring, soil stabilization, and foundation engineering.',
-    image: '/frames/ezgif-frame-030.jpg',
-    description: 'We engineer foundational infrastructure that guarantees long-term structural viability across challenging geological strata, deep subterranean basements, and complex seismic zones.',
-    capabilities: [
-      'Deep Foundation Piling (Bored, CFA, Driven)',
-      'Secant & Contiguous Retaining Wall Systems',
-      'Geotechnical Ground Improvement & Grouting',
-      'Hydrological Dewatering & Deep Well Networks',
-      'Seismic Risk Assessment & Soil Liquefaction Mitigation'
-    ],
-    metrics: { completed: '450+ Sites', tolerance: '±2.0 mm', depth: 'Up to 45m' }
-  },
-  {
-    id: 's-02',
-    number: '02',
-    slug: 'structural-engineering',
-    title: 'Structural Design & Superstructures',
-    tagline: 'High-performance reinforced concrete, structural steel, post-tensioned spans, and seismic design.',
-    image: '/frames/ezgif-frame-140.jpg',
-    description: 'Utilizing finite-element structural modeling and parametric design to deliver efficient, resilient, and architecturally stunning towers, expansive cantilevers, and column-free spaces.',
-    capabilities: [
-      'Post-Tensioned Monolithic Floor Plate Engineering',
-      'Tall Building Lateral & Wind Load Optimization',
-      'Mass Timber & Hybrid CLT Structural Systems',
-      'Tuned Mass Damping & Base Isolation Systems',
-      'Seismic Retrofitting & Structural Health Monitoring'
-    ],
-    metrics: { completed: '280+ Structures', maxSpan: '140 m Clear', lifeExpectancy: '100+ Years' }
-  },
-  {
-    id: 's-03',
-    number: '03',
-    slug: 'general-construction',
-    title: 'General Construction & Turnkey Delivery',
-    tagline: 'End-to-end execution, self-performing crews, robotic machinery, and rigorous site governance.',
-    image: '/frames/ezgif-frame-200.jpg',
-    description: 'From ground-breaking to occupancy handover, we execute complex architectural visions on compressed schedules with uncompromising craft and institutional discipline.',
-    capabilities: [
-      'Full EPC (Engineering, Procurement, Construction) Management',
-      'Advanced Self-Climbing Hydraulic Formwork Systems',
-      'Automated Concrete Batching & Telemetric Boom Pumping',
-      'Prefabricated Modular Pod & Façade Integration',
-      'Punch-List Zero Commissioning & Handover'
-    ],
-    metrics: { projectsDelivered: '150+ Milestones', onTimeRate: '98.4%', safetyRating: 'Zero-Harm' }
-  },
-  {
-    id: 's-04',
-    number: '04',
-    slug: 'infrastructure-transport',
-    title: 'Infrastructure & Transport Systems',
-    tagline: 'Highways, cable-stayed bridges, viaducts, transit interchanges, and marine ports.',
-    image: '/frames/ezgif-frame-180.jpg',
-    description: 'Connecting global economies with durable civil arteries engineered to withstand 100-year environmental extremes, heavy freight loading, and relentless traffic demands.',
-    capabilities: [
-      'Precast Segmental Viaducts & Overhead Launching',
-      'Cable-Stayed & Steel Arch Bridges',
-      'Underground Rail Tunnels & Cut-and-Cover Stations',
-      'Airport Runway & Apron Heavy Pavements',
-      'Coastal Marine Wharves & Breakwaters'
-    ],
-    metrics: { linearKm: '320+ km Built', loadRating: 'HL-93 Standard', serviceLife: '120 Years' }
-  },
-  {
-    id: 's-05',
-    number: '05',
-    slug: 'project-management',
-    title: 'Digital Project & Construction Management',
-    tagline: '4D/5D BIM schedule tracking, algorithmic supply chain logistics, and cost governance.',
-    image: '/frames/ezgif-frame-100.jpg',
-    description: 'Eliminating construction friction through rigorous digital modeling, real-time drone progress verification, predictive risk forecasting, and transparent financial stewardship.',
-    capabilities: [
-      '4D Schedule Clashing & Milestone Simulation',
-      '5D Real-Time Cost & Earned Value Management (EVM)',
-      'Autonomous Drone Photogrammetry & LiDAR Site Audits',
-      'Subcontractor Procurement & Quality Control Gateways',
-      'Regulatory Authority Approvals & Permitting Management'
-    ],
-    metrics: { costVariance: '< 1.2%', bimClashResolution: '10,000+ Prevented', scheduleAccuracy: '99.1%' }
-  },
-  {
-    id: 's-06',
-    number: '06',
+    id: 'architectural-design',
     slug: 'architectural-design',
-    title: 'Architectural Planning & Engineering Detail',
-    tagline: 'Contemporary luxury envelopes, high-efficiency façades, and bioclimatic building design.',
-    image: '/frames/ezgif-frame-240.jpg',
-    description: 'Bridging poetic architectural vision with rigorous engineering reality. We design envelopes with optimized solar heat gain, acoustic quietude, and striking visual identity.',
-    capabilities: [
-      'Unitized Low-E Double & Triple Glazed Curtain Walls',
-      'Thermally Broken Louver & Kinetic Shading Systems',
-      'Computational Fluid Dynamics (CFD) Micro-Climate Modeling',
-      'Acoustic Enclosure Engineering & Vibration Isolation',
-      'Circadian DALI-2 Architectural Lighting Integration'
-    ],
-    metrics: { uValueEfficiency: '0.95 W/m²K', acousticIsolation: '46 dB Rw', daylightAutonomy: '88%' }
-  },
-  {
-    id: 's-07',
-    number: '07',
-    slug: 'industrial-construction',
-    title: 'Industrial Facilities & Advanced Manufacturing',
-    tagline: 'Cleanrooms, automated distribution centers, gigafactories, and process plant infrastructure.',
-    image: '/frames/ezgif-frame-080.jpg',
-    description: 'Constructing mission-critical industrial assets with high floor-load capacities, super-flat floor tolerances (FM1/FM2), and specialized MEP process piping.',
-    capabilities: [
-      'ISO 14644 Class 4 to Class 8 Certified Cleanrooms',
-      'Laser-Screeded Superflat Industrial Flooring',
-      'High-Bay Automated Storage and Retrieval (ASRS) Enclosures',
-      'Process Cooling, Nitrogen, & Deionized Water Spines',
-      'Hazardous Material Containment & Explosion-Proof Enclosures'
-    ],
-    metrics: { floorFlatness: 'FM1 Standard', cleanroomArea: '45,000+ m²', uptimeTarget: '99.999%' }
-  },
-  {
-    id: 's-08',
-    number: '08',
-    slug: 'maintenance-asset-lifecycle',
-    title: 'Asset Lifecycle & Structural Health Monitoring',
-    tagline: 'Digital twin operational telemetry, IoT sensor integration, and longevity restoration.',
+    number: '01',
+    title: 'Architectural Design',
+    subtitle: 'From Initial Concept to Iconic Form',
+    shortDesc: 'Bespoke residential architectural blueprints, spatial layouts, bioclimatic orientation, and 3D photorealistic renderings designed for luxury living.',
+    description: 'We develop tailor-made architectural concepts that harmonize luxury living with environmental context. Every floorplan is meticulously optimized for natural light, privacy, indoor-outdoor flow, and structural elegance.',
+    icon: 'PenTool',
     image: '/frames/ezgif-frame-300.jpg',
-    description: 'Extending the operational lifespan of built assets through continuous fiber-optic strain monitoring, drone thermography inspections, and predictive maintenance protocols.',
     capabilities: [
-      'IoT Fiber-Optic Structural Strain & Deflection Sensing',
-      'Autonomous Drone Infrared Façade Inspection',
-      'Concrete Carbonation & Rebar Corrosion Testing',
-      'Carbon-Fiber Reinforced Polymer (CFRP) Strengthening',
-      'Digital Twin Building Management System (BMS) Integration'
+      'Site analysis, solar geometry & bioclimatic planning',
+      'Concept spatial zoning, circulation & floor plan optimization',
+      'Contemporary facade design & material palette curation',
+      'Photorealistic 3D exterior & interior CGI visualizations',
+      'Statutory zoning approvals & building permit clearance',
+      'Detailed construction drawings & finishing schedules'
     ],
-    metrics: { assetsMonitored: '85+ Landmarks', inspectionSpeed: '4x Faster', sensorLifespan: '25 Years' }
+    stats: {
+      metric: 'LOD 400',
+      label: 'Architectural Detail',
+      timeline: '4–8 Weeks Concept to Approval'
+    }
+  },
+  {
+    id: 'structural-engineering',
+    slug: 'structural-engineering',
+    number: '02',
+    title: 'Structural Engineering',
+    subtitle: 'Uncompromising Structural Integrity & Longevity',
+    shortDesc: 'Finite Element Analysis (FEA), seismic design, post-tensioned slabs, deep foundation engineering, and precision load analysis.',
+    description: 'Our chartered structural engineers calculate every load path, beam, and column using advanced 3D FEA simulation to guarantee earthquake resistance, wide open spans, and generational durability.',
+    icon: 'Layers',
+    image: '/frames/ezgif-frame-120.jpg',
+    capabilities: [
+      'Subterranean soil load-bearing analysis & geotechnics',
+      'Seismic Zone IV/V dynamic earthquake engineering',
+      'Column-free wide-span post-tensioned concrete slabs',
+      'Dramatic cantilevered balconies & open living spaces',
+      'High-grade rebar reinforcement scheduling & detailing',
+      'On-site structural integrity inspections during concrete pours'
+    ],
+    stats: {
+      metric: 'Zone IV/V',
+      label: 'Seismic Compliance',
+      timeline: '25-Year Structural Guarantee'
+    }
+  },
+  {
+    id: 'home-construction',
+    slug: 'home-construction',
+    number: '03',
+    title: 'Custom Home Construction',
+    subtitle: 'Flawless On-Site Execution & Craftsmanship',
+    shortDesc: 'Full turnkey ground-up construction using premium materials, laser-guided accuracy, and strict zero-harm safety governance.',
+    description: 'We handle the complete physical execution of your dream home with dedicated on-site project managers, master craftsmen, and automated digital tracking so you stay informed at every step.',
+    icon: 'Building2',
+    image: '/frames/ezgif-frame-200.jpg',
+    capabilities: [
+      'Laser-guided ground excavation & shoring installation',
+      'Monolithic raft foundation casting & waterproofing membranes',
+      'Reinforced concrete frame superstructure erection',
+      'Precision thermal AAC blockwork & acoustic insulation',
+      'Premium waterproofing for basements, wet areas, and roof terraces',
+      'Full-time chartered site engineers & daily photographic logs'
+    ],
+    stats: {
+      metric: '±1.5 mm',
+      label: 'Laser Site Precision',
+      timeline: '100% On-Time Milestone Record'
+    }
+  },
+  {
+    id: 'interior-architecture',
+    slug: 'interior-architecture',
+    number: '04',
+    title: 'Interior Architecture & Finishes',
+    subtitle: 'Bespoke Millwork, Luxury Fixtures & Lighting',
+    shortDesc: 'Curated Italian marbles, custom hardwood joinery, concealed HVAC diffusers, and intelligent mood lighting scenes.',
+    description: 'Our interior architecture team crafts luxurious, harmonious sanctuaries. We coordinate custom cabinetry, designer bathrooms, gourmet kitchens, and acoustic serenity for effortless living.',
+    icon: 'Maximize2',
+    image: '/frames/ezgif-frame-280.jpg',
+    capabilities: [
+      'Custom kitchen layouts with concealed appliances & quartz islands',
+      'Luxury spa bathrooms with book-matched Italian marble & rain showers',
+      'Bespoke architectural woodwork, walk-in closets & paneling',
+      'Concealed linear HVAC diffusers & multi-zone climate control',
+      'Acoustic ceiling treatments & motorized blackout drapery',
+      'Designer furniture procurement & art curation'
+    ],
+    stats: {
+      metric: 'Zero-VOC',
+      label: 'Air Quality Certified',
+      timeline: 'Bespoke Artisanal Finishing'
+    }
+  },
+  {
+    id: 'luxury-renovation',
+    slug: 'luxury-renovation',
+    number: '05',
+    title: 'Luxury Renovation & Extensions',
+    subtitle: 'Reimagining & Expanding Existing Residences',
+    shortDesc: 'Comprehensive structural reconfiguration, modern facade upgrades, vertical penthouse extensions, and energy retrofits.',
+    description: 'Transform your existing residence into a modern luxury showpiece. We structurally reinforce existing foundations, open up dark floorplans, and seamlessly blend contemporary extensions.',
+    icon: 'Wrench',
+    image: '/frames/ezgif-frame-260.jpg',
+    capabilities: [
+      'Structural load-bearing wall removal & steel beam retrofitting',
+      'Modern glass & thermowood exterior facade transformations',
+      'Vertical floor additions & rooftop terrace extensions',
+      'Complete electrical, plumbing, and smart home rewiring',
+      'Acoustic insulation retrofits & high-performance glazing replacement',
+      'Fast-track clean execution minimizing neighborhood disruption'
+    ],
+    stats: {
+      metric: '100%',
+      label: 'Structural Integrity',
+      timeline: 'Seamless Architectural Blending'
+    }
+  },
+  {
+    id: 'project-management',
+    slug: 'project-management',
+    number: '06',
+    title: 'Comprehensive Project Management',
+    subtitle: 'Transparent Budgets, Schedules & Live Tracking',
+    shortDesc: 'Dedicated project directors, milestone-based escrow payments, 24/7 client dashboard portal, and strict quality control.',
+    description: 'We remove the stress from building your dream home. You receive a single accountable point of contact, fixed cost commitments, weekly video reports, and transparent progress tracking.',
+    icon: 'Compass',
+    image: '/frames/ezgif-frame-080.jpg',
+    capabilities: [
+      'Detailed critical-path Gantt schedules & milestone tracking',
+      'Transparent itemized bill of quantities (BOQ) with zero hidden fees',
+      'Automated daily site logs & drone photo updates for homeowners',
+      'Material quality verification & laboratory testing certificates',
+      'Vendor coordination, procurement & statutory inspections',
+      'Strict budget governance with staged milestone signoffs'
+    ],
+    stats: {
+      metric: '0.00%',
+      label: 'Budget Overrun History',
+      timeline: 'Weekly Live Client Briefings'
+    }
+  },
+  {
+    id: 'landscape-architecture',
+    slug: 'landscape-architecture',
+    number: '07',
+    title: 'Landscape Architecture & Exteriors',
+    subtitle: 'Biophilic Gardens, Plunge Pools & Outdoor Living',
+    shortDesc: 'Infinity pools, sunken firepits, outdoor summer kitchens, pergolas, specimen tree planting, and smart irrigation.',
+    description: 'Extend your living space into nature. We design private garden oases with architectural swimming pools, ambient twilight illumination, native flora, and alfresco entertaining pavilions.',
+    icon: 'CheckCircle',
+    image: '/frames/ezgif-frame-290.jpg',
+    capabilities: [
+      'Custom infinity-edge swimming pools & integrated hot spas',
+      'Architectural pergolas, sunken seating lounges & fire features',
+      'Outdoor summer kitchens with BBQ stations & bar seating',
+      'Mature specimen trees (olive, frangipani, palm) planting',
+      'Automated weather-responsive micro-drip irrigation systems',
+      'Low-voltage warm architectural pathway and tree uplighting'
+    ],
+    stats: {
+      metric: '85%',
+      label: 'Native Drought-Tolerant',
+      timeline: 'Turnkey Garden Handover'
+    }
+  },
+  {
+    id: 'turnkey-home-solutions',
+    slug: 'turnkey-home-solutions',
+    number: '08',
+    title: 'Turnkey Home Solutions',
+    subtitle: 'Single-Source Accountability from Soil to Keys',
+    shortDesc: 'All-inclusive dream-home delivery combining architecture, permits, engineering, building, interiors, and final handover.',
+    description: 'Our flagship turnkey model gives you complete peace of mind. From the day you share your vision to the moment you turn the key in the front door, we manage every single detail in-house.',
+    icon: 'ShieldCheck',
+    image: '/frames/ezgif-frame-300.jpg',
+    capabilities: [
+      'Single contract encompassing architecture, engineering & construction',
+      'Complete statutory approvals, utility connections & occupancy certificates',
+      'Fully furnished interior styling & appliances commissioning',
+      'White-glove deep cleaning and formal key handover ceremony',
+      'Digital As-Built 3D BIM model & comprehensive home operations manual',
+      '10-year structural warranty & 1-year complimentary maintenance'
+    ],
+    stats: {
+      metric: '100%',
+      label: 'Single-Point Accountability',
+      timeline: 'Key-In-Hand Ready to Move'
+    }
   }
 ];

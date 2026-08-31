@@ -1,41 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Award, Users, Compass, Globe2, ArrowUpRight } from 'lucide-react';
+import { ShieldCheck, Award, Users, Compass, Globe2, ArrowUpRight, Sparkles, Home } from 'lucide-react';
 
 export function AboutPage() {
   const leadership = [
     {
-      name: 'Dr. Marcus Vance, Ph.D., PE',
-      role: 'Chief Executive & Principal Structural Engineer',
-      discipline: 'Structural Dynamics & Seismic Systems',
-      bio: 'Over 28 years directing complex high-rise and deep foundation infrastructure. Former Chairman of the International Concrete Institute.'
-    },
-    {
       name: 'Elena Rostova, M.Arch, AIA',
       role: 'Design Director & Principal Architect',
-      discipline: 'Contemporary Façade & Bioclimatic Envelopes',
-      bio: 'Recognized for pioneering cantilevered mass-concrete residential architecture and thermal envelope engineering.'
+      discipline: 'Contemporary Residential Design & Bioclimatic Living',
+      bio: 'Over 18 years crafting bespoke luxury villas, cantilevered architectural residences, and light-filled family homes.'
     },
     {
-      name: 'David K. Tanaka, CEng, FICE',
-      role: 'Director of Civil & Marine Infrastructure',
-      discipline: 'Segmental Bridges & Offshore Foundations',
-      bio: 'Spearheaded over 400 kilometers of elevated viaducts, stay cable bridges, and subterranean rail interchanges globally.'
+      name: 'Dr. Marcus Vance, Ph.D., PE',
+      role: 'Chief Structural & Foundation Engineer',
+      discipline: 'Seismic Dynamics & Post-Tensioned Engineering',
+      bio: 'Specialist in column-free wide-span residential floorplates, seismic isolation, and subterranean foundation geotechnics.'
     },
     {
-      name: 'Sarah Al-Mansoor, MSc',
-      role: 'Head of Digital Delivery & Computational BIM',
-      discipline: '5D Parametric Modeling & Digital Twins',
-      bio: 'Pioneered automated clash-detection algorithms and real-time IoT strain monitoring for long-span structures.'
+      name: 'Julian Montgomery, CEng',
+      role: 'Director of Construction & Site Execution',
+      discipline: 'Turnkey Execution & Zero-Defect Quality Control',
+      bio: 'Directs on-site master craftsmen and chartered site engineers to guarantee sub-millimeter execution and timely handovers.'
+    },
+    {
+      name: 'Aria Chen, MA',
+      role: 'Head of Interior Architecture & Smart Home Systems',
+      discipline: 'Bespoke Millwork, Italian Marbles & Automation',
+      bio: 'Orchestrates luxury tactile interiors, acoustic serenity, custom lighting design, and integrated Lutron automation.'
     }
   ];
 
   const milestones = [
-    { year: '2001', title: 'Foundation & Civil Groundworks', desc: 'Established with a focus on high-precision deep excavation and contiguous shoring systems.' },
-    { year: '2008', title: 'Superstructure & High-Rise Division', desc: 'Expanded into commercial towers, self-climbing hydraulic formwork, and post-tensioned slabs.' },
-    { year: '2016', title: 'Digital Twin & Computational BIM', desc: 'Integrated 5D BIM and drone LiDAR photogrammetry across 100% of delivered projects.' },
-    { year: '2022', title: 'Low-Carbon Concrete & ESG Leadership', desc: 'Formulated proprietary GGBS low-clinker concrete blends, reducing embodied carbon by 38%.' },
-    { year: 'Present', title: 'Global Delivery & Turnkey Mastery', desc: 'Executing complex institutional landmarks across 25+ metropolitan regions worldwide.' }
+    { year: '2008', title: 'Architectural Studio Inception', desc: 'Founded with a singular mission: to make luxury residential architectural design and construction transparent and joyful.' },
+    { year: '2014', title: 'Turnkey Design-Build Integration', desc: 'Unified architecture, structural engineering, and self-performing construction crews under single-source contracts.' },
+    { year: '2019', title: 'BIM 5D & Digital Homeowner Portal', desc: 'Introduced 3D digital twin modeling and daily photographic logs, giving homeowners complete live visibility.' },
+    { year: '2023', title: 'Passive House & Low-Carbon Excellence', desc: 'Adopted Net-Zero ready passive envelopes, solar integration, and low-clinker architectural concretes.' },
+    { year: 'Present', title: '100+ Dream Homes Delivered', desc: 'Recognized as the premier luxury residential design-and-build platform with 100% on-time milestone delivery.' }
   ];
 
   return (
@@ -43,13 +43,13 @@ export function AboutPage() {
       {/* Hero Banner */}
       <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)', position: 'relative' }}>
         <div className="container">
-          <div className="eyebrow">Institutional Profile</div>
+          <div className="eyebrow">About Build My Dream</div>
           <h1 className="hero-headline" style={{ marginBottom: '1.5rem', color: '#0F172A' }}>
-            ENGINEERING DISCIPLINE. <br />
-            <span className="text-gold">ARCHITECTURAL MASTERY.</span>
+            PASSION FOR DESIGN. <br />
+            <span className="text-gold">PRECISION IN CRAFT.</span>
           </h1>
           <p className="section-subtitle" style={{ fontSize: '1.2rem', maxWidth: '850px' }}>
-            VERTEX is a premier engineering, architecture, and construction corporation committed to building resilient structures that shape skyline identities and advance civil infrastructure.
+            <strong>BUILD MY DREAM</strong> is a luxury residential architecture, engineering, and construction platform committed to transforming your dream home vision into an enduring, beautifully crafted reality.
           </p>
         </div>
       </section>
@@ -57,68 +57,95 @@ export function AboutPage() {
       {/* Core Principles Grid */}
       <section className="section-pad" style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">
-          <div className="eyebrow">Guiding Philosophy</div>
-          <h2 className="section-title" style={{ marginBottom: '3rem', color: '#0F172A' }}>OUR CORE PILLARS</h2>
+          <div className="eyebrow">Our Guiding Philosophy</div>
+          <h2 className="section-title" style={{ marginBottom: '3rem', color: '#0F172A' }}>THE FOUR FOUNDATIONAL PILLARS</h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            <div className="hud-border glass-card" style={{ padding: '2.5rem 2rem', borderRadius: '4px' }}>
-              <div style={{ width: '48px', height: '48px', background: 'rgba(179, 142, 93, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', color: 'var(--accent-gold)', marginBottom: '1.5rem' }}>
-                <Compass size={24} />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
+            <div className="hud-border glass-card" style={{ padding: '2.25rem', borderRadius: '4px' }}>
+              <div style={{ width: '40px', height: '40px', background: 'rgba(179, 142, 93, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', color: 'var(--accent-gold)', marginBottom: '1.25rem' }}>
+                <Compass size={20} />
               </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.75rem', color: '#0F172A' }}>
-                Mathematical Precision
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 800, marginBottom: '0.75rem', color: '#0F172A' }}>
+                Design-Led Architecture
               </h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                Every load-bearing calculation, formwork tolerance, and post-tensioned tendon is audited against rigorous physics models with zero margin for deviation.
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
+                Every home is custom sculpted for its inhabitants—optimizing natural light, spatial harmony, biophilic connection, and family comfort.
               </p>
             </div>
 
-            <div className="hud-border glass-card" style={{ padding: '2.5rem 2rem', borderRadius: '4px' }}>
-              <div style={{ width: '48px', height: '48px', background: 'rgba(179, 142, 93, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', color: 'var(--accent-gold)', marginBottom: '1.5rem' }}>
-                <ShieldCheck size={24} />
+            <div className="hud-border glass-card" style={{ padding: '2.25rem', borderRadius: '4px' }}>
+              <div style={{ width: '40px', height: '40px', background: 'rgba(179, 142, 93, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', color: 'var(--accent-gold)', marginBottom: '1.25rem' }}>
+                <ShieldCheck size={20} />
               </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.75rem', color: '#0F172A' }}>
-                Zero-Harm Integrity
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 800, marginBottom: '0.75rem', color: '#0F172A' }}>
+                Engineering Precision
               </h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                Our institutional culture places human life and safety above all commercial pressures, maintaining top-decile global safety records.
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
+                Rigorous finite element load analysis, post-tensioned wide spans, and seismic Zone IV structural integrity built to last for generations.
               </p>
             </div>
 
-            <div className="hud-border glass-card" style={{ padding: '2.5rem 2rem', borderRadius: '4px' }}>
-              <div style={{ width: '48px', height: '48px', background: 'rgba(179, 142, 93, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', color: 'var(--accent-gold)', marginBottom: '1.5rem' }}>
-                <Award size={24} />
+            <div className="hud-border glass-card" style={{ padding: '2.25rem', borderRadius: '4px' }}>
+              <div style={{ width: '40px', height: '40px', background: 'rgba(179, 142, 93, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', color: 'var(--accent-gold)', marginBottom: '1.25rem' }}>
+                <Sparkles size={20} />
               </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.75rem', color: '#0F172A' }}>
-                Generational Longevity
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 800, marginBottom: '0.75rem', color: '#0F172A' }}>
+                Artisanal Craftsmanship
               </h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                We engineer buildings and bridges for 100+ year lifespans using corrosion-resistant alloys, self-healing concretes, and durable timber elements.
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
+                From hand-selected Italian stone slabs to custom walnut joinery and concealed linear diffusers, every detail is executed flawlessly.
+              </p>
+            </div>
+
+            <div className="hud-border glass-card" style={{ padding: '2.25rem', borderRadius: '4px' }}>
+              <div style={{ width: '40px', height: '40px', background: 'rgba(179, 142, 93, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', color: 'var(--accent-gold)', marginBottom: '1.25rem' }}>
+                <Award size={20} />
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 800, marginBottom: '0.75rem', color: '#0F172A' }}>
+                Turnkey Peace of Mind
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
+                Single-source contractual accountability, fixed budgets, guaranteed handover dates, and a 25-year structural warranty.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Leadership Directory */}
+      {/* Leadership Cadre */}
       <section className="section-pad">
         <div className="container">
-          <div className="eyebrow">Executive Governance</div>
-          <h2 className="section-title" style={{ marginBottom: '3rem', color: '#0F172A' }}>CHARTERED DIRECTORS & LEADERSHIP</h2>
+          <div className="eyebrow">Studio Leadership</div>
+          <h2 className="section-title" style={{ marginBottom: '3rem', color: '#0F172A' }}>ARCHITECTURAL & ENGINEERING DIRECTORS</h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
             {leadership.map((leader, idx) => (
-              <div key={idx} className="hud-border glass-card" style={{ padding: '2.25rem', borderRadius: '4px' }}>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent-gold)', marginBottom: '0.5rem', fontWeight: 700 }}>
-                  {leader.discipline}
+              <div
+                key={idx}
+                className="hud-border glass-card"
+                style={{
+                  padding: '2.5rem 2rem',
+                  borderRadius: '4px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem'
+                }}
+              >
+                <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(179, 142, 93, 0.12)', border: '1.5px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontFamily: 'var(--font-mono)', fontSize: '1.1rem', fontWeight: 800 }}>
+                  {leader.name.split(' ')[0][0]}{leader.name.split(' ')[1] ? leader.name.split(' ')[1][0] : ''}
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', fontWeight: 800, marginBottom: '0.25rem', color: '#0F172A' }}>
-                  {leader.name}
-                </h3>
-                <div style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', marginBottom: '1.25rem', fontWeight: 600 }}>
-                  {leader.role}
+                <div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.25rem' }}>
+                    {leader.name}
+                  </h3>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent-gold)', fontWeight: 700 }}>
+                    {leader.role}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#64748B', marginTop: '0.2rem' }}>
+                    {leader.discipline}
+                  </div>
                 </div>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: 1.6, borderTop: '1px solid rgba(15, 23, 42, 0.08)', paddingTop: '1rem', marginTop: '0.5rem' }}>
                   {leader.bio}
                 </p>
               </div>
@@ -127,34 +154,34 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Corporate Timeline */}
+      {/* Corporate Heritage Timeline */}
       <section className="section-pad" style={{ backgroundColor: 'var(--bg-surface)', borderTop: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">
-          <div className="eyebrow">Institutional Evolution</div>
-          <h2 className="section-title" style={{ marginBottom: '3rem', color: '#0F172A' }}>OUR MILESTONES</h2>
+          <div className="eyebrow">Our Journey</div>
+          <h2 className="section-title" style={{ marginBottom: '3.5rem', color: '#0F172A' }}>EVOLUTION OF RESIDENTIAL EXCELLENCE</h2>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             {milestones.map((m, idx) => (
               <div
                 key={idx}
                 className="hud-border glass-card"
                 style={{
-                  padding: '2rem 2.25rem',
+                  padding: '2rem 2.5rem',
                   borderRadius: '4px',
-                  display: 'flex',
-                  alignItems: 'center',
+                  display: 'grid',
+                  gridTemplateColumns: '120px 1fr',
                   gap: '2.5rem',
-                  flexWrap: 'wrap'
+                  alignItems: 'center'
                 }}
               >
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', fontWeight: 800, color: 'var(--accent-gold)', minWidth: '120px' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent-gold)' }}>
                   {m.year}
                 </div>
-                <div style={{ flex: 1 }}>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 800, marginBottom: '0.35rem', color: '#0F172A' }}>
+                <div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.35rem' }}>
                     {m.title}
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.6 }}>
                     {m.desc}
                   </p>
                 </div>

@@ -1,10 +1,17 @@
-# 01. Project Brief
+# 01_PROJECT_BRIEF.md — BUILD MY DREAM
 
 ## Executive Summary
-VERTEX is a leading international engineering, architecture, and construction corporation delivering high-complexity commercial towers, luxury residential estates, civil transit viaducts, and advanced cleanroom campuses.
+**BUILD MY DREAM** is a premier residential architecture, structural engineering, and custom home construction digital experience. The platform conveys the emotional and technical journey of turning a dream-home vision into a masterfully engineered physical reality.
 
-## Objectives
-1. Present the company as a top-tier global engineering powerhouse.
-2. Provide a signature interactive construction time-lapse scrubber utilizing 300 sequential photorealistic frames.
-3. Enable seamless discovery across services, projects, sectors, technologies, sustainability, and career opportunities.
-4. Deliver an intuitive, accessible, and high-performance digital experience across all screen sizes.
+## Core Brand Strategy
+- **Brand Name**: BUILD MY DREAM
+- **Tagline**: *"From Vision to Reality."*
+- **Supporting Statements**: *"Your dream home. Engineered to last."* | *"Designed for you. Built to last."* | *"We don't just build houses. We build your dream."*
+- **Business Type**: Premium residential construction, architecture, engineering, and turnkey home development.
+- **Audience**: Homeowners, families, land owners, architects, and luxury property buyers.
+
+## Key Differentiators
+1. **Design-First Architecture**: Bespoke contemporary living spaces optimized for light and lifestyle.
+2. **Engineering Rigor**: Subterranean geotechnics, seismic FEA modeling, and post-tensioned spans.
+3. **Turnkey Accountability**: Single contract encompassing architecture, permits, building, and interiors.
+4. **Interactive Digital Transparency**: 300-frame time-lapse scrubber and 3D BIM structural skeleton.

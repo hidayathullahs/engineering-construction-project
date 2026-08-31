@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useFramePreloader } from '../../hooks/useFramePreloader';
 import { CONSTRUCTION_STAGES } from '../../data/constructionStages';
-import { ChevronRight, ChevronLeft, Layers, ShieldCheck, Activity, Compass } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Sparkles, ShieldCheck, Activity, Compass } from 'lucide-react';
 import '../../styles/canvas.css';
 
 export function ConstructionCanvasScrubber() {
@@ -70,94 +70,126 @@ export function ConstructionCanvasScrubber() {
       drawY = 0;
     }
 
+    ctx.fillStyle = '#0B0F14';
+    ctx.fillRect(0, 0, width, height);
+
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
-    ctx.drawImage(img, Math.round(drawX), Math.round(drawY), Math.round(drawW), Math.round(drawH));
+    ctx.drawImage(img, drawX, drawY, drawW, drawH);
+
+    // Subtle CAD corner markers
+    ctx.strokeStyle = 'rgba(179, 142, 93, 0.4)';
+    ctx.lineWidth = 1;
+    const mLen = 14;
+    
+    // Top-left
+    ctx.beginPath();
+    ctx.moveTo(16, 16 + mLen);
+    ctx.lineTo(16, 16);
+    ctx.lineTo(16 + mLen, 16);
+    ctx.stroke();
+
+    // Top-right
+    ctx.beginPath();
+    ctx.moveTo(width - 16 - mLen, 16);
+    ctx.lineTo(width - 16, 16);
+    ctx.lineTo(width - 16, 16 + mLen);
+    ctx.stroke();
+
+    // Bottom-left
+    ctx.beginPath();
+    ctx.moveTo(16, height - 16 - mLen);
+    ctx.lineTo(16, height - 16);
+    ctx.lineTo(16 + mLen, height - 16);
+    ctx.stroke();
+
+    // Bottom-right
+    ctx.beginPath();
+    ctx.moveTo(width - 16 - mLen, height - 16);
+    ctx.lineTo(width - 16, height - 16);
+    ctx.lineTo(width - 16, height - 16 - mLen);
+    ctx.stroke();
 
     ctx.restore();
   }, [images, totalFrames]);
 
-  // Smooth lerp frame loop for cinematic fluidity
+  // Smooth animation momentum loop
   useEffect(() => {
+    let isRunning = true;
+
     const loop = () => {
-      const target = targetFrameRef.current;
-      const current = displayedFrameRef.current;
+      if (!isRunning) return;
 
-      const diff = target - current;
+      const diff = targetFrameRef.current - displayedFrameRef.current;
       if (Math.abs(diff) > 0.05) {
-        // Smooth interpolation step
         displayedFrameRef.current += diff * 0.35;
-        const roundedFrame = Math.min(totalFrames - 1, Math.max(0, Math.round(displayedFrameRef.current)));
-        setCurrentFrameIndex(roundedFrame);
+        const currentInt = Math.round(displayedFrameRef.current);
+        const clampedInt = Math.max(0, Math.min(totalFrames - 1, currentInt));
+        
+        setCurrentFrameIndex(clampedInt);
+        renderCanvas(clampedInt);
 
-        const stage = CONSTRUCTION_STAGES.find(
-          (s) => roundedFrame >= s.startFrame && roundedFrame <= s.endFrame
-        ) || CONSTRUCTION_STAGES[CONSTRUCTION_STAGES.length - 1];
-        setActiveStage(stage);
+        // Find active stage
+        const matchingStage = CONSTRUCTION_STAGES.find(
+          (s) => clampedInt >= s.startFrame && clampedInt <= s.endFrame
+        ) || CONSTRUCTION_STAGES[0];
 
-        renderCanvas(roundedFrame);
+        setActiveStage(matchingStage);
+        setScrubProgress(Math.round((clampedInt / (totalFrames - 1)) * 100));
       }
 
       animFrameIdRef.current = requestAnimationFrame(loop);
     };
 
     animFrameIdRef.current = requestAnimationFrame(loop);
+
     return () => {
+      isRunning = false;
       if (animFrameIdRef.current) cancelAnimationFrame(animFrameIdRef.current);
     };
   }, [renderCanvas, totalFrames]);
 
-  // Scroll listener
+  // Initial draw once ready
   useEffect(() => {
-    const handleScroll = () => {
-      const container = containerRef.current;
-      if (!container) return;
+    if (isTier1Ready) {
+      renderCanvas(0);
+    }
+  }, [isTier1Ready, renderCanvas]);
 
-      const rect = container.getBoundingClientRect();
-      const scrollHeight = rect.height - window.innerHeight;
-      if (scrollHeight <= 0) return;
-
-      const scrolled = Math.max(0, Math.min(scrollHeight, -rect.top));
-      const rawProgress = scrolled / scrollHeight;
-      setScrubProgress(rawProgress);
-
-      const target = Math.min(
-        totalFrames - 1,
-        Math.max(0, Math.floor(rawProgress * (totalFrames - 1)))
-      );
-      targetFrameRef.current = target;
+  // Resize handler
+  useEffect(() => {
+    const handleResize = () => {
+      renderCanvas(currentFrameIndex);
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [totalFrames]);
-
-  // Re-render on resize or initial load
-  useEffect(() => {
-    renderCanvas(currentFrameIndex);
-    const handleResize = () => renderCanvas(currentFrameIndex);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [currentFrameIndex, isTier1Ready, isFullyLoaded, renderCanvas]);
+  }, [currentFrameIndex, renderCanvas]);
 
-  // Jump to specific construction stage smoothly
-  const jumpToStage = (stage) => {
+  // Scroll listener for pinned container
+  useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    const midFrame = Math.floor((stage.startFrame + stage.endFrame) / 2);
-    const targetProgress = midFrame / (totalFrames - 1);
+    const handleScroll = () => {
+      const rect = container.getBoundingClientRect();
+      const scrollHeight = container.offsetHeight - window.innerHeight;
+      
+      if (scrollHeight <= 0) return;
 
-    const containerTop = container.offsetTop;
-    const scrollHeight = container.clientHeight - window.innerHeight;
-    const targetScrollY = containerTop + (targetProgress * scrollHeight);
+      const scrolled = -rect.top;
+      const progressRatio = Math.max(0, Math.min(1, scrolled / scrollHeight));
 
-    window.scrollTo({
-      top: targetScrollY,
-      behavior: 'smooth'
-    });
+      const targetFrame = Math.round(progressRatio * (totalFrames - 1));
+      targetFrameRef.current = targetFrame;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [totalFrames]);
+
+  // Manual Jump to specific stage
+  const jumpToStage = (stage) => {
+    targetFrameRef.current = stage.startFrame;
   };
 
   const handleNextStage = () => {
@@ -177,27 +209,27 @@ export function ConstructionCanvasScrubber() {
   return (
     <section
       id="construction-journey"
-      className="construction-journey-section"
       ref={containerRef}
-      data-cursor="drag"
+      className="scrubber-section"
+      style={{
+        height: '450vh',
+        position: 'relative',
+        backgroundColor: '#FAFAF9'
+      }}
     >
-      <div className="scrubber-pin-container">
-        <div className="scrubber-sticky-viewport">
-          {/* Main Scrubber Canvas */}
-          <canvas ref={canvasRef} className="scrubber-canvas" />
+      <div className="scrubber-sticky-viewport">
+        <div className="scrubber-canvas-container">
+          <canvas
+            ref={canvasRef}
+            className="scrubber-canvas"
+            style={{ width: '100%', height: '100%', display: 'block' }}
+          />
 
-          {/* Crisp Filter Layer */}
-          <div className="scrubber-crisp-layer" />
-
-          {/* Vignette Overlay */}
-          <div className="scrubber-vignette" />
-
-          {/* Preloader Overlay while initial keyframes load */}
+          {/* Loading Indicator Overlay */}
           {!isTier1Ready && (
-            <div className="scrubber-preloader">
-              <div className="preloader-spinner" />
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--accent-gold)', letterSpacing: '0.1em' }}>
+            <div className="scrubber-loading-overlay">
+              <div className="hud-border glass-card" style={{ padding: '2rem 3rem', textAlign: 'center', borderRadius: '4px' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--accent-gold)', letterSpacing: '0.1em', fontWeight: 800 }}>
                   INITIALIZING ARCHITECTURAL SCENE...
                 </div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.35rem' }}>
@@ -212,19 +244,19 @@ export function ConstructionCanvasScrubber() {
             {/* Top Bar: Section Title + Horizontal Telemetry Ribbon */}
             <div className="hud-top-bar">
               <div className="hud-top-left-title">
-                <div className="eyebrow" style={{ color: 'var(--accent-gold)', marginBottom: '0.2rem', fontSize: '0.75rem' }}>
-                  Signature Time-Lapse Scrubber
+                <div className="eyebrow" style={{ color: 'var(--accent-gold)', marginBottom: '0.2rem', fontSize: '0.75rem', fontWeight: 800 }}>
+                  SIGNATURE EXPERIENCE // BUILD YOUR DREAM
                 </div>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(0.95rem, 1.3vw, 1.25rem)', letterSpacing: '0.04em', color: '#0F172A', textTransform: 'uppercase' }}>
-                  From Ground Excavation To Luxury Completion
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.95rem, 1.3vw, 1.25rem)', letterSpacing: '0.04em', color: '#0F172A', textTransform: 'uppercase' }}>
+                  YOUR DREAM HOME, BUILT STEP BY STEP
                 </div>
               </div>
 
               {/* Horizontal Telemetry Strip */}
               <div className="hud-telemetry-strip">
                 <div className="hud-telemetry-item">
-                  <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#4ade80', display: 'inline-block', boxShadow: '0 0 6px #4ade80' }} />
-                  <span style={{ color: '#4ade80', fontWeight: 700 }}>LIVE 60FPS</span>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#16a34a', display: 'inline-block', boxShadow: '0 0 6px #16a34a' }} />
+                  <span style={{ color: '#16a34a', fontWeight: 700 }}>LIVE 60FPS</span>
                 </div>
                 <div className="hud-telemetry-divider" />
                 <div className="hud-telemetry-item">
@@ -248,7 +280,7 @@ export function ConstructionCanvasScrubber() {
             <div className="hud-timeline-stepper">
               <div className="hud-timeline-header">
                 <span>STAGES</span>
-                <span style={{ color: 'var(--text-muted)' }}>16</span>
+                <span style={{ color: 'var(--accent-gold)', fontWeight: 800 }}>16</span>
               </div>
               {CONSTRUCTION_STAGES.map((st) => {
                 const isActive = st.id === activeStage.id;
@@ -260,7 +292,7 @@ export function ConstructionCanvasScrubber() {
                     title={st.title}
                   >
                     <span className="timeline-step-label">
-                      {st.stepNumber} {st.title.split(' ')[0]}
+                      {st.name}
                     </span>
                     <span className="timeline-step-dot" />
                   </button>
@@ -273,30 +305,30 @@ export function ConstructionCanvasScrubber() {
               {/* Active Stage Editorial Card */}
               <div className="hud-stage-card">
                 <div className="hud-stage-number">
-                  <span>STAGE {activeStage.stepNumber} OF 16</span>
+                  <span>STAGE 0{activeStage.stageNumber} OF 16</span>
                   <span style={{ color: 'var(--text-muted)' }}>•</span>
-                  <span>{activeStage.safetyStatus}</span>
+                  <span style={{ color: 'var(--accent-gold)', fontWeight: 700 }}>{activeStage.phase}</span>
                 </div>
                 <h3 className="hud-stage-title">{activeStage.title}</h3>
                 <p className="hud-stage-desc">{activeStage.description}</p>
 
                 {/* Technical Engineering Specifications */}
                 <div className="hud-stage-specs">
-                  {Object.entries(activeStage.engineeringSpecs).slice(0, 2).map(([key, val]) => (
-                    <div key={key} className="hud-spec-item">
-                      <span className="hud-spec-label">{key.replace(/([A-Z])/g, ' $1')}</span>
-                      <span className="hud-spec-value">{val}</span>
+                  {activeStage.specs && activeStage.specs.map((sp, idx) => (
+                    <div key={idx} className="hud-spec-item">
+                      <span className="hud-spec-label">{sp.label}</span>
+                      <span className="hud-spec-value">{sp.value}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Direct Stage Controls */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem', paddingTop: '0.65rem', borderTop: '1px solid var(--border-subtle)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem', paddingTop: '0.65rem', borderTop: '1px solid rgba(15, 23, 42, 0.08)' }}>
                   <div style={{ display: 'flex', gap: '0.4rem' }}>
                     <button
                       onClick={handlePrevStage}
                       className="btn-outline-gold"
-                      style={{ padding: '0.3rem 0.6rem', fontSize: '0.72rem' }}
+                      style={{ padding: '0.35rem 0.75rem', fontSize: '0.74rem', fontWeight: 700 }}
                       title="Previous Stage"
                     >
                       <ChevronLeft size={13} /> Prev
@@ -304,13 +336,13 @@ export function ConstructionCanvasScrubber() {
                     <button
                       onClick={handleNextStage}
                       className="btn-outline-gold"
-                      style={{ padding: '0.3rem 0.6rem', fontSize: '0.72rem' }}
+                      style={{ padding: '0.35rem 0.75rem', fontSize: '0.74rem', fontWeight: 700 }}
                       title="Next Stage"
                     >
                       Next <ChevronRight size={13} />
                     </button>
                   </div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-secondary)' }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#475569', fontWeight: 600 }}>
                     SCROLL DOWN TO ADVANCE ↓
                   </div>
                 </div>
@@ -318,27 +350,20 @@ export function ConstructionCanvasScrubber() {
 
               {/* Bottom Scrub Track */}
               <div className="hud-scrub-bar-wrap">
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--text-secondary)' }}>
-                  <span>01 SITE PREP</span>
-                  <span className="text-gold" style={{ fontWeight: 600 }}>PROGRESS: {Math.round(scrubProgress * 100)}%</span>
-                  <span>16 COMPLETION</span>
+                <div className="hud-scrub-labels">
+                  <span>01 DREAM CONCEPT</span>
+                  <span style={{ color: 'var(--accent-gold)', fontWeight: 800 }}>PROGRESS: {scrubProgress}%</span>
+                  <span>16 YOUR DREAM HOME</span>
                 </div>
-                <div
-                  className="hud-scrub-track"
-                  onClick={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    const clickX = e.clientX - rect.left;
-                    const pct = Math.max(0, Math.min(1, clickX / rect.width));
-                    const container = containerRef.current;
-                    if (container) {
-                      const targetScroll = container.offsetTop + (pct * (container.clientHeight - window.innerHeight));
-                      window.scrollTo({ top: targetScroll, behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  <div className="hud-scrub-fill" style={{ width: `${scrubProgress * 100}%` }}>
-                    <div className="hud-scrub-indicator" />
-                  </div>
+                <div className="hud-scrub-track">
+                  <div
+                    className="hud-scrub-fill"
+                    style={{ width: `${scrubProgress}%` }}
+                  />
+                  <div
+                    className="hud-scrub-handle"
+                    style={{ left: `${scrubProgress}%` }}
+                  />
                 </div>
               </div>
             </div>

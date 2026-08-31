@@ -1,197 +1,244 @@
 export const PROJECTS_DATA = [
   {
-    id: 'p-01',
-    slug: 'horizon-villa-residences',
+    id: 'horizon-villa-residence',
+    slug: 'horizon-villa-residence',
+    ref: 'REF: 01',
     title: 'Horizon Modern Luxury Villa Residences',
-    category: 'Residential',
+    subtitle: 'Cantilevered Architectural Masterpiece',
+    category: 'VILLAS',
+    categoryLabel: 'Luxury Villa',
     location: 'Metropolitan Bay Enclave',
     year: '2025',
-    status: 'Completed',
-    scale: '4,850 m² Built Area',
+    builtArea: '4,850 m²',
+    floors: '3 Levels + Subterranean Wellness Suite',
     heroImage: '/frames/ezgif-frame-300.jpg',
-    constructionImage: '/frames/ezgif-frame-180.jpg',
-    excavationImage: '/frames/ezgif-frame-001.jpg',
-    shortDescription: 'Multi-tiered luxury contemporary residential architecture featuring cantilevered concrete volumes, warm thermowood louvers, and frameless panoramic glazing.',
-    client: 'Private Investment Consortium',
-    architect: 'Vertex Structural Design & Architecture',
-    structuralSystem: 'Post-Tensioned Monolithic Slabs with Shear Core',
+    cardImage: '/frames/ezgif-frame-300.jpg',
+    overview: 'A multi-tiered luxury contemporary residential estate featuring dramatic post-tensioned cantilevered concrete floorplates, warm thermowood louvers, frameless triple glazing, and an integrated infinity plunge pool.',
+    vision: 'To harmonize bold geometric forms with serene biophilic garden courtyards, maximizing panoramic natural light while preserving absolute family privacy.',
+    architecture: 'Designed with interlocking cubic volumes, board-formed architectural concrete walls, and floor-to-ceiling sliding glass pocket doors that dissolve boundaries between interior living and exterior pool decks.',
+    engineering: 'Engineered with post-tensioned 3.2-meter cantilevered concrete slabs, seismic Zone IV ductile detailing, and subterranean contiguous secant shoring for the private wellness spa.',
+    construction: 'Executed across 16 seamless stages using low-carbon self-consolidating concrete, precision laser-aligned steel reinforcements, and bespoke Italian interior millwork.',
+    materials: [
+      'Board-Formed Architectural White Concrete',
+      'FSC Sustainable Thermowood Louvers',
+      'Low-E Acoustic Triple Glazing (U-Value 0.68)',
+      'Italian Statuario Calacatta Porcelain',
+      'Concealed Linear HVAC & Lutron HomeWorks Hub'
+    ],
+    challenges: [
+      'Executing 3.2m cantilevered balcony spans with zero column support over living zones',
+      'High coastal water table requiring pressurized subterranean waterproofing membranes',
+      'Seamless pocketing of 6m motorized sliding glass panels into insulated cavity walls'
+    ],
+    solutions: [
+      'High-strength post-tensioned bonded steel tendons within 250mm reinforced concrete decks',
+      'Double-ply SBS elastomeric waterproofing membrane backed with active drainage sump pits',
+      'Laser-calibrated structural steel subframes with concealed thermal-break drainage sills'
+    ],
     metrics: [
       { label: 'Built Area', value: '4,850 m²' },
-      { label: 'Structural Concrete', value: '4,620 m³' },
-      { label: 'Rebar Steel', value: '580 Tons' },
-      { label: 'Safety Record', value: '0 Incidents' },
-      { label: 'Handover', value: '14 Months' }
-    ],
-    overview: 'Designed and engineered as a statement of contemporary architectural mastery. The project incorporates wide cantilevered balcony slabs spanning over 3.2 meters, high-efficiency acoustic double glazing, and custom thermowood vertical louvers configured to provide natural solar shading while maintaining sweeping panoramic vistas.',
-    challenge: 'Engineering wide column-free floor plates with deep cantilevered terrace overhangs in a high wind zone without visible external structural struts or sagging over time.',
-    solution: 'Engineered an unbonded post-tensioned concrete structural system paired with a central monolithic shear core. Used high-performance micro-silica modified concrete (C40/50) and pre-cambered formwork calculations to ensure zero millimeter long-term deflection.',
-    technologies: ['BIM 5D Modeling', 'Post-Tensioned Slab Analysis', 'Thermowood Façade System', 'Smart DALI-2 Circadian Lighting', 'SUDS Permeable Drainage'],
-    scope: [
-      'Topographical and Geotechnical Surveying',
-      'Bulk Earthworks & Contiguous Secant Shoring',
-      'Structural Reinforced Concrete Superstructure',
-      'Low-E Panoramic Curtain Wall & Window Assemblies',
-      'Architectural Joinery, Landscaping & Circadian Lighting'
+      { label: 'Cantilever Reach', value: '3.2 m Overhang' },
+      { label: 'Energy Rating', value: 'Net-Zero Ready' },
+      { label: 'Delivery Time', value: '14 Months' }
     ],
     gallery: [
-      { url: '/frames/ezgif-frame-300.jpg', caption: 'Completed Building at Blue Hour' },
-      { url: '/frames/ezgif-frame-240.jpg', caption: 'Daytime Architectural Façade & Landscaping' },
-      { url: '/frames/ezgif-frame-180.jpg', caption: 'Superstructure Framing & Scaffolding' },
-      { url: '/frames/ezgif-frame-100.jpg', caption: 'Ground Floor Columns & Load-Bearing Core' },
-      { url: '/frames/ezgif-frame-050.jpg', caption: 'Basement Excavation & Shoring Piles' }
+      '/frames/ezgif-frame-300.jpg',
+      '/frames/ezgif-frame-280.jpg',
+      '/frames/ezgif-frame-220.jpg',
+      '/frames/ezgif-frame-160.jpg'
     ]
   },
   {
-    id: 'p-02',
-    slug: 'apex-tower-financial-center',
-    title: 'Apex Tower International Financial Center',
-    category: 'Commercial',
-    location: 'Central Financial District',
+    id: 'solaria-contemporary-estate',
+    slug: 'solaria-contemporary-estate',
+    ref: 'REF: 02',
+    title: 'The Solaria Contemporary Hillside Residence',
+    subtitle: 'Bioclimatic Solar-Optimized Luxury Home',
+    category: 'CONTEMPORARY',
+    categoryLabel: 'Contemporary Home',
+    location: 'Emerald Hills Ridge',
     year: '2024',
-    status: 'Completed',
-    scale: '124,000 m² / 52 Floors',
-    heroImage: '/frames/ezgif-frame-240.jpg',
-    constructionImage: '/frames/ezgif-frame-150.jpg',
-    excavationImage: '/frames/ezgif-frame-010.jpg',
-    shortDescription: 'A 52-story commercial skyscraper featuring an outrigger structural damping system and a double-skin triple-glazed aerodynamic façade.',
-    client: 'Apex Global Financial Properties',
-    architect: 'KPF & Vertex Engineering',
-    structuralSystem: 'Composite Steel-Concrete Core with Buckling-Restrained Braces',
-    metrics: [
-      { label: 'Total Height', value: '248 Meters' },
-      { label: 'Floors', value: '52 Stories' },
-      { label: 'Structural Steel', value: '18,500 Tons' },
-      { label: 'LEED Status', value: 'Platinum Certified' },
-      { label: 'Efficiency', value: '94% Floor Plate' }
+    builtArea: '3,600 m²',
+    floors: '2 Levels + Rooftop Sky Terrace',
+    heroImage: '/frames/ezgif-frame-280.jpg',
+    cardImage: '/frames/ezgif-frame-280.jpg',
+    overview: 'Perched on a dramatic slope, this contemporary home leverages stepped terraces, passive solar shading, and expansive green roof systems to create an eco-luxury retreat.',
+    vision: 'Maximizing valley vistas while utilizing passive earth cooling, cross ventilation, and solar energy capture for self-sufficient modern living.',
+    architecture: 'Cascading open-plan architecture with double-height central atrium, floating steel-and-oak staircase, and seamless transitions to landscaped hillside patios.',
+    engineering: 'Stepped micropile foundation anchored into hillside bedrock with reinforced retaining walls engineered for extreme slope stability.',
+    construction: 'Precision earth excavation with zero soil displacement offsite; all excavated stone was repurposed in the property’s architectural gabion landscape walls.',
+    materials: [
+      'Locally Quarried Repurposed Sandstone',
+      'Matte Black Architectural Anodized Aluminum',
+      'Thermally Broken Triple Glazing',
+      'Integrated Rooftop Solar PV Tiles (18 kWp)'
     ],
-    overview: 'A high-performance commercial tower that anchors the city skyline. Constructed over a four-level subterranean transit interchange, the tower features column-free office spans and automated photovoltaic glass louvers.',
-    challenge: 'Minimizing vortex shedding vibrations and aerodynamic sway under Category 4 typhoon wind loading while maintaining an ultra-slender architectural silhouette.',
-    solution: 'Designed and installed a 650-ton tuned mass damper on the 50th floor integrated with a composite Mega-Column structural system connected via two-story outrigger trusses.',
-    technologies: ['Tuned Mass Damper Dynamics', 'CFD Wind Tunnel Simulation', 'Parametric Façade Scripting', 'Digital Twin Predictive Maintenance'],
-    scope: [
-      'Deep Diaphragm Wall Excavation (32m depth)',
-      'Structural Steel Superstructure Erection',
-      'Unitized Triple-Glazed Curtain Wall Delivery',
-      'High-Speed Regenerative Elevator Core'
+    challenges: [
+      'Steep 32-degree slope topography with tight vehicle access',
+      'Ensuring total seismic stability along hillside fault lines'
+    ],
+    solutions: [
+      '36 deep rock-socketed micropiles with tension anchors into bedrock',
+      'Continuous structural retaining walls with geogrid reinforced backfill'
+    ],
+    metrics: [
+      { label: 'Built Area', value: '3,600 m²' },
+      { label: 'Solar Generation', value: '18 kWp On-Grid' },
+      { label: 'Rainwater Storage', value: '45,000 Liters' },
+      { label: 'Delivery Time', value: '12 Months' }
     ],
     gallery: [
-      { url: '/frames/ezgif-frame-240.jpg', caption: 'Tower Podium and Architectural Entrance' },
-      { url: '/frames/ezgif-frame-300.jpg', caption: 'Night Illumination and Crown Detail' },
-      { url: '/frames/ezgif-frame-120.jpg', caption: 'Core Wall Climbing Formwork System' }
+      '/frames/ezgif-frame-280.jpg',
+      '/frames/ezgif-frame-260.jpg',
+      '/frames/ezgif-frame-180.jpg',
+      '/frames/ezgif-frame-100.jpg'
     ]
   },
   {
-    id: 'p-03',
-    slug: 'lumina-coastal-viaduct',
-    title: 'Lumina Coastal Express Viaduct & Cable Bridge',
-    category: 'Infrastructure',
-    location: 'Coastal Maritime Corridor',
+    id: 'apex-modern-manor',
+    slug: 'apex-modern-manor',
+    ref: 'REF: 03',
+    title: 'Apex Urban Luxury Residence',
+    subtitle: 'Monolithic Architectural Landmark',
+    category: 'MODERN HOMES',
+    categoryLabel: 'Modern Home',
+    location: 'Central Prime Boulevard',
     year: '2025',
-    status: 'In Progress',
-    scale: '14.2 km Dual-Carriageway',
-    heroImage: '/frames/ezgif-frame-180.jpg',
-    constructionImage: '/frames/ezgif-frame-080.jpg',
-    excavationImage: '/frames/ezgif-frame-005.jpg',
-    shortDescription: 'Prestressed segmental concrete elevated highway and twin cable-stayed maritime bridge engineered for 120-year seismic and marine durability.',
-    client: 'National Highways & Transport Authority',
-    architect: 'Vertex Infrastructure Consortium',
-    structuralSystem: 'Precast Segmental Box Girder with Stainless Stay Cables',
-    metrics: [
-      { label: 'Total Span', value: '14.2 km' },
-      { label: 'Main Bridge Span', value: '480 m' },
-      { label: 'Marine Piles', value: '420 Deep Borings' },
-      { label: 'Service Life', value: '120 Years' }
+    builtArea: '5,200 m²',
+    floors: '4 Levels + Underground Automobile Gallery',
+    heroImage: '/frames/ezgif-frame-290.jpg',
+    cardImage: '/frames/ezgif-frame-290.jpg',
+    overview: 'An urban trophy residence boasting private automobile gallery, indoor heated lap pool, wine cellar, and a rooftop sky lounge overlooking the skyline.',
+    vision: 'Creating a private architectural sanctuary within the urban core with superior acoustic isolation and world-class smart home automation.',
+    architecture: 'Crisp monolithic stone volumes with rhythmic architectural louvers that modulate daylight while blocking urban noise.',
+    engineering: 'Subterranean double-level basement with perimeter secant pile walls and heavy vibration-isolation dampening pads under the foundation.',
+    construction: 'Built to ultra-exacting hospital-grade acoustic standards (STC 62) with advanced air filtration and water purification systems.',
+    materials: [
+      'Honed Roman Travertine Slabs',
+      'Acoustic Multi-Layer Laminated Glass',
+      'Solid European Smoked Oak Flooring',
+      'High-Ductility Structural Steel Frame'
     ],
-    overview: 'A crucial coastal transit artery connecting major economic zones. Engineered with marine-grade self-healing concrete and cathodic corrosion protection to withstand extreme salt-fog marine environments.',
-    challenge: 'Erecting 120-ton precast box girder segments over active marine shipping lanes without interrupting maritime commerce or damaging delicate coastal mangrove ecosystems.',
-    solution: 'Employed automated overhead launching gantries that advanced span-by-span, setting match-cast epoxy-bonded segments with zero marine bed disturbance.',
-    technologies: ['Overhead Launching Gantries', 'Match-Cast Precast Yard Automation', 'Acoustic Emission Fiber-Optic Strain Sensors', 'Cathodic Protection Monitoring'],
-    scope: [
-      'Offshore Bored Pile Marine Foundations',
-      'Precast Segmental Girders Fabrication & Erection',
-      'Stay Cable Tensioning & Dynamic Balancing',
-      'Smart Traffic Management System Integration'
+    challenges: [
+      'Urban lot with zero clearance to neighboring structures',
+      'Vibration damping from nearby arterial transit lines'
+    ],
+    solutions: [
+      'Vibration-isolated elastomeric base isolators under basement raft',
+      'Top-down excavation methodology to prevent any soil settlement'
+    ],
+    metrics: [
+      { label: 'Built Area', value: '5,200 m²' },
+      { label: 'Acoustic Rating', value: 'STC 62 Silent' },
+      { label: 'Car Gallery', value: '6 Vehicles' },
+      { label: 'Delivery Time', value: '16 Months' }
     ],
     gallery: [
-      { url: '/frames/ezgif-frame-180.jpg', caption: 'Pylon Erection & Stay Anchor Formwork' },
-      { url: '/frames/ezgif-frame-100.jpg', caption: 'Marine Pier Substructure Casting' },
-      { url: '/frames/ezgif-frame-300.jpg', caption: 'Architectural Roadway Lighting Simulation' }
+      '/frames/ezgif-frame-290.jpg',
+      '/frames/ezgif-frame-270.jpg',
+      '/frames/ezgif-frame-210.jpg',
+      '/frames/ezgif-frame-140.jpg'
     ]
   },
   {
-    id: 'p-04',
-    slug: 'solaria-bio-tech-research-park',
-    title: 'Solaria Advanced Bio-Tech Innovation Campus',
-    category: 'Industrial',
-    location: 'Silicon Valley Technology District',
+    id: 'serenity-coastal-villa',
+    slug: 'serenity-coastal-villa',
+    ref: 'REF: 04',
+    title: 'The Serenity Coastal Waterfront Villa',
+    subtitle: 'Marine-Grade Architectural Waterfront Sanctuary',
+    category: 'LUXURY HOMES',
+    categoryLabel: 'Luxury Home',
+    location: 'Azure Cove Coastline',
     year: '2024',
-    status: 'Completed',
-    scale: '78,000 m² Campus / 6 Buildings',
+    builtArea: '4,200 m²',
+    floors: '2 Levels + Private Marina Deck',
+    heroImage: '/frames/ezgif-frame-270.jpg',
+    cardImage: '/frames/ezgif-frame-270.jpg',
+    overview: 'A luxury coastal estate engineered for extreme marine durability, featuring hurricane-rated panoramic glazing, infinity tidal pool, and private boat dock.',
+    vision: 'Unmatched 270-degree oceanic panoramas with an organic material palette that withstands saline winds and tropical storms effortlessly.',
+    architecture: 'Sweeping horizontal rooflines, shaded wrap-around deep overhangs, and natural coral stone cladding with marine bronze hardware.',
+    engineering: 'Marine-grade C5-M stainless steel fittings, sulfate-resistant concrete mix, and deep driven friction piles extending to solid seabed rock.',
+    construction: 'Complete turnkey delivery including seawall reinforcement, private dock engineering, and salt-tolerant coastal landscape design.',
+    materials: [
+      'Sulfate-Resistant Marine Concrete (C50/60)',
+      '316L Marine-Grade Stainless Steel & Bronze',
+      'Impact-Resistant Hurricane Glass (Category 5)',
+      'Natural Coral Stone & Teak Wood Decking'
+    ],
+    challenges: [
+      'Extreme coastal corrosion and tidal storm surges',
+      'High wind loading during seasonal cyclones'
+    ],
+    solutions: [
+      'Reinforced concrete with silica fume and epoxy-coated rebar',
+      'Engineered hurricane anchors and pressure-equalized facade framing'
+    ],
+    metrics: [
+      { label: 'Built Area', value: '4,200 m²' },
+      { label: 'Wind Resistance', value: 'Category 5 (280 km/h)' },
+      { label: 'Private Dock', value: '40ft Vessel Berth' },
+      { label: 'Delivery Time', value: '15 Months' }
+    ],
+    gallery: [
+      '/frames/ezgif-frame-270.jpg',
+      '/frames/ezgif-frame-240.jpg',
+      '/frames/ezgif-frame-190.jpg',
+      '/frames/ezgif-frame-120.jpg'
+    ]
+  },
+  {
+    id: 'heritage-manor-renovation',
+    slug: 'heritage-manor-renovation',
+    ref: 'REF: 05',
+    title: 'The Heritage Manor Modern Transformation',
+    subtitle: 'Historic Residence Reimagined with Modern Glass Wings',
+    category: 'RENOVATION',
+    categoryLabel: 'Luxury Renovation',
+    location: 'Old Town Heritage District',
+    year: '2025',
+    builtArea: '3,800 m²',
+    floors: '3 Levels + Wine Cellar',
     heroImage: '/frames/ezgif-frame-260.jpg',
-    constructionImage: '/frames/ezgif-frame-140.jpg',
-    excavationImage: '/frames/ezgif-frame-020.jpg',
-    shortDescription: 'Ultra-low vibration ISO Class 5 cleanrooms, modular biotechnology laboratories, and mass-timber research pavilions.',
-    client: 'Solaria Life Sciences Corp',
-    architect: 'Foster + Vertex Modular Studio',
-    structuralSystem: 'Hybrid Mass Timber & Reinforced Concrete Base Isolation',
-    metrics: [
-      { label: 'Cleanroom Space', value: '22,000 m²' },
-      { label: 'Embodied Carbon', value: '-42% vs Baseline' },
-      { label: 'Vibration Standard', value: 'VC-E Certified' },
-      { label: 'Solar Generation', value: '1.4 MW Rooftop' }
+    cardImage: '/frames/ezgif-frame-260.jpg',
+    overview: 'A sensitive yet dramatic architectural transformation of an established heritage residence, introducing open-span living, smart infrastructure, and a modern glass pavilion.',
+    vision: 'Preserving the historic soul and stone masonry while injecting high-performance structural steel and minimalist glass architecture.',
+    architecture: 'Harmonious dialogue between restored hand-carved brick masonry and ultra-minimalist floor-to-ceiling glass pavilions.',
+    engineering: 'Surgical underpinning of 90-year-old foundations, insertion of hidden steel moment frames to create open-plan living areas.',
+    construction: 'Clean, precision renovation executed without disturbing adjacent heritage trees or historical perimeter walls.',
+    materials: [
+      'Restored Heritage Brick & Lime Mortar',
+      'Structural Steel Moment Frames',
+      'Minimalist Slim-Profile Sliding Glass Doors',
+      'Herringbone French White Oak Parquet'
     ],
-    overview: 'A benchmark life sciences research hub integrating cross-laminated timber (CLT) structural elements with medical-grade cleanroom envelopes and redundant MEP utility spines.',
-    challenge: 'Eliminating micro-vibrations from nearby rail lines to allow electron microscopy and nanoscale molecular analysis inside the laboratories.',
-    solution: 'Constructed isolated seismic and vibration inertial foundation tables suspended on elastomeric spring bearings, completely decoupling sensitive labs from surrounding ground motion.',
-    technologies: ['Base Isolation Spring Bearings', 'Cross-Laminated Timber (CLT)', 'Computational Fluid Dynamics Cleanroom Airflow', '6D BIM Facility Management'],
-    scope: [
-      'Base Isolation Pad Engineering & Installation',
-      'Mass Timber Framing & Glulam Arch Assembly',
-      'Specialized Process Gas & Ultra-Pure Water Piping',
-      'Automated Bio-Containment HVAC Commissioning'
+    challenges: [
+      'Underpinning unreinforced masonry walls without structural cracking',
+      'Integrating modern smart HVAC & plumbing into solid stone walls'
+    ],
+    solutions: [
+      'Sequential needle-beam underpinning and carbon-fiber reinforcement',
+      'Precision diamond-core coring for concealed linear MEP conduits'
+    ],
+    metrics: [
+      { label: 'Built Area', value: '3,800 m²' },
+      { label: 'Heritage Restored', value: '100% Preserved Façade' },
+      { label: 'Efficiency Gain', value: '+65% Thermal Performance' },
+      { label: 'Delivery Time', value: '10 Months' }
     ],
     gallery: [
-      { url: '/frames/ezgif-frame-260.jpg', caption: 'Finished Research Pavilion Exterior' },
-      { url: '/frames/ezgif-frame-300.jpg', caption: 'Night View of Mass Timber Atrium' },
-      { url: '/frames/ezgif-frame-140.jpg', caption: 'CLT Panel Rigging and Structural Assembly' }
-    ]
-  },
-  {
-    id: 'p-05',
-    slug: 'aerotropolis-transit-interchange',
-    title: 'Aerotropolis Multi-Modal Transit Hub & Terminal',
-    category: 'Public',
-    location: 'International Airport Corridor',
-    year: '2025',
-    status: 'In Progress',
-    scale: '185,000 m² Complex',
-    heroImage: '/frames/ezgif-frame-300.jpg',
-    constructionImage: '/frames/ezgif-frame-200.jpg',
-    excavationImage: '/frames/ezgif-frame-040.jpg',
-    shortDescription: 'Sweeping steel diagrid canopy roof spanning 140 meters column-free, housing high-speed rail, metro, bus terminal, and civic plaza.',
-    client: 'Department of Public Transportation',
-    architect: 'Zaha Hadid Architects & Vertex Civil',
-    structuralSystem: 'Parametric Steel Space-Frame Diagrid with ETFE Skylights',
-    metrics: [
-      { label: 'Canopy Clear Span', value: '140 m' },
-      { label: 'Steel Canopy Weight', value: '8,400 Tons' },
-      { label: 'Daily Commuters', value: '250,000 People' },
-      { label: 'Energy Target', value: 'Net-Zero Carbon' }
-    ],
-    overview: 'A hyper-connected civic gateway integrating high-speed rail lines with international airport check-ins. The signature feature is an organically curved steel diagrid roof covered with pneumatic triple-layer ETFE cushions.',
-    challenge: 'Assembling complex doubly-curved spatial steel node joints with millimetric tolerance while trains operated underneath.',
-    solution: 'Employed 3D laser photogrammetry, robotic total stations, and prefabricated modular steel sub-assemblies rigged during scheduled overnight maintenance windows.',
-    technologies: ['Parametric Diagrid Geometry', 'Pneumatic ETFE Foil Envelopes', 'Real-Time Total Station Tracking', 'Crowd Flow Dynamic Simulation'],
-    scope: [
-      'Subterranean Rail Trench Excavation & Box Jacking',
-      'Spatial Diagrid Roof Erection & Node Welding',
-      'Pneumatic ETFE Cushion Installation & Pressurization',
-      'Civic Plaza Landscaping & Integrated Drainage'
-    ],
-    gallery: [
-      { url: '/frames/ezgif-frame-300.jpg', caption: 'Diagrid Canopy at Sunset' },
-      { url: '/frames/ezgif-frame-200.jpg', caption: 'Canopy Steelwork Erection' },
-      { url: '/frames/ezgif-frame-100.jpg', caption: 'Concourse Substructure Piling' }
+      '/frames/ezgif-frame-260.jpg',
+      '/frames/ezgif-frame-230.jpg',
+      '/frames/ezgif-frame-170.jpg',
+      '/frames/ezgif-frame-090.jpg'
     ]
   }
+];
+
+export const PROJECT_CATEGORIES = [
+  'ALL',
+  'MODERN HOMES',
+  'LUXURY HOMES',
+  'VILLAS',
+  'CONTEMPORARY',
+  'RENOVATION'
 ];

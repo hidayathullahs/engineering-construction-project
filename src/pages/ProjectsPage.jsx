@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PROJECTS_DATA } from '../data/projectsData';
+import { PROJECTS_DATA, PROJECT_CATEGORIES } from '../data/projectsData';
 import { ArrowUpRight, MapPin, Calendar, Search } from 'lucide-react';
 
 export function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const categories = ['ALL', 'RESIDENTIAL', 'COMMERCIAL', 'INFRASTRUCTURE', 'INDUSTRIAL', 'PUBLIC'];
-
   const filtered = PROJECTS_DATA.filter((p) => {
-    const matchesCategory = selectedCategory === 'ALL' || p.category.toUpperCase() === selectedCategory;
+    const matchesCategory = selectedCategory === 'ALL' || p.category === selectedCategory;
     const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           p.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          p.shortDescription.toLowerCase().includes(searchQuery.toLowerCase());
+                          (p.overview && p.overview.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
@@ -24,11 +22,11 @@ export function ProjectsPage() {
         <div className="container">
           <div className="eyebrow">Portfolio Directory</div>
           <h1 className="hero-headline" style={{ marginBottom: '1.5rem', color: '#0F172A' }}>
-            ENGINEERED <br />
-            <span className="text-gold">LANDMARKS & ASSETS.</span>
+            FEATURED <br />
+            <span className="text-gold">DREAM HOMES & VILLAS.</span>
           </h1>
           <p className="section-subtitle" style={{ fontSize: '1.2rem', maxWidth: '850px' }}>
-            Explore our global catalog of structural masterpieces, transit viaducts, cleanroom research parks, and contemporary residences.
+            Explore our curated portfolio of bespoke residential architecture, contemporary hillside estates, luxury waterfront villas, and heritage transformations.
           </p>
         </div>
       </section>
@@ -38,7 +36,7 @@ export function ProjectsPage() {
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           {/* Categories */}
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-            {categories.map((cat) => (
+            {PROJECT_CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
@@ -63,22 +61,22 @@ export function ProjectsPage() {
           </div>
 
           {/* Search Box */}
-          <div style={{ position: 'relative', minWidth: '260px' }}>
-            <Search size={16} style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+          <div style={{ position: 'relative', minWidth: '280px' }}>
+            <Search size={16} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--accent-gold)' }} />
             <input
               type="text"
-              placeholder="Search landmarks & cities..."
+              placeholder="Search homes, location, style..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{
                 width: '100%',
                 background: '#FFFFFF',
-                border: '1px solid rgba(15, 23, 42, 0.15)',
-                color: '#0F172A',
-                padding: '0.6rem 0.85rem 0.6rem 2.4rem',
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.88rem',
+                border: '1px solid rgba(15, 23, 42, 0.12)',
                 borderRadius: '3px',
+                padding: '0.6rem 1rem 0.6rem 2.5rem',
+                color: '#0F172A',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.82rem',
                 outline: 'none'
               }}
             />
@@ -89,79 +87,57 @@ export function ProjectsPage() {
       {/* Projects Grid */}
       <section className="section-pad">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2.5rem' }}>
-            {filtered.map((project, idx) => (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2.5rem' }}>
+            {filtered.map((project) => (
               <Link
                 key={project.id}
                 to={`/projects/${project.slug}`}
-                style={{ textDecoration: 'none', color: 'inherit' }}
-                data-cursor="view"
+                className="hud-border glass-card"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderRadius: '6px',
+                  overflow: 'hidden',
+                  textDecoration: 'none',
+                  color: 'inherit'
+                }}
               >
-                <div
-                  className="hud-border glass-card img-zoom-wrap"
-                  style={{
-                    borderRadius: '4px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%',
-                    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
-                  }}
-                >
-                  <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
-                    <img
-                      src={project.heroImage}
-                      alt={project.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: '1rem',
-                        left: '1rem',
-                        background: 'rgba(255, 255, 255, 0.94)',
-                        backdropFilter: 'blur(10px)',
-                        border: '1px solid rgba(179, 142, 93, 0.4)',
-                        borderLeft: '3px solid var(--accent-gold)',
-                        padding: '0.35rem 0.75rem',
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '0.72rem',
-                        fontWeight: 700,
-                        color: 'var(--accent-gold)',
-                        textTransform: 'uppercase',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                      }}
-                    >
-                      {project.category}
-                    </div>
+                <div className="img-zoom-wrap" style={{ height: '260px', position: 'relative' }}>
+                  <img src={project.cardImage} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', bottom: '1rem', right: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', background: 'rgba(15, 23, 42, 0.85)', backdropFilter: 'blur(10px)', color: '#FFFFFF', padding: '0.3rem 0.65rem', borderRadius: '2px', fontWeight: 700 }}>
+                    {project.ref}
+                  </div>
+                  <div style={{ position: 'absolute', top: '1rem', left: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.68rem', background: '#FFFFFF', color: 'var(--accent-gold)', padding: '0.35rem 0.75rem', borderRadius: '2px', fontWeight: 800, textTransform: 'uppercase', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+                    {project.categoryLabel}
+                  </div>
+                </div>
+
+                <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                  <div style={{ display: 'flex', gap: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent-gold)', marginBottom: '0.75rem', fontWeight: 600 }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <MapPin size={13} className="text-gold" /> {project.location}
+                    </span>
+                    <span>•</span>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Calendar size={13} className="text-gold" /> {project.year}
+                    </span>
                   </div>
 
-                  <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between', background: '#FFFFFF' }}>
-                    <div>
-                      <div style={{ display: 'flex', gap: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                          <MapPin size={13} className="text-gold" /> {project.location}
-                        </span>
-                        <span>•</span>
-                        <span>{project.year}</span>
-                      </div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.75rem', color: '#0F172A', lineHeight: 1.3 }}>
+                    {project.title}
+                  </h3>
 
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', fontWeight: 800, lineHeight: 1.3, marginBottom: '0.75rem', color: '#0F172A' }}>
-                        {project.title}
-                      </h3>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem', flexGrow: 1 }}>
+                    {project.overview}
+                  </p>
 
-                      <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                        {project.shortDescription}
-                      </p>
-                    </div>
-
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1.25rem', borderTop: '1px solid rgba(15, 23, 42, 0.08)' }}>
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--accent-gold)', fontWeight: 700 }}>
-                        {project.scale}
-                      </span>
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#0F172A', fontWeight: 700 }}>
-                        Full Case Study <ArrowUpRight size={14} className="text-gold" />
-                      </span>
-                    </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(15, 23, 42, 0.08)' }}>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--accent-gold)', fontWeight: 700 }}>
+                      {project.builtArea}
+                    </span>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: '#0F172A', display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 700 }}>
+                      Case Study <ArrowUpRight size={14} className="text-gold" />
+                    </span>
                   </div>
                 </div>
               </Link>

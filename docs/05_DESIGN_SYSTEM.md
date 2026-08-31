@@ -1,18 +1,36 @@
-# 05. Design System Specification
+# 05_DESIGN_SYSTEM.md — BUILD MY DREAM Design Tokens
 
-## Color Palette
-| Token | Hex / Value | Semantic Role |
-| :--- | :--- | :--- |
-| `--bg-primary` | `#0B0F14` | Main dark background canvas |
-| `--bg-surface` | `#141A21` | Elevated component surface |
-| `--bg-surface-elevated` | `#1B232D` | Hover and active card state |
-| `--accent-gold` | `#C5A880` | Restrained architectural highlight |
-| `--accent-gold-hover` | `#D4AF37` | Interactive gold state |
-| `--text-primary` | `#F7F7F2` | High-contrast body & titles |
-| `--text-secondary` | `#858D95` | Muted subtitle copy |
-| `--border-subtle` | `rgba(255, 255, 255, 0.08)` | Structural hairline borders |
+## Architectural White Luxury Palette
+```css
+:root {
+  /* Surface Tokens */
+  --bg-primary: #FAFAF9;              /* Warm Architectural White */
+  --bg-surface: #FFFFFF;              /* Pure White */
+  --bg-surface-elevated: #F4F4F5;     /* Subtle Off-White */
+  --bg-surface-translucent: rgba(255, 255, 255, 0.94);
 
-## Typography Tokens
-- **Display Headings**: Google Fonts `Outfit` (Weight 700 / 800)
-- **Technical & Telemetry**: Google Fonts `Space Grotesk` (Weight 500 / 600 / 700)
-- **Body Copy**: Google Fonts `Plus Jakarta Sans` / System Sans (Weight 400 / 500)
+  /* Typography Tokens */
+  --text-primary: #0F172A;            /* Deep Obsidian Black */
+  --text-secondary: #475569;          /* Architectural Slate */
+  --text-muted: #8E9CAE;              /* Cool Gray */
+
+  /* Metallic Accent Tokens */
+  --accent-gold: #B38E5D;             /* Architectural Champagne Gold */
+  --accent-gold-hover: #967243;
+  --accent-gold-glow: rgba(179, 142, 93, 0.25);
+
+  /* Linework & CAD Grids */
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-gold: rgba(179, 142, 93, 0.4);
+
+  /* Typography Fonts */
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+```
+
+## Component Aesthetics
+- `.glass-card`: White frosted container (`background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(20px); border: 1px solid rgba(15, 23, 42, 0.08); box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);`)
+- `.btn-primary`: Champagne gold CTA with arrow icon and subtle scale hover.
+- `.btn-secondary`: Crisp white button with obsidian border and text.

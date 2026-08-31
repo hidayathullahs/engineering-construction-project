@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CAREERS_DATA } from '../../data/careersData';
-import { ArrowUpRight, Briefcase, MapPin, Clock } from 'lucide-react';
+import { ArrowUpRight, Briefcase, MapPin, Clock, Sparkles } from 'lucide-react';
 
 export function CareersPreviewSection() {
   return (
@@ -10,15 +10,15 @@ export function CareersPreviewSection() {
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '3.5rem' }}>
           <div>
-            <div className="eyebrow">Engineering Culture</div>
-            <h2 className="section-title" style={{ color: '#0F172A' }}>JOIN OUR STRUCTURAL CADRE</h2>
+            <div className="eyebrow">Careers & Culture</div>
+            <h2 className="section-title" style={{ color: '#0F172A' }}>BUILD YOUR CAREER WITH US.</h2>
             <p className="section-subtitle" style={{ marginTop: '0.5rem' }}>
-              {CAREERS_DATA.subtitle}
+              Join a multidisciplinary team of visionary residential architects, structural engineers, and master builders crafting generational homes.
             </p>
           </div>
 
-          <Link to="/careers" className="btn-secondary">
-            View All Open Roles ({CAREERS_DATA.openPositions.length})
+          <Link to="/careers" className="btn-secondary" style={{ background: '#FFFFFF', color: '#0F172A', border: '1px solid rgba(15, 23, 42, 0.15)' }}>
+            View Opportunities ({CAREERS_DATA.openPositions.length})
             <ArrowUpRight size={16} />
           </Link>
         </div>
@@ -62,8 +62,8 @@ export function CareersPreviewSection() {
 
               <Link
                 to="/careers"
-                className="btn-outline-gold"
-                style={{ padding: '0.75rem 1.5rem', fontWeight: 700 }}
+                className="btn-primary"
+                style={{ padding: '0.75rem 1.5rem', fontSize: '0.82rem', fontWeight: 700 }}
               >
                 Apply for Position <ArrowUpRight size={14} />
               </Link>

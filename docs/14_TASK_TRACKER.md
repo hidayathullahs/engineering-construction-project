@@ -1,11 +1,23 @@
-# 14. Master Task Tracker
+# 14_TASK_TRACKER.md — BUILD MY DREAM
 
-- [x] Phase 1: Project Scaffolding, Package Setup & Asset Staging (`public/frames/`)
-- [x] Phase 2: Architectural Design System, Tokens, Global Styles & Custom Cursor
-- [x] Phase 3: High-Performance 300-Frame Canvas Scroll-Scrubber Engine & Hero Experience
-- [x] Phase 4: Signature 16-Stage Interactive Construction Journey & HUD Telemetry
-- [x] Phase 5: Homepage Core Editorial Sections & Micro-Interactions
-- [x] Phase 6: Full Multi-Page Routing & Rich Detail Pages (`/about`, `/services`, `/projects`, `/projects/:slug`, `/industries`, `/technology`, `/sustainability`, `/safety-quality`, `/careers`, `/contact`)
-- [x] Phase 7: Interactive 3D BIM Model Viewer with Three.js & FEA Stress Simulation
-- [x] Phase 8: Comprehensive Documentation Suite (`PROJECT_CONTEXT.md`, `README.md`, `CHANGELOG.md`, `docs/01`–`docs/14`)
-- [x] Phase 9: Verification, Build Testing & Quality Assurance
+## Project Tasks
+
+- [x] Inspect existing repository & audit framework
+- [x] Establish BUILD MY DREAM brand architecture ("From Vision to Reality")
+- [x] Configure architectural white luxury design tokens
+- [x] Build luxury Navbar with brand logo & mobile drawer
+- [x] Build Hero Cinematic with parallax & environmental sensor widget
+- [x] Build Philosophy & Craft section ("YOUR HOME. YOUR VISION. OUR CRAFT.")
+- [x] Build Signature 300-Frame Dream-Home Journey Scrubber (16 milestones)
+- [x] Build Projects Showcase with residential categories (`ALL`, `MODERN HOMES`, `LUXURY HOMES`, `VILLAS`, `CONTEMPORARY`, `RENOVATION`)
+- [x] Build 8-Stage Turnkey Dream-Home Process Pipeline
+- [x] Build Services Catalog (8 specialized dream-home practices)
+- [x] Build "WHY BUILD MY DREAM" Trust & Quality Section (8 principles)
+- [x] Build Permanent 3D BIM Skeletal Viewer with Three.js WebGL & FEA Simulation
+- [x] Build Dream-Home Estimator Form with accessible budget tiers
+- [x] Build Luxury Footer with newsletter subscription & quick links
+- [x] Mobile & tablet responsive optimization
+- [x] Accessibility compliance & reduced-motion support
+- [x] Verify production build (`npm run build`)
+- [x] Capture visual screenshot suite (`scripts/capture_all_sections.js`)
+- [x] Deploy & push to GitHub repository

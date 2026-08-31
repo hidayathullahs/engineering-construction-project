@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, Compass, Shield, Award } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sparkles, Home } from 'lucide-react';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,11 +29,11 @@ export function Navbar() {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Construction Journey', path: '/#construction-journey' },
-    { name: 'Industries', path: '/industries' },
+    { name: 'Dream Journey', path: '/#construction-journey' },
+    { name: 'Why Us', path: '/#why-us' },
     { name: 'Technology', path: '/technology' },
     { name: 'Sustainability', path: '/sustainability' },
-    { name: 'Safety & QA', path: '/safety-quality' },
+    { name: 'Quality & Safety', path: '/safety-quality' },
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -70,28 +70,28 @@ export function Navbar() {
           >
             <div
               style={{
-                width: '38px',
-                height: '38px',
+                width: '40px',
+                height: '40px',
                 border: '1.5px solid var(--accent-gold)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'rgba(179, 142, 93, 0.1)',
+                background: 'rgba(179, 142, 93, 0.12)',
                 position: 'relative',
-                borderRadius: '2px'
+                borderRadius: '3px'
               }}
             >
-              <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, fontSize: '1.15rem', color: 'var(--accent-gold)' }}>
-                V
+              <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--accent-gold)' }}>
+                BMD
               </span>
               <div style={{ position: 'absolute', top: -3, right: -3, width: 6, height: 6, backgroundColor: 'var(--accent-gold)' }} />
             </div>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, color: '#0F172A' }}>
-                VERTEX
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.18rem', letterSpacing: '0.04em', textTransform: 'uppercase', lineHeight: 1, color: '#0F172A' }}>
+                BUILD MY DREAM
               </div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', color: '#64748B', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '2px', fontWeight: 600 }}>
-                Engineering & Infrastructure
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.64rem', color: 'var(--accent-gold)', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '3px', fontWeight: 700 }}>
+                From Vision to Reality
               </div>
             </div>
           </Link>
@@ -137,9 +137,9 @@ export function Navbar() {
             <Link
               to="/contact"
               className="btn-primary desktop-cta"
-              style={{ padding: '0.65rem 1.25rem', fontSize: '0.78rem' }}
+              style={{ padding: '0.65rem 1.35rem', fontSize: '0.8rem', fontWeight: 700 }}
             >
-              Start a Project
+              Start Your Dream
               <ArrowUpRight size={14} />
             </Link>
 
@@ -178,14 +178,13 @@ export function Navbar() {
           justifyContent: 'space-between',
           padding: '6rem 2rem 3rem 2rem',
           transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(-100%)',
-          opacity: isMobileMenuOpen ? 1 : 0,
-          pointerEvents: isMobileMenuOpen ? 'auto' : 'none',
-          transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-          overflowY: 'auto'
+          transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
+          pointerEvents: isMobileMenuOpen ? 'auto' : 'none'
         }}
+        className="mobile-menu-drawer"
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          <div className="eyebrow" style={{ marginBottom: '0.5rem' }}>Navigation Matrix</div>
+          <div className="eyebrow" style={{ marginBottom: '0.5rem' }}>Navigation // Build My Dream</div>
           {navLinks.map((link, idx) => (
             <Link
               key={link.name}
@@ -193,50 +192,39 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '1.75rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
+                fontSize: '1.65rem',
+                fontWeight: 800,
+                color: '#0F172A',
                 textDecoration: 'none',
-                color: location.pathname === link.path ? 'var(--accent-gold)' : '#0F172A',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                borderBottom: '1px solid rgba(15, 23, 42, 0.08)',
-                paddingBottom: '0.75rem'
+                padding: '0.5rem 0',
+                borderBottom: '1px solid rgba(15, 23, 42, 0.06)'
               }}
             >
               <span>{link.name}</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent-gold)' }}>
                 0{idx + 1}
               </span>
             </Link>
           ))}
         </div>
 
-        <div style={{ paddingTop: '2rem', borderTop: '1px solid var(--border-medium)', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingTop: '2rem' }}>
           <Link
             to="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
             className="btn-primary"
-            style={{ width: '100%', padding: '1rem' }}
+            style={{ width: '100%', padding: '1rem', justifyContent: 'center', fontSize: '1rem' }}
           >
-            Initiate Project Enquiry
-            <ArrowUpRight size={16} />
+            Start Your Dream <ArrowUpRight size={18} />
           </Link>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
-            <span>ISO 9001 & 45001 CERTIFIED</span>
-            <span className="text-gold">GLOBAL DELIVERY</span>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#64748B', textAlign: 'center' }}>
+            BUILD MY DREAM • FROM VISION TO REALITY
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 1100px) {
-          .desktop-nav-links { display: none !important; }
-          .desktop-cta { display: none !important; }
-          .mobile-toggle-btn { display: flex !important; }
-        }
-      `}</style>
     </>
   );
 }
