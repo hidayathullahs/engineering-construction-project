@@ -15,7 +15,10 @@
 ## Technical Stack & Tooling
 
 - **Framework**: React 19 + Vite 6
-- **Routing**: React Router DOM v7 (Multi-page SPA with `public/_redirects`)
+- **Routing & SPA Fallback**:
+  - React Router DOM v7 (`BrowserRouter`)
+  - Render Static Site rewrite configuration (`render.yaml` with `routes: [{type: rewrite, source: /*, destination: /index.html}]`)
+  - `public/_redirects` (`/* /index.html 200`) and root `_redirects` for multi-platform SPA static server rewrites
 - **Animation & Canvas Engine**:
   - HTML5 2D Canvas Engine with double-buffering for the 300-frame time-lapse scrubber
   - Full crawlable semantic HTML markup (`<article>` cards for all 16 milestones) alongside canvas animation
@@ -41,14 +44,16 @@
 9. `/services/renovation` — **Home Renovation** (Structural retrofitting, vertical extensions, and façade upgrades)
 10. `/locations/ramanathapuram` — **Home Builders in Ramanathapuram** (Local SEO hub with soil characteristics, coastal weather resistance, service zones, and local FAQs)
 11. `/guides` — **Construction Guides & Insights Hub**
-12. `/guides/house-construction-cost-in-ramanathapuram` — **Cost Guide 2026** (Cost per sqft, materials, and BOQ formulation)
-13. `/guides/how-to-choose-a-home-builder-in-ramanathapuram` — **Builder Selection Checklist**
-14. `/guides/house-construction-process-foundation-to-handover` — **16-Stage Construction Roadmap**
-15. `/projects` — **Projects Catalog** (Filterable residential portfolio in Tamil Nadu)
-16. `/projects/:slug` — **Project Case Studies** (Editorial details with vision, engineering challenges, materials, and gallery)
-17. `/technology` — **Technology & BIM** (3D structural skeleton, Digital Twins, and LiDAR geomatics)
-18. `/sustainability` — **Sustainability & ESG** (Passive cooling, solar integration, and low-carbon concrete)
-19. `/safety-quality` — **Quality & Safety Standards** (120-point QC protocols and zero-harm governance)
-20. `/careers` — **Careers & Cadre Culture**
-21. `/contact` — **Project Estimator & RFP** (Validated specification form with budget brackets, plot CAD dropzone, and 24-hr consultation guarantee)
-22. `*` — **404 Page** (Clean blueprint not found with easy navigation links)
+12. `/blog` — **Blog & Educational Insights** (Alias to `/guides`)
+13. `/process` — **Construction Process Roadmap** (Alias to `/guides/house-construction-process-foundation-to-handover`)
+14. `/guides/house-construction-cost-in-ramanathapuram` — **Cost Guide 2026** (Cost per sqft, materials, and BOQ formulation)
+15. `/guides/how-to-choose-a-home-builder-in-ramanathapuram` — **Builder Selection Checklist**
+16. `/guides/house-construction-process-foundation-to-handover` — **16-Stage Construction Roadmap**
+17. `/projects` — **Projects Catalog** (Filterable residential portfolio in Tamil Nadu)
+18. `/projects/:slug` — **Project Case Studies** (Supports custom and sample project slugs like `/projects/example-project`)
+19. `/technology` — **Technology & BIM** (3D structural skeleton, Digital Twins, and LiDAR geomatics)
+20. `/sustainability` — **Sustainability & ESG** (Passive cooling, solar integration, and low-carbon concrete)
+21. `/safety-quality` — **Quality & Safety Standards** (120-point QC protocols and zero-harm governance)
+22. `/careers` — **Careers & Cadre Culture**
+23. `/contact` — **Project Estimator & Contact** (Validated specification form with budget brackets, plot CAD dropzone, and direct call/email)
+24. `*` — **404 Page** (Clean blueprint not found with quick navigation links)

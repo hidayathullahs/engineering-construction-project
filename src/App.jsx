@@ -82,6 +82,8 @@ export function App() {
 
           {/* Educational Guides Hub & Articles */}
           <Route path="/guides" element={<GuidesHubPage />} />
+          <Route path="/blog" element={<GuidesHubPage />} />
+          <Route path="/process" element={<HouseConstructionProcessGuide />} />
           <Route path="/guides/house-construction-cost-in-ramanathapuram" element={<HouseConstructionCostRamanathapuram />} />
           <Route path="/guides/how-to-choose-a-home-builder-in-ramanathapuram" element={<HowToChooseHomeBuilderRamanathapuram />} />
           <Route path="/guides/house-construction-process-foundation-to-handover" element={<HouseConstructionProcessGuide />} />

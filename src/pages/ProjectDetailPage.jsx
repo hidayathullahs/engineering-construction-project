@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowUpRight, MapPin, Calendar, CheckCircle2, Shield, Layers
 
 export function ProjectDetailPage() {
   const { slug } = useParams();
-  const project = PROJECTS_DATA.find((p) => p.slug === slug);
+  const project = PROJECTS_DATA.find((p) => p.slug === slug) || (slug === 'example-project' ? PROJECTS_DATA[0] : null);
 
   if (!project) {
     return <Navigate to="/projects" replace />;

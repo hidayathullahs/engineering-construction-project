@@ -1,0 +1,13 @@
+# Render Static Site Configuration with SPA Rewrite Rule
+# Documentation: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: build-my-dream
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
