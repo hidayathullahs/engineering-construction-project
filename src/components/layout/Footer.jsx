@@ -26,28 +26,28 @@ export function Footer() {
       className="bg-blueprint-grid"
     >
       {/* Top Pre-Footer Callout */}
-      <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)', padding: '5.5rem 0' }}>
+      <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)', padding: '5rem 0' }}>
         <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '2rem' }}>
             <div style={{ maxWidth: '750px' }}>
-              <div className="eyebrow" style={{ color: 'var(--accent-gold)' }}>Your Dream Home Starts Here</div>
+              <div className="eyebrow" style={{ color: 'var(--accent-gold)' }}>Home Builders in Ramanathapuram, Tamil Nadu</div>
               <h2 className="section-title" style={{ marginTop: '0.5rem', color: '#FFFFFF' }}>
-                YOUR DREAM <br />
+                YOUR DREAM HOME <br />
                 <span className="text-gold">DESERVES TO BE BUILT.</span>
               </h2>
               <p className="section-subtitle" style={{ marginTop: '1rem', color: '#94A3B8' }}>
-                Partner with visionary residential architects, structural engineers, and master craftsmen dedicated to turning your dream home vision into reality.
+                Partner with visionary residential architects, structural engineers, and master craftsmen dedicated to turning your dream home vision into reality in Ramanathapuram.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <Link to="/contact" className="btn-primary" style={{ padding: '1.25rem 2.5rem', fontSize: '0.95rem', fontWeight: 800 }}>
+              <Link to="/contact" className="btn-primary" style={{ padding: '1.15rem 2.25rem', fontSize: '0.92rem', fontWeight: 800 }}>
                 Start Your Dream
                 <ArrowUpRight size={18} />
               </Link>
               <a
                 href="tel:+916385740155"
                 className="btn-secondary"
-                style={{ padding: '1.25rem 2rem', fontSize: '0.95rem', background: '#FFFFFF', color: '#0F172A', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700 }}
+                style={{ padding: '1.15rem 2rem', fontSize: '0.92rem', background: '#FFFFFF', color: '#0F172A', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700 }}
               >
                 <Phone size={16} className="text-gold" /> Call: +91 63857 40155
               </a>
@@ -72,11 +72,14 @@ export function Footer() {
             </div>
 
             <p style={{ color: '#94A3B8', fontSize: '0.85rem', lineHeight: 1.6 }}>
-              Designing and building beautiful, thoughtful homes with engineering precision, quality craftsmanship, and single-source turnkey accountability.
+              Residential construction, architecture, structural engineering, and turnkey dream homes in Ramanathapuram, Tamil Nadu.
             </p>
 
-            {/* Direct Contact & Ads Details */}
+            {/* Direct Contact Details */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '0.85rem' }}>
+              <div style={{ fontSize: '0.82rem', color: '#CBD5E1', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <MapPin size={13} className="text-gold" /> Ramanathapuram, Tamil Nadu 623501
+              </div>
               <a href="tel:+916385740155" style={{ color: 'var(--accent-gold)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <Phone size={14} /> +91 63857 40155
               </a>
@@ -86,41 +89,43 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Navigation Links */}
+          {/* Col 2: Services & Practices */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase' }}>
-              Navigation
+              Services
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.88rem' }}>
-              <Link to="/about" style={{ color: '#94A3B8', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.target.style.color = '#FFF')} onMouseLeave={(e) => (e.target.style.color = '#94A3B8')}>About Our Studio</Link>
-              <Link to="/services" style={{ color: '#94A3B8', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.target.style.color = '#FFF')} onMouseLeave={(e) => (e.target.style.color = '#94A3B8')}>Architectural Services</Link>
-              <Link to="/projects" style={{ color: '#94A3B8', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.target.style.color = '#FFF')} onMouseLeave={(e) => (e.target.style.color = '#94A3B8')}>Featured Residences</Link>
-              <Link to="/#construction-journey" style={{ color: '#94A3B8', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.target.style.color = '#FFF')} onMouseLeave={(e) => (e.target.style.color = '#94A3B8')}>Dream Home Journey</Link>
-              <Link to="/#why-us" style={{ color: '#94A3B8', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.target.style.color = '#FFF')} onMouseLeave={(e) => (e.target.style.color = '#94A3B8')}>Why Build My Dream</Link>
+              <Link to="/services/home-construction" style={{ color: '#94A3B8', textDecoration: 'none' }}>House Construction</Link>
+              <Link to="/services/architectural-design" style={{ color: '#94A3B8', textDecoration: 'none' }}>Architectural Design</Link>
+              <Link to="/services/structural-engineering" style={{ color: '#94A3B8', textDecoration: 'none' }}>Structural Engineering</Link>
+              <Link to="/services/interior-design" style={{ color: '#94A3B8', textDecoration: 'none' }}>Interior Design</Link>
+              <Link to="/services/turnkey-construction" style={{ color: '#94A3B8', textDecoration: 'none' }}>Turnkey Construction</Link>
+              <Link to="/services/renovation" style={{ color: '#94A3B8', textDecoration: 'none' }}>Home Renovation</Link>
             </div>
           </div>
 
-          {/* Col 3: Practices & Advertising */}
+          {/* Col 3: Local & Knowledge Hub */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase' }}>
-              Practices & Enquiries
+              Locations & Guides
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.88rem' }}>
-              <Link to="/technology" style={{ color: '#94A3B8', textDecoration: 'none' }}>3D BIM & Digital Twin</Link>
-              <Link to="/sustainability" style={{ color: '#94A3B8', textDecoration: 'none' }}>Passive House & ESG</Link>
-              <Link to="/safety-quality" style={{ color: '#94A3B8', textDecoration: 'none' }}>Quality & Safety Governance</Link>
-              <Link to="/careers" style={{ color: '#94A3B8', textDecoration: 'none' }}>Careers & Culture</Link>
-              <Link to="/contact" style={{ color: '#94A3B8', textDecoration: 'none' }}>Project Estimator / Ads</Link>
+              <Link to="/locations/ramanathapuram" style={{ color: 'var(--accent-gold)', fontWeight: 700, textDecoration: 'none' }}>Builders in Ramanathapuram</Link>
+              <Link to="/guides/house-construction-cost-in-ramanathapuram" style={{ color: '#94A3B8', textDecoration: 'none' }}>Construction Cost Guide</Link>
+              <Link to="/guides/how-to-choose-a-home-builder-in-ramanathapuram" style={{ color: '#94A3B8', textDecoration: 'none' }}>Builder Selection Checklist</Link>
+              <Link to="/guides/house-construction-process-foundation-to-handover" style={{ color: '#94A3B8', textDecoration: 'none' }}>Construction Process</Link>
+              <Link to="/projects" style={{ color: '#94A3B8', textDecoration: 'none' }}>Completed Projects</Link>
+              <Link to="/technology" style={{ color: '#94A3B8', textDecoration: 'none' }}>3D BIM Skeleton</Link>
             </div>
           </div>
 
-          {/* Col 4: Newsletter & Dossier */}
+          {/* Col 4: Newsletter */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase' }}>
-              Architectural Journal
+              Construction Journal
             </div>
             <p style={{ fontSize: '0.82rem', color: '#94A3B8', lineHeight: 1.5 }}>
-              Receive our quarterly monograph on contemporary residential architecture, engineering, and home designs.
+              Receive updates on residential building regulations, material cost trends, and contemporary home designs in Tamil Nadu.
             </p>
 
             {isSubscribed ? (
@@ -156,12 +161,11 @@ export function Footer() {
         {/* Bottom Bar */}
         <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', fontSize: '0.78rem', color: '#64748B' }}>
           <div>
-            © {new Date().getFullYear()} BUILD MY DREAM. All Rights Reserved. Designed for you. Built to last.
+            © {new Date().getFullYear()} BUILD MY DREAM. All Rights Reserved. Home Builders in Ramanathapuram, Tamil Nadu.
           </div>
           <div style={{ display: 'flex', gap: '1.5rem', fontFamily: 'var(--font-mono)' }}>
             <a href="tel:+916385740155" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>TEL: +91 63857 40155</a>
             <a href="mailto:hidayathullahbajar@gmail.com" style={{ color: '#94A3B8', textDecoration: 'none' }}>EMAIL: hidayathullahbajar@gmail.com</a>
-            <span>LOD 500 AS-BUILT CERTIFIED</span>
           </div>
         </div>
       </div>

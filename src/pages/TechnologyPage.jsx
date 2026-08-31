@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEOHead } from '../components/seo/SEOHead';
 import { StructuralModelViewer } from '../components/3d/StructuralModelViewer';
 import { TECHNOLOGY_DATA } from '../data/technologyData';
 import { Cpu, Layers, Activity, ShieldCheck, ArrowUpRight, CheckCircle2 } from 'lucide-react';
@@ -6,6 +7,12 @@ import { Cpu, Layers, Activity, ShieldCheck, ArrowUpRight, CheckCircle2 } from '
 export function TechnologyPage() {
   return (
     <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+      <SEOHead
+        title="Structural BIM & Engineering Technology | Build My Dream"
+        description="Explore our 5D parametric BIM, interactive 3D structural simulations, and sub-millimeter laser geomatics for precision home building in Ramanathapuram."
+        canonicalUrl="https://buildmydream.in/technology"
+      />
+
       {/* Hero */}
       <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">

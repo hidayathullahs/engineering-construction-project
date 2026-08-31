@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SEOHead } from '../components/seo/SEOHead';
 import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, UploadCloud, ArrowUpRight, Sparkles, Home, MessageCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -63,6 +64,12 @@ export function ContactPage() {
 
   return (
     <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+      <SEOHead
+        title="Contact Home Builders in Ramanathapuram | Build My Dream"
+        description="Contact Build My Dream for house construction, architectural design, and turnkey building inquiries in Ramanathapuram, Tamil Nadu. Phone: +91 63857 40155."
+        canonicalUrl="https://buildmydream.in/contact"
+      />
+
       {/* Hero Header */}
       <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">

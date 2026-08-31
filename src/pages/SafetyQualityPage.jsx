@@ -1,10 +1,17 @@
 import React from 'react';
+import { SEOHead } from '../components/seo/SEOHead';
 import { SAFETY_QUALITY_DATA } from '../data/safetyQualityData';
 import { ShieldCheck, CheckCircle2, Award, FileCheck2, HardHat } from 'lucide-react';
 
 export function SafetyQualityPage() {
   return (
     <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+      <SEOHead
+        title="Safety & Quality Standards in Home Construction | Build My Dream"
+        description="Learn about our 120-point quality assurance protocols, zero-harm site safety, and certified structural inspection benchmarks for homes in Ramanathapuram."
+        canonicalUrl="https://buildmydream.in/safety-quality"
+      />
+
       {/* Hero */}
       <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">

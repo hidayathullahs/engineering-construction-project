@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { SEOHead } from '../components/seo/SEOHead';
 import { PROJECTS_DATA } from '../data/projectsData';
 import { ArrowLeft, ArrowUpRight, MapPin, Calendar, CheckCircle2, Shield, Layers, Award, Sparkles, Home } from 'lucide-react';
 
@@ -15,6 +16,12 @@ export function ProjectDetailPage() {
 
   return (
     <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+      <SEOHead
+        title={`${project.title} | Build My Dream Projects`}
+        description={`${project.title} - ${project.categoryLabel} residential construction and architectural design in ${project.location}. ${project.overview.slice(0, 140)}...`}
+        canonicalUrl={`https://buildmydream.in/projects/${project.slug}`}
+      />
+
       {/* Back Link Bar */}
       <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

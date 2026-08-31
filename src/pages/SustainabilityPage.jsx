@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEOHead } from '../components/seo/SEOHead';
 import { SUSTAINABILITY_DATA } from '../data/sustainabilityData';
 import { Leaf, Recycle, Wind, Droplets, CheckCircle2, Award } from 'lucide-react';
 
@@ -7,6 +8,12 @@ export function SustainabilityPage() {
 
   return (
     <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+      <SEOHead
+        title="Sustainable Home Construction in Tamil Nadu | Build My Dream"
+        description="Bioclimatic residential architecture, passive house cooling, low-carbon materials, and solar energy integration for homes in Ramanathapuram, Tamil Nadu."
+        canonicalUrl="https://buildmydream.in/sustainability"
+      />
+
       {/* Hero */}
       <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">

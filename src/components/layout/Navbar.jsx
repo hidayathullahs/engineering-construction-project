@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, Sparkles, Home, Phone, Mail } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sparkles, Home, Phone, Mail, MapPin } from 'lucide-react';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,13 +28,10 @@ export function Navbar() {
   const navLinks = [
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
+    { name: 'Ramanathapuram', path: '/locations/ramanathapuram' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Dream Journey', path: '/#construction-journey' },
-    { name: 'Why Us', path: '/#why-us' },
+    { name: 'Guides', path: '/guides' },
     { name: 'Technology', path: '/technology' },
-    { name: 'Sustainability', path: '/sustainability' },
-    { name: 'Quality & Safety', path: '/safety-quality' },
-    { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -91,7 +88,7 @@ export function Navbar() {
                 BUILD MY DREAM
               </div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.64rem', color: 'var(--accent-gold)', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '3px', fontWeight: 700 }}>
-                From Vision to Reality
+                Home Builders · Ramanathapuram
               </div>
             </div>
           </Link>
@@ -101,12 +98,12 @@ export function Navbar() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '1.75rem'
+              gap: '1.5rem'
             }}
             className="desktop-nav-links"
           >
-            {navLinks.slice(0, 6).map((link) => {
-              const isActive = location.pathname === link.path || (link.path.startsWith('/#') && location.hash === link.path.substring(1));
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
               return (
                 <Link
                   key={link.name}
@@ -117,7 +114,7 @@ export function Navbar() {
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
                     textDecoration: 'none',
-                    fontWeight: isActive ? 700 : 600,
+                    fontWeight: isActive ? 800 : 600,
                     color: isActive ? 'var(--accent-gold)' : '#475569',
                     transition: 'color 0.2s ease',
                     position: 'relative',

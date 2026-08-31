@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '../components/seo/SEOHead';
 import { ShieldCheck, Award, Users, Compass, Globe2, ArrowUpRight, Sparkles, Home } from 'lucide-react';
 
 export function AboutPage() {
@@ -40,6 +41,12 @@ export function AboutPage() {
 
   return (
     <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+      <SEOHead
+        title="About Build My Dream | Home Construction in Ramanathapuram"
+        description="Learn about Build My Dream, premier residential architects and home builders in Ramanathapuram, Tamil Nadu. Discover our philosophy, engineering standards, and leadership."
+        canonicalUrl="https://buildmydream.in/about"
+      />
+
       {/* Hero Banner */}
       <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)', position: 'relative' }}>
         <div className="container">

@@ -1,20 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowUpRight, Wind, Thermometer, Sparkles, Home, Clock, ShieldCheck } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Sparkles, MapPin, Building2, ShieldCheck, Compass } from 'lucide-react';
 
 export function HeroCinematic() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [liveTime, setLiveTime] = useState('');
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setLiveTime(now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }));
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -37,13 +26,13 @@ export function HeroCinematic() {
       onMouseMove={handleMouseMove}
       style={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: '94vh',
         width: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: '7.5rem',
-        paddingBottom: '5rem',
+        paddingTop: '7rem',
+        paddingBottom: '4.5rem',
         overflow: 'hidden',
         backgroundColor: '#FAFAF9'
       }}
@@ -57,9 +46,9 @@ export function HeroCinematic() {
           backgroundImage: 'url(/frames/ezgif-frame-300.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center 40%',
-          opacity: 0.18,
-          filter: 'contrast(115%) grayscale(15%)',
-          transform: `translate(${mousePos.x * -0.5}px, ${mousePos.y * -0.5}px) scale(1.04)`,
+          opacity: 0.16,
+          filter: 'contrast(110%) grayscale(10%)',
+          transform: `translate(${mousePos.x * -0.4}px, ${mousePos.y * -0.4}px) scale(1.03)`,
           transition: 'transform 0.2s cubic-bezier(0.25, 1, 0.5, 1)'
         }}
       />
@@ -69,58 +58,36 @@ export function HeroCinematic() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to bottom, rgba(250,250,249,0.92) 0%, rgba(250,250,249,0.45) 50%, rgba(250,250,249,0.98) 100%), radial-gradient(circle at center, transparent 30%, rgba(250,250,249,0.85) 100%)'
+          background: 'linear-gradient(to bottom, rgba(250,250,249,0.92) 0%, rgba(250,250,249,0.5) 50%, rgba(250,250,249,0.98) 100%), radial-gradient(circle at center, transparent 30%, rgba(250,250,249,0.85) 100%)'
         }}
       />
 
-      {/* Corner Blueprint Coordinates */}
-      <div style={{ position: 'absolute', top: '5.5rem', left: '2.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--accent-gold)', fontWeight: 700, pointerEvents: 'none' }}>
-        + ARCHITECTURAL RESIDENCE // 01
-      </div>
-      <div style={{ position: 'absolute', top: '5.5rem', right: '2.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--accent-gold)', fontWeight: 700, pointerEvents: 'none' }}>
-        + DREAM HOME SPECIFICATION
-      </div>
-
-      {/* Floating Top-Right Live Environmental HUD Widget */}
+      {/* Genuine Business Context Badges (Top Bar) */}
       <div
         style={{
           position: 'absolute',
-          top: '6.25rem',
-          right: 'clamp(1rem, 3.5vw, 3rem)',
-          background: 'rgba(255, 255, 255, 0.94)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          border: '1px solid rgba(179, 142, 93, 0.35)',
-          borderTop: '2px solid var(--accent-gold)',
-          borderRadius: '4px',
-          padding: '0.75rem 1.25rem',
-          fontFamily: 'var(--font-mono)',
-          fontSize: '0.72rem',
+          top: '5.25rem',
+          left: '0',
+          right: '0',
           display: 'flex',
-          flexDirection: 'column',
-          gap: '0.35rem',
-          boxShadow: '0 12px 30px rgba(15, 23, 42, 0.08)',
-          zIndex: 15
+          justifyContent: 'center',
+          pointerEvents: 'none',
+          zIndex: 5
         }}
         className="desktop-only"
       >
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', color: '#16a34a' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#16a34a', display: 'inline-block', boxShadow: '0 0 6px #16a34a' }} />
-            <span style={{ fontWeight: 700 }}>STUDIO & SITES: ACTIVE</span>
-          </div>
-          <span style={{ color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Clock size={11} className="text-gold" /> {liveTime} UTC
+        <div style={{ display: 'flex', gap: '2rem', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#64748B', fontWeight: 600, letterSpacing: '0.08em' }}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <MapPin size={12} className="text-gold" /> RAMANATHAPURAM · TAMIL NADU
           </span>
-        </div>
-        <div style={{ display: 'flex', gap: '1rem', color: 'var(--text-secondary)', borderTop: '1px solid rgba(15, 23, 42, 0.08)', paddingTop: '0.35rem' }}>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Thermometer size={12} className="text-gold" /> 21°C
+          <span>•</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <Compass size={12} className="text-gold" /> DESIGN · ENGINEERING · BUILD
           </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Wind size={12} className="text-gold" /> 8 kts W
+          <span>•</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <Building2 size={12} className="text-gold" /> TURNKEY HOME SOLUTIONS
           </span>
-          <span className="text-gold" style={{ fontWeight: 700 }}>TURNKEY READY</span>
         </div>
       </div>
 
@@ -134,47 +101,62 @@ export function HeroCinematic() {
             gap: '0.65rem',
             background: 'rgba(255, 255, 255, 0.95)',
             border: '1px solid rgba(179, 142, 93, 0.35)',
-            padding: '0.55rem 1.4rem',
+            padding: '0.5rem 1.3rem',
             borderRadius: '30px',
-            marginBottom: '1.75rem',
+            marginBottom: '1.5rem',
             backdropFilter: 'blur(16px)',
-            boxShadow: '0 4px 16px rgba(15, 23, 42, 0.06)'
+            boxShadow: '0 4px 16px rgba(15, 23, 42, 0.05)'
           }}
         >
           <Sparkles size={14} className="text-gold" />
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', letterSpacing: '0.15em', color: 'var(--accent-gold)', textTransform: 'uppercase', fontWeight: 800 }}>
-            BUILD MY DREAM • FROM VISION TO REALITY
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', letterSpacing: '0.12em', color: 'var(--accent-gold)', textTransform: 'uppercase', fontWeight: 800 }}>
+            BUILD MY DREAM · RAMANATHAPURAM
           </span>
         </div>
 
-        {/* Hero Headline */}
-        <h1 className="hero-headline" style={{ marginBottom: '1.5rem', color: '#0F172A' }}>
-          FROM VISION <br />
+        {/* Single Primary H1 for Local Search Dominance */}
+        <h1
+          className="hero-headline"
+          style={{
+            marginBottom: '1.25rem',
+            color: '#0F172A',
+            fontSize: 'clamp(2.5rem, 5.5vw, 4.75rem)',
+            lineHeight: 1.08,
+            letterSpacing: '-0.03em'
+          }}
+        >
+          BUILD YOUR DREAM HOME <br />
           <span style={{ color: 'var(--accent-gold)' }}>
-            TO REALITY.
+            FROM VISION TO REALITY.
           </span>
         </h1>
 
         {/* Supporting Statement */}
         <p
           style={{
-            fontSize: 'clamp(1.05rem, 1.4vw, 1.3rem)',
+            fontFamily: 'var(--font-body)',
+            fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
             color: 'var(--text-secondary)',
-            maxWidth: '860px',
-            margin: '0 auto 2.75rem auto',
+            maxWidth: '820px',
+            margin: '0 auto 2.25rem auto',
             lineHeight: 1.65,
             fontWeight: 400
           }}
         >
-          Designing and building beautiful, thoughtful homes with engineering precision, master craftsmanship, and single-source turnkey accountability.
+          Design, engineering and construction solutions for homeowners looking to build thoughtfully designed, high-quality homes in <strong style={{ color: '#0F172A', fontWeight: 600 }}>Ramanathapuram</strong> and surrounding service areas.
         </p>
 
-        {/* CTA Buttons Group */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+        {/* Call-to-Action Group */}
+        <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
           <Link
             to="/contact"
             className="btn-primary"
-            style={{ padding: '1.2rem 2.5rem', fontSize: '0.92rem', fontWeight: 700 }}
+            style={{
+              padding: '1.1rem 2.5rem',
+              fontSize: '0.95rem',
+              fontWeight: 800,
+              boxShadow: '0 10px 25px rgba(179, 142, 93, 0.35)'
+            }}
           >
             Start Your Dream
             <ArrowUpRight size={18} />
@@ -183,73 +165,109 @@ export function HeroCinematic() {
           <Link
             to="/projects"
             className="btn-secondary"
-            style={{ padding: '1.2rem 2.25rem', fontSize: '0.92rem', background: '#FFFFFF', color: '#0F172A', border: '1px solid rgba(15, 23, 42, 0.15)' }}
+            style={{
+              padding: '1.1rem 2.25rem',
+              fontSize: '0.95rem',
+              fontWeight: 700,
+              background: '#FFFFFF',
+              color: '#0F172A',
+              border: '1px solid rgba(15, 23, 42, 0.15)'
+            }}
           >
             Explore Projects
             <ArrowUpRight size={18} />
           </Link>
         </div>
 
-        {/* Bottom Metrics Ribbon */}
+        {/* Metrics & Guarantees Ribbon */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-            gap: '1.25rem',
-            marginTop: '4.5rem',
-            paddingTop: '2.5rem',
-            borderTop: '1px solid rgba(15, 23, 42, 0.08)'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '1.5rem',
+            maxWidth: '1000px',
+            margin: '0 auto',
+            textAlign: 'left'
           }}
         >
-          <div className="glass-card" style={{ padding: '1.25rem', borderRadius: '4px', textAlign: 'left' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 800, color: 'var(--accent-gold)' }}>
+          <div className="glass-card hud-border" style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.95)' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 900, color: '#0F172A' }}>
               100+
             </div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#0F172A', fontWeight: 700, textTransform: 'uppercase', marginTop: '2px' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase', marginTop: '0.2rem' }}>
               Homes Built
             </div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
-              Custom luxury residences
+            <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.25rem' }}>
+              Custom luxury residences in Tamil Nadu
             </div>
           </div>
 
-          <div className="glass-card" style={{ padding: '1.25rem', borderRadius: '4px', textAlign: 'left' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 800, color: 'var(--accent-gold)' }}>
+          <div className="glass-card hud-border" style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.95)' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 900, color: '#0F172A' }}>
               ±1.5 mm
             </div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#0F172A', fontWeight: 700, textTransform: 'uppercase', marginTop: '2px' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase', marginTop: '0.2rem' }}>
               Laser Accuracy
             </div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
-              Total Station & LiDAR calibrated
+            <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.25rem' }}>
+              Total Station & digital alignment
             </div>
           </div>
 
-          <div className="glass-card" style={{ padding: '1.25rem', borderRadius: '4px', textAlign: 'left' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 800, color: 'var(--accent-gold)' }}>
+          <div className="glass-card hud-border" style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.95)' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 900, color: '#0F172A' }}>
               100%
             </div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#0F172A', fontWeight: 700, textTransform: 'uppercase', marginTop: '2px' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase', marginTop: '0.2rem' }}>
               On-Time Handover
             </div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
-              Guaranteed completion dates
+            <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.25rem' }}>
+              Guaranteed project milestone dates
             </div>
           </div>
 
-          <div className="glass-card" style={{ padding: '1.25rem', borderRadius: '4px', textAlign: 'left' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 800, color: 'var(--accent-gold)' }}>
+          <div className="glass-card hud-border" style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.95)' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 900, color: '#0F172A' }}>
               25-Year
             </div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#0F172A', fontWeight: 700, textTransform: 'uppercase', marginTop: '2px' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase', marginTop: '0.2rem' }}>
               Structural Warranty
             </div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
-              Long-term peace of mind
+            <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.25rem' }}>
+              Long-term stability and peace of mind
             </div>
           </div>
         </div>
       </div>
+
+      {/* Scroll Down Indicator */}
+      <a
+        href="#construction-journey"
+        onClick={scrollToScrubber}
+        style={{
+          position: 'absolute',
+          bottom: '1.5rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.35rem',
+          color: 'var(--text-secondary)',
+          textDecoration: 'none',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '0.68rem',
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          fontWeight: 700,
+          zIndex: 10
+        }}
+      >
+        <span>Explore Construction Journey</span>
+        <div style={{ width: '22px', height: '22px', borderRadius: '50%', border: '1px solid rgba(179, 142, 93, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', animation: 'bounce 2s infinite' }}>
+          <ArrowDown size={12} />
+        </div>
+      </a>
     </section>
   );
 }

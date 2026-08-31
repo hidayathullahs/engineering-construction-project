@@ -4,49 +4,51 @@
 
 - **Name**: BUILD MY DREAM
 - **Brand Tagline**: *"From Vision to Reality."*
-- **Supporting Statements**: *"Your dream home. Engineered to last."* / *"Designed for you. Built to last."* / *"We don't just build houses. We build your dream."*
-- **Type**: Premium Residential Architecture, Structural Engineering, and Turnkey Dream-Home Construction Platform
-- **Core Promise**: *"We help people transform their dream home vision into a professionally designed, engineered and constructed reality."*
-- **Signature Experience**: **"YOUR DREAM HOME, BUILT STEP BY STEP"** — High-speed, 60fps HTML5 Canvas scroll-driven construction time-lapse engine utilizing 300 photorealistic 1280x720 frames (`public/frames/`) documenting ground excavation to a completed luxury contemporary villa at dusk.
+- **Primary Market**: Ramanathapuram, Tamil Nadu, India
+- **Primary Business**: Residential home builders, house construction, architectural design, structural engineering, interior architecture, and turnkey home construction.
+- **Core Promise**: *"We help homeowners transform their dream home vision into a professionally designed, engineered and constructed reality in Ramanathapuram and surrounding regions."*
+- **Direct Contacts**:
+  - Phone: `+91 63857 40155`
+  - Email: `hidayathullahbajar@gmail.com`
+  - Address: Ramanathapuram, Tamil Nadu 623501, India
 
-## Core Stack & Tooling
+## Technical Stack & Tooling
 
 - **Framework**: React 19 + Vite 6
-- **Routing**: React Router DOM v7 (11 core multi-page routes)
-- **Animation & Scrolling**:
-  - HTML5 2D Canvas Engine with double-buffering and multi-tier progressive preloading
-  - GSAP 3 & ScrollTrigger for timeline synchronization
-  - Lenis for smooth inertial scroll physics
-- **3D Visualization (PERMANENT IMMUTABLE CORE FEATURE)**:
-  - Three.js WebGL interactive 5D BIM skeletal model viewer (`StructuralModelViewer.jsx`) with real-time orbit controls, layer filtering (ALL, CORE, COLUMNS, SLABS), and FEA stress simulation heatmap toggle.
-  - **CRITICAL DIRECTIVE**: Under no circumstances should this 3D BIM Computational Skeleton Viewer be removed, replaced, or disabled. It is a permanent signature feature on both the Homepage and `/technology`.
-- **Design Tokens**:
-  - Background Primary: `#FAFAF9` (Warm Architectural White)
-  - Background Surface: `#FFFFFF` (Crisp White)
-  - Background Translucent: `rgba(255, 255, 255, 0.94)`
-  - Obsidian Dark: `#0F172A`
-  - Slate Secondary: `#475569`
-  - Architectural Champagne Gold: `#B38E5D` / `#C5A880`
-  - Grid Linework: `rgba(15, 23, 42, 0.04)` to `rgba(15, 23, 42, 0.08)`
-  - Typography: `Outfit` (Headings) and `Space Grotesk` (Technical HUD & Numbers)
+- **Routing**: React Router DOM v7 (Multi-page SPA with `public/_redirects`)
+- **Animation & Canvas Engine**:
+  - HTML5 2D Canvas Engine with double-buffering for the 300-frame time-lapse scrubber
+  - Full crawlable semantic HTML markup (`<article>` cards for all 16 milestones) alongside canvas animation
+  - GSAP 3 & ScrollTrigger for timeline triggers
+  - Lenis for smooth inertial momentum scrolling
+- **3D Graphics (PERMANENT IMMUTABLE CORE FEATURE)**:
+  - Three.js WebGL interactive 5D BIM skeletal model viewer (`StructuralModelViewer.jsx`) with real-time orbit controls, layer filtering (`ALL`, `CORE`, `COLUMNS`, `SLABS`), and FEA stress simulation heatmap toggle.
+- **SEO & Structured Data Engine**:
+  - Dynamic `<title>`, `<meta name="description">`, `<link rel="canonical">`, Open Graph, and Twitter Cards
+  - Schema.org JSON-LD structured data (`LocalBusiness`, `GeneralContractor`, `BreadcrumbList`, `Service`, `FAQPage`)
+  - `public/sitemap.xml` and `public/robots.txt`
 
-## Multi-Page Hierarchy
+## Multi-Page Route Hierarchy
 
-1. `/` — **Homepage** (Hero Cinematic with Parallax & Environmental Sensor HUD, Who We Are Philosophy, Key Metrics, **Signature 300-Frame Dream Home Journey Scrubber**, Featured Projects with category filter, Services list & preview switcher, 8-step Dream-Home Process pipeline, 3D BIM Technology Preview, Safety & Quality Standards, Sustainability Roadmap, Why Build My Dream Trust Section, Careers Preview, and Footer)
-2. `/about` — **About Our Studio** (Philosophy, 4 Foundational Pillars, Architectural & Engineering Leadership Cadre, Milestones Timeline)
-3. `/services` — **Architectural & Construction Practices** (8 comprehensive practices: Architectural Design, Structural Engineering, Custom Home Construction, Interior Architecture, Luxury Renovation, Project Management, Landscape Architecture, Turnkey Home Solutions)
-4. `/projects` — **Projects Catalog** (Filterable residential portfolio: All, Modern Homes, Luxury Homes, Villas, Contemporary, Renovation)
-5. `/projects/:slug` — **Project Detail** (Rich editorial case studies with metrics, architectural vision, engineering challenges, solutions, materials palette, and gallery)
-6. `/industries` — **Sectors** (Residential, Coastal Villas, High-End Renovations, Urban Manors)
-7. `/technology` — **Technology & BIM** (Interactive 3D structural model viewer, Digital Twin, Drone LiDAR photogrammetry, Non-Linear FEA modeling)
-8. `/sustainability` — **Sustainability & ESG** (Bioclimatic design, low-carbon concretes, passive envelope metrics, solar integration)
-9. `/safety-quality` — **Quality Assurance & Safety** (Zero-Harm site governance, sub-millimeter laser QA/QC, accredited laboratory testing)
-10. `/careers` — **Careers & Culture** (Cadre values, active job openings, interactive application modal with instant confirmation and confetti)
-11. `/contact` — **Project Estimator & RFP** (Validated dream home specification form with accessible budget selector, scale estimator, plot layout/CAD dropzone, and 24-hour executive consultation guarantee)
-
-## Status & Verified Quality
-
-- **Production Build**: Successfully passes `npm run build` with zero syntax errors.
-- **HTTP Endpoints**: All 11 routes and frame static assets return HTTP 200 OK.
-- **Responsive Viewports**: Scaled for Mobile (320px–430px), Tablet (768px–1024px), Desktop (1280px–1440px), and Large Displays (1920px+).
-- **Reduced Motion**: Full compliance with `prefers-reduced-motion: reduce`.
+1. `/` — **Homepage** (Single H1: `BUILD YOUR DREAM HOME FROM VISION TO REALITY.`, UI cleanup without sci-fi sensor widgets, signature 300-frame construction scrubber with crawlable semantic markup, 8-stage process, 3D BIM skeleton, and local Ramanathapuram trust proof)
+2. `/about` — **About Our Studio** (Philosophy, 4 Foundational Pillars, Leadership Cadre, Heritage Milestones)
+3. `/services` — **Services Catalog** (Master directory linking to all dedicated sub-services)
+4. `/services/home-construction` — **House Construction** (Substructure, foundation, RCC frame, masonry, and pricing in Ramanathapuram)
+5. `/services/architectural-design` — **Architectural Design** (2D/3D floorplans, Vastu compliance, and bioclimatic ventilation)
+6. `/services/structural-engineering` — **Structural Engineering** (Soil testing, FEA stress modeling, and coastal corrosion resistance)
+7. `/services/interior-design` — **Interior Design** (Modular kitchens, wardrobes, Italian marble, and ambient lighting)
+8. `/services/turnkey-construction` — **Turnkey Construction** (Single-source contracts, fixed pricing, and 25-year structural warranty)
+9. `/services/renovation` — **Home Renovation** (Structural retrofitting, vertical extensions, and façade upgrades)
+10. `/locations/ramanathapuram` — **Home Builders in Ramanathapuram** (Local SEO hub with soil characteristics, coastal weather resistance, service zones, and local FAQs)
+11. `/guides` — **Construction Guides & Insights Hub**
+12. `/guides/house-construction-cost-in-ramanathapuram` — **Cost Guide 2026** (Cost per sqft, materials, and BOQ formulation)
+13. `/guides/how-to-choose-a-home-builder-in-ramanathapuram` — **Builder Selection Checklist**
+14. `/guides/house-construction-process-foundation-to-handover` — **16-Stage Construction Roadmap**
+15. `/projects` — **Projects Catalog** (Filterable residential portfolio in Tamil Nadu)
+16. `/projects/:slug` — **Project Case Studies** (Editorial details with vision, engineering challenges, materials, and gallery)
+17. `/technology` — **Technology & BIM** (3D structural skeleton, Digital Twins, and LiDAR geomatics)
+18. `/sustainability` — **Sustainability & ESG** (Passive cooling, solar integration, and low-carbon concrete)
+19. `/safety-quality` — **Quality & Safety Standards** (120-point QC protocols and zero-harm governance)
+20. `/careers` — **Careers & Cadre Culture**
+21. `/contact` — **Project Estimator & RFP** (Validated specification form with budget brackets, plot CAD dropzone, and 24-hr consultation guarantee)
+22. `*` — **404 Page** (Clean blueprint not found with easy navigation links)

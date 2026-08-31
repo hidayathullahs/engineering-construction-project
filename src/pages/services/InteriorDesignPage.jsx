@@ -1,0 +1,82 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { SEOHead } from '../../components/seo/SEOHead';
+import { CheckCircle2, ArrowUpRight, Sparkles, Phone, ArrowLeft } from 'lucide-react';
+
+export function InteriorDesignPage() {
+  const interiorFeatures = [
+    'Custom Luxury Modular Kitchens with Quartz/Granite Countertops',
+    'Bespoke Wardrobes, Walk-in Closets & Premium Wood Veneer Paneling',
+    'Architectural False Ceilings with Concealed LED Cove & Magnetic Track Lighting',
+    'Italian Marble, Large-Format Glazed Vitrified Tiles & Hardwood Flooring',
+    'Luxury Bathroom Vanities with Concealed Diverters & Glass Partitions',
+    'Curated Color Palettes, Texture Paint, and Wall Treatment Concepts'
+  ];
+
+  return (
+    <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+      <SEOHead
+        title="Home Interior Design in Ramanathapuram | Build My Dream"
+        description="Premium residential interior design and bespoke carpentry in Ramanathapuram, Tamil Nadu. Modular kitchens, Italian marble, custom wardrobes, and ambient lighting."
+        canonicalUrl="https://buildmydream.in/services/interior-design"
+      />
+
+      <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Link
+            to="/services"
+            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-secondary)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', fontWeight: 700 }}
+          >
+            <ArrowLeft size={14} /> Back to Services Catalog
+          </Link>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent-gold)', fontWeight: 800 }}>
+            SERVICE // INTERIOR DESIGN
+          </div>
+        </div>
+      </div>
+
+      <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
+        <div className="container">
+          <div className="eyebrow">Luxury Interior Architecture & Styling</div>
+          <h1 className="hero-headline" style={{ marginBottom: '1.5rem', color: '#0F172A' }}>
+            HOME INTERIOR DESIGN IN <br />
+            <span className="text-gold">RAMANATHAPURAM.</span>
+          </h1>
+          <p className="section-subtitle" style={{ fontSize: '1.2rem', maxWidth: '850px' }}>
+            Crafting elegant, modern, and warm interior living spaces with artisanal joinery, premium European hardware, and timeless material finishes.
+          </p>
+
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+            <Link to="/contact" className="btn-primary" style={{ padding: '1rem 2.25rem', fontWeight: 800 }}>
+              Consult Interior Designer <ArrowUpRight size={16} />
+            </Link>
+            <a
+              href="tel:+916385740155"
+              className="btn-secondary"
+              style={{ padding: '1rem 2rem', background: '#FFFFFF', color: '#0F172A', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700 }}
+            >
+              <Phone size={15} className="text-gold" /> Call: +91 63857 40155
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
+        <div className="container">
+          <div className="eyebrow">Interior Finishes</div>
+          <h2 className="section-title" style={{ color: '#0F172A', marginBottom: '2rem' }}>
+            WHAT OUR INTERIOR DESIGN SERVICE INCLUDES
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            {interiorFeatures.map((feat, idx) => (
+              <div key={idx} className="hud-border glass-card" style={{ padding: '1.75rem', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <CheckCircle2 size={20} className="text-gold" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: '0.95rem', color: '#0F172A', fontWeight: 600 }}>{feat}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

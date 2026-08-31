@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEOHead } from '../components/seo/SEOHead';
 import { HeroCinematic } from '../components/hero/HeroCinematic';
 import { WhoWeAreSection } from '../components/sections/WhoWeAreSection';
 import { KeyMetricsSection } from '../components/sections/KeyMetricsSection';
@@ -16,6 +17,12 @@ import { CareersPreviewSection } from '../components/sections/CareersPreviewSect
 export function HomePage() {
   return (
     <main>
+      <SEOHead
+        title="Build My Dream | Home Builders in Ramanathapuram"
+        description="Premier home builders in Ramanathapuram, Tamil Nadu. We specialize in residential construction, architectural design, structural engineering, and turnkey home construction."
+        canonicalUrl="https://buildmydream.in/"
+      />
+
       {/* 01: Hero Cinematic Section */}
       <HeroCinematic />
 
@@ -34,7 +41,7 @@ export function HomePage() {
       {/* 06: Services Showcase */}
       <ServicesShowcaseSection />
 
-      {/* 07: 7-Stage Engineering Delivery Process */}
+      {/* 07: 8-Stage Engineering Delivery Process */}
       <EngineeringProcessSection />
 
       {/* 08: Technology & Interactive 3D Structural BIM */}

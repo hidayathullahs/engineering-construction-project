@@ -1,0 +1,6 @@
+# Robots.txt for BUILD MY DREAM
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://buildmydream.in/sitemap.xml

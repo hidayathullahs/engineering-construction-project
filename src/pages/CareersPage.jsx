@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SEOHead } from '../components/seo/SEOHead';
 import { CAREERS_DATA } from '../data/careersData';
 import { Briefcase, MapPin, Clock, ArrowUpRight, CheckCircle2, X } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -29,6 +30,12 @@ export function CareersPage() {
 
   return (
     <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+      <SEOHead
+        title="Careers & Opportunities in Residential Construction | Build My Dream"
+        description="Join our multidisciplinary team of residential architects, civil engineers, project managers, and interior designers at Build My Dream in Tamil Nadu."
+        canonicalUrl="https://buildmydream.in/careers"
+      />
+
       {/* Hero */}
       <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">
