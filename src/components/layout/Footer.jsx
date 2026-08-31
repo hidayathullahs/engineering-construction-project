@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, CheckCircle2, Shield, Globe2, Phone, Mail, MapPin, Sparkles, Home } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Shield, Globe2, Phone, Mail, MapPin, Sparkles, Home, MessageCircle } from 'lucide-react';
 
 export function Footer() {
   const [email, setEmail] = useState('');
@@ -39,10 +39,19 @@ export function Footer() {
                 Partner with visionary residential architects, structural engineers, and master craftsmen dedicated to turning your dream home vision into reality.
               </p>
             </div>
-            <Link to="/contact" className="btn-primary" style={{ padding: '1.25rem 2.5rem', fontSize: '0.95rem', fontWeight: 800 }}>
-              Start Your Dream
-              <ArrowUpRight size={18} />
-            </Link>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <Link to="/contact" className="btn-primary" style={{ padding: '1.25rem 2.5rem', fontSize: '0.95rem', fontWeight: 800 }}>
+                Start Your Dream
+                <ArrowUpRight size={18} />
+              </Link>
+              <a
+                href="tel:+916385740155"
+                className="btn-secondary"
+                style={{ padding: '1.25rem 2rem', fontSize: '0.95rem', background: '#FFFFFF', color: '#0F172A', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700 }}
+              >
+                <Phone size={16} className="text-gold" /> Call: +91 63857 40155
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -50,7 +59,7 @@ export function Footer() {
       {/* Main Footer Directory */}
       <div className="container" style={{ padding: '4.5rem var(--container-pad)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem' }}>
-          {/* Col 1: Identity & Coordinates */}
+          {/* Col 1: Identity & Direct Contact */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <div style={{ width: '36px', height: '36px', border: '1.5px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(179, 142, 93, 0.15)', borderRadius: '3px' }}>
@@ -66,9 +75,14 @@ export function Footer() {
               Designing and building beautiful, thoughtful homes with engineering precision, quality craftsmanship, and single-source turnkey accountability.
             </p>
 
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#64748B', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-              <span>HQ: 500 Grand Architectural Way</span>
-              <span>STUDIO & LABS: San Francisco & New York</span>
+            {/* Direct Contact & Ads Details */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '0.85rem' }}>
+              <a href="tel:+916385740155" style={{ color: 'var(--accent-gold)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <Phone size={14} /> +91 63857 40155
+              </a>
+              <a href="mailto:hidayathullahbajar@gmail.com" style={{ color: '#E2E8F0', textDecoration: 'none', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '6px', wordBreak: 'break-all' }}>
+                <Mail size={14} className="text-gold" /> hidayathullahbajar@gmail.com
+              </a>
             </div>
           </div>
 
@@ -86,17 +100,17 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 3: Practices */}
+          {/* Col 3: Practices & Advertising */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase' }}>
-              Practices
+              Practices & Enquiries
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.88rem' }}>
               <Link to="/technology" style={{ color: '#94A3B8', textDecoration: 'none' }}>3D BIM & Digital Twin</Link>
               <Link to="/sustainability" style={{ color: '#94A3B8', textDecoration: 'none' }}>Passive House & ESG</Link>
               <Link to="/safety-quality" style={{ color: '#94A3B8', textDecoration: 'none' }}>Quality & Safety Governance</Link>
               <Link to="/careers" style={{ color: '#94A3B8', textDecoration: 'none' }}>Careers & Culture</Link>
-              <Link to="/contact" style={{ color: '#94A3B8', textDecoration: 'none' }}>Project Estimator / RFP</Link>
+              <Link to="/contact" style={{ color: '#94A3B8', textDecoration: 'none' }}>Project Estimator / Ads</Link>
             </div>
           </div>
 
@@ -145,8 +159,8 @@ export function Footer() {
             © {new Date().getFullYear()} BUILD MY DREAM. All Rights Reserved. Designed for you. Built to last.
           </div>
           <div style={{ display: 'flex', gap: '1.5rem', fontFamily: 'var(--font-mono)' }}>
-            <span>PRIVACY POLICY</span>
-            <span>TERMS OF ENGAGEMENT</span>
+            <a href="tel:+916385740155" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>TEL: +91 63857 40155</a>
+            <a href="mailto:hidayathullahbajar@gmail.com" style={{ color: '#94A3B8', textDecoration: 'none' }}>EMAIL: hidayathullahbajar@gmail.com</a>
             <span>LOD 500 AS-BUILT CERTIFIED</span>
           </div>
         </div>

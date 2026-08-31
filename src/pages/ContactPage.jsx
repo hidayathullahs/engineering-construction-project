@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, UploadCloud, ArrowUpRight, Sparkles, Home } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, UploadCloud, ArrowUpRight, Sparkles, Home, MessageCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export function ContactPage() {
@@ -66,13 +66,13 @@ export function ContactPage() {
       {/* Hero Header */}
       <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">
-          <div className="eyebrow">Start Your Journey</div>
+          <div className="eyebrow">Start Your Journey & Advertise With Us</div>
           <h1 className="hero-headline" style={{ marginBottom: '1.5rem', color: '#0F172A' }}>
             LET’S BUILD <br />
             <span className="text-gold">YOUR DREAM.</span>
           </h1>
           <p className="section-subtitle" style={{ fontSize: '1.2rem', maxWidth: '850px' }}>
-            Tell us what you're imagining. Our architects and structural engineers will craft a tailor-made design concept and transparent feasibility roadmap for your home.
+            Tell us what you're imagining. Reach out directly for project inquiries, custom architectural consultations, and business advertising opportunities.
           </p>
         </div>
       </section>
@@ -92,7 +92,7 @@ export function ContactPage() {
                     Dream Home Brief Received!
                   </h2>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '480px', margin: '0 auto 2rem auto' }}>
-                    Thank you, <strong style={{ color: '#0F172A' }}>{formData.fullName}</strong>. Our Principal Architectural Group has registered your request. An assigned project director will review your vision and connect within 24 hours.
+                    Thank you, <strong style={{ color: '#0F172A' }}>{formData.fullName}</strong>. Our Principal Architectural Group has registered your request. We will review your parameters and connect with you at <strong style={{ color: '#0F172A' }}>{formData.email}</strong> or <strong style={{ color: '#0F172A' }}>{formData.phone}</strong> within 24 hours.
                   </p>
                   <button
                     onClick={() => {
@@ -131,7 +131,7 @@ export function ContactPage() {
                       <input
                         type="email"
                         className="form-input"
-                        placeholder="e.g. marcus@domain.com"
+                        placeholder="e.g. yourname@domain.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       />
@@ -145,7 +145,7 @@ export function ContactPage() {
                       <input
                         type="tel"
                         className="form-input"
-                        placeholder="+91 98765 43210"
+                        placeholder="e.g. +91 63857 40155"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       />
@@ -157,7 +157,7 @@ export function ContactPage() {
                       <input
                         type="text"
                         className="form-input"
-                        placeholder="e.g. Bangalore / Mumbai / Hyderabad"
+                        placeholder="e.g. Bangalore / Chennai / Hyderabad"
                         value={formData.city}
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                       />
@@ -268,55 +268,105 @@ export function ContactPage() {
             {/* Right Information & Direct Contact Channels */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
               <div>
-                <div className="eyebrow">Studio Consultation</div>
+                <div className="eyebrow">Direct Contact & Advertising</div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>
                   Direct Architectural Channels
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.6 }}>
-                  Prefer an immediate discussion? Speak directly with our lead residential architect or schedule a private studio consultation.
+                  Connect directly with our Lead Director for project consultations, turnkey estimates, media collaborations, and advertising inquiries.
                 </p>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <div className="hud-border glass-card" style={{ padding: '1.5rem', borderRadius: '4px', display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                {/* Email Direct */}
+                <a
+                  href="mailto:hidayathullahbajar@gmail.com?subject=Build%20My%20Dream%20-%20Project%20/%20Advertising%20Inquiry"
+                  className="hud-border glass-card"
+                  style={{
+                    padding: '1.5rem',
+                    borderRadius: '6px',
+                    display: 'flex',
+                    gap: '1.25rem',
+                    alignItems: 'center',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--accent-gold)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(15, 23, 42, 0.08)')}
+                >
                   <div style={{ width: '48px', height: '48px', borderRadius: '4px', background: 'rgba(179, 142, 93, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)' }}>
                     <Mail size={22} />
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 700, textTransform: 'uppercase' }}>Direct Studio Inquiries</div>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 800, color: '#0F172A' }}>studio@buildmydream.com</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase' }}>Direct Official Email</div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 800, color: '#0F172A', wordBreak: 'break-all' }}>hidayathullahbajar@gmail.com</div>
                   </div>
-                </div>
+                </a>
 
-                <div className="hud-border glass-card" style={{ padding: '1.5rem', borderRadius: '4px', display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+                {/* Phone Call Direct */}
+                <a
+                  href="tel:+916385740155"
+                  className="hud-border glass-card"
+                  style={{
+                    padding: '1.5rem',
+                    borderRadius: '6px',
+                    display: 'flex',
+                    gap: '1.25rem',
+                    alignItems: 'center',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--accent-gold)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(15, 23, 42, 0.08)')}
+                >
                   <div style={{ width: '48px', height: '48px', borderRadius: '4px', background: 'rgba(179, 142, 93, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)' }}>
                     <Phone size={22} />
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 700, textTransform: 'uppercase' }}>Executive Concierge</div>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 800, color: '#0F172A' }}>+1 (800) 555-DREAM</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 800, textTransform: 'uppercase' }}>Direct Phone / Concierge</div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#0F172A' }}>+91 63857 40155</div>
                   </div>
-                </div>
+                </a>
 
-                <div className="hud-border glass-card" style={{ padding: '1.5rem', borderRadius: '4px', display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '4px', background: 'rgba(179, 142, 93, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)' }}>
-                    <MapPin size={22} />
+                {/* WhatsApp Direct */}
+                <a
+                  href="https://wa.me/916385740155?text=Hello%20Build%20My%20Dream%20team,%20I%20would%20like%20to%20discuss%20a%20project%20/%20advertising%20inquiry."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hud-border glass-card"
+                  style={{
+                    padding: '1.5rem',
+                    borderRadius: '6px',
+                    display: 'flex',
+                    gap: '1.25rem',
+                    alignItems: 'center',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#16a34a')}
+                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(15, 23, 42, 0.08)')}
+                >
+                  <div style={{ width: '48px', height: '48px', borderRadius: '4px', background: 'rgba(22, 163, 74, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a' }}>
+                    <MessageCircle size={22} />
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 700, textTransform: 'uppercase' }}>Architectural Design Studio</div>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 800, color: '#0F172A' }}>500 Grand Architectural Way, CA</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#16a34a', fontWeight: 800, textTransform: 'uppercase' }}>WhatsApp Chat</div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 800, color: '#0F172A' }}>Chat Directly (+91 63857 40155)</div>
                   </div>
-                </div>
+                </a>
               </div>
 
               {/* Guarantees Box */}
               <div style={{ background: '#FFFFFF', border: '1px solid rgba(179, 142, 93, 0.3)', borderRadius: '6px', padding: '1.75rem' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: '#0F172A', marginBottom: '0.75rem' }}>
-                  Our Homeowner Commitments
+                  Our Direct Commitments
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <CheckCircle2 size={16} className="text-gold" /> Guaranteed 24-Hour Executive Consultation Response
+                    <CheckCircle2 size={16} className="text-gold" /> Direct response from Principal Lead (Within 24 Hours)
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <CheckCircle2 size={16} className="text-gold" /> Fixed-Price Turnkey Contracts with Zero Hidden Escalations

@@ -4,6 +4,7 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { CustomCursor } from './components/layout/CustomCursor';
 import { ScrollToTop } from './components/layout/ScrollToTop';
+import { FloatingContactConcierge } from './components/layout/FloatingContactConcierge';
 import { useLenisScroll } from './hooks/useLenisScroll';
 
 // Pages
@@ -53,9 +54,13 @@ export function App() {
         </Routes>
       </div>
 
+      {/* Direct Contact & Advertising Concierge Float */}
+      <FloatingContactConcierge />
+
       {/* Global Architectural Footer */}
       <Footer />
     </div>
   );
 }
+
 export default App;

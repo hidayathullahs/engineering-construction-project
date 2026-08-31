@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, Sparkles, Home } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sparkles, Home, Phone, Mail } from 'lucide-react';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,7 +48,7 @@ export function Navbar() {
           right: 0,
           zIndex: 'var(--z-nav)',
           transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.94)' : 'rgba(255, 255, 255, 0.8)',
+          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.94)' : 'rgba(255, 255, 255, 0.85)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           borderBottom: isScrolled ? '1px solid rgba(15, 23, 42, 0.08)' : '1px solid rgba(15, 23, 42, 0.05)',
@@ -105,7 +105,7 @@ export function Navbar() {
             }}
             className="desktop-nav-links"
           >
-            {navLinks.slice(0, 7).map((link) => {
+            {navLinks.slice(0, 6).map((link) => {
               const isActive = location.pathname === link.path || (link.path.startsWith('/#') && location.hash === link.path.substring(1));
               return (
                 <Link
@@ -132,12 +132,34 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Desktop CTA & Mobile Toggle */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          {/* Desktop Direct Phone & CTA */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+            <a
+              href="tel:+916385740155"
+              className="desktop-cta"
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                color: '#0F172A',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                padding: '0.55rem 0.85rem',
+                borderRadius: '3px',
+                background: 'rgba(179, 142, 93, 0.1)',
+                border: '1px solid rgba(179, 142, 93, 0.3)'
+              }}
+            >
+              <Phone size={13} className="text-gold" />
+              <span>+91 63857 40155</span>
+            </a>
+
             <Link
               to="/contact"
               className="btn-primary desktop-cta"
-              style={{ padding: '0.65rem 1.35rem', fontSize: '0.8rem', fontWeight: 700 }}
+              style={{ padding: '0.6rem 1.25rem', fontSize: '0.78rem', fontWeight: 800 }}
             >
               Start Your Dream
               <ArrowUpRight size={14} />
@@ -176,15 +198,16 @@ export function Navbar() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          padding: '6rem 2rem 3rem 2rem',
+          padding: '5.5rem 2rem 2.5rem 2rem',
           transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(-100%)',
           transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
-          pointerEvents: isMobileMenuOpen ? 'auto' : 'none'
+          pointerEvents: isMobileMenuOpen ? 'auto' : 'none',
+          overflowY: 'auto'
         }}
         className="mobile-menu-drawer"
       >
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          <div className="eyebrow" style={{ marginBottom: '0.5rem' }}>Navigation // Build My Dream</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div className="eyebrow" style={{ marginBottom: '0.25rem' }}>Navigation // Build My Dream</div>
           {navLinks.map((link, idx) => (
             <Link
               key={link.name}
@@ -192,14 +215,14 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '1.65rem',
+                fontSize: '1.45rem',
                 fontWeight: 800,
                 color: '#0F172A',
                 textDecoration: 'none',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '0.5rem 0',
+                padding: '0.4rem 0',
                 borderBottom: '1px solid rgba(15, 23, 42, 0.06)'
               }}
             >
@@ -211,18 +234,58 @@ export function Navbar() {
           ))}
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingTop: '2rem' }}>
+        {/* Mobile Direct Contact Channels */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingTop: '1.5rem' }}>
+          <a
+            href="tel:+916385740155"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              padding: '0.85rem',
+              borderRadius: '4px',
+              background: 'rgba(179, 142, 93, 0.12)',
+              border: '1px solid var(--accent-gold)',
+              color: '#0F172A',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.9rem',
+              fontWeight: 800,
+              textDecoration: 'none'
+            }}
+          >
+            <Phone size={16} className="text-gold" /> Call: +91 63857 40155
+          </a>
+
+          <a
+            href="mailto:hidayathullahbajar@gmail.com"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              padding: '0.75rem',
+              borderRadius: '4px',
+              background: '#FFFFFF',
+              border: '1px solid rgba(15, 23, 42, 0.12)',
+              color: '#475569',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.8rem',
+              textDecoration: 'none',
+              wordBreak: 'break-all'
+            }}
+          >
+            <Mail size={14} className="text-gold" /> hidayathullahbajar@gmail.com
+          </a>
+
           <Link
             to="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
             className="btn-primary"
-            style={{ width: '100%', padding: '1rem', justifyContent: 'center', fontSize: '1rem' }}
+            style={{ width: '100%', padding: '0.95rem', justifyContent: 'center', fontSize: '0.95rem', fontWeight: 800 }}
           >
             Start Your Dream <ArrowUpRight size={18} />
           </Link>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#64748B', textAlign: 'center' }}>
-            BUILD MY DREAM • FROM VISION TO REALITY
-          </div>
         </div>
       </div>
     </>
