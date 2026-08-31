@@ -7,6 +7,7 @@ import '../../styles/canvas.css';
 export function ConstructionCanvasScrubber() {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
+  const stepperRef = useRef(null);
   const { images, progress, isTier1Ready, isFullyLoaded, totalFrames } = useFramePreloader();
   
   const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
@@ -25,7 +26,7 @@ export function ConstructionCanvasScrubber() {
 
     let img = images[frameIndex];
     if (!img || !img.complete || img.naturalWidth === 0) {
-      for (let offset = 1; offset < 25; offset++) {
+      for (let offset = 1; offset < 35; offset++) {
         const prev = images[Math.max(0, frameIndex - offset)];
         if (prev && prev.complete && prev.naturalWidth > 0) {
           img = prev;
@@ -70,7 +71,7 @@ export function ConstructionCanvasScrubber() {
       drawY = 0;
     }
 
-    ctx.fillStyle = '#FAFAF9';
+    ctx.fillStyle = '#0F172A';
     ctx.fillRect(0, 0, width, height);
 
     ctx.imageSmoothingEnabled = true;
@@ -84,17 +85,17 @@ export function ConstructionCanvasScrubber() {
   useEffect(() => {
     const loop = () => {
       const diff = targetFrameRef.current - displayedFrameRef.current;
-      if (Math.abs(diff) > 0.05) {
+      if (Math.abs(diff) > 0.04) {
         displayedFrameRef.current += diff * 0.18;
         const frameToRender = Math.min(totalFrames - 1, Math.max(0, Math.round(displayedFrameRef.current)));
         setCurrentFrameIndex(frameToRender);
         renderCanvas(frameToRender);
 
         const currentStage = CONSTRUCTION_STAGES.find(
-          (s) => frameToRender >= s.frameStart && frameToRender <= s.frameEnd
-        ) || CONSTRUCTION_STAGES[CONSTRUCTION_STAGES.length - 1];
+          (s) => frameToRender >= (s.startFrame ?? s.frameStart ?? 0) && frameToRender <= (s.endFrame ?? s.frameEnd ?? 299)
+        ) || CONSTRUCTION_STAGES[0];
 
-        setActiveStage(currentStage);
+        setActiveStage((prev) => (prev.id !== currentStage.id ? currentStage : prev));
         setScrubProgress(Math.round((frameToRender / (totalFrames - 1)) * 100));
       }
       animFrameIdRef.current = requestAnimationFrame(loop);
@@ -105,6 +106,16 @@ export function ConstructionCanvasScrubber() {
       if (animFrameIdRef.current) cancelAnimationFrame(animFrameIdRef.current);
     };
   }, [renderCanvas, totalFrames]);
+
+  // Auto-scroll the active stage button inside the right-hand stepper list
+  useEffect(() => {
+    if (stepperRef.current) {
+      const activeEl = stepperRef.current.querySelector('.timeline-step-btn.active');
+      if (activeEl) {
+        activeEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    }
+  }, [activeStage]);
 
   // Scroll listener mapped to 0..299 frames
   useEffect(() => {
@@ -128,14 +139,21 @@ export function ConstructionCanvasScrubber() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [totalFrames]);
 
+  // Jump to specific milestone smoothly
   const jumpToStage = (stage) => {
-    const target = stage.frameStart;
-    targetFrameRef.current = target;
+    const start = stage.startFrame ?? stage.frameStart ?? 0;
+    targetFrameRef.current = start;
     const container = containerRef.current;
     if (container) {
+      const containerTop = container.getBoundingClientRect().top + window.scrollY;
       const scrollableDist = container.offsetHeight - window.innerHeight;
-      const targetScroll = container.offsetTop + (target / (totalFrames - 1)) * scrollableDist;
-      window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      const targetScroll = containerTop + (start / (totalFrames - 1)) * scrollableDist;
+
+      if (window.__lenis) {
+        window.__lenis.scrollTo(targetScroll, { duration: 1.0 });
+      } else {
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      }
     }
   };
 
@@ -160,9 +178,9 @@ export function ConstructionCanvasScrubber() {
         ref={containerRef}
         className="scrubber-section"
         style={{
-          height: '420vh',
+          height: '450vh',
           position: 'relative',
-          backgroundColor: '#FAFAF9',
+          backgroundColor: '#0F172A',
           borderTop: '1px solid rgba(15, 23, 42, 0.08)',
           borderBottom: '1px solid rgba(15, 23, 42, 0.08)'
         }}
@@ -199,7 +217,7 @@ export function ConstructionCanvasScrubber() {
                 <div className="hud-telemetry">
                   <span>60 FPS</span>
                   <span>FRAME {String(currentFrameIndex + 1).padStart(3, '0')}/300</span>
-                  <span>ELEV {activeStage.specs?.[1]?.value || '±0.00m'}</span>
+                  <span>ELEV {activeStage.elevation || '±0.00m'}</span>
                 </div>
               </div>
 
@@ -214,7 +232,7 @@ export function ConstructionCanvasScrubber() {
               </div>
 
               {/* Right Vertical Timeline Navigation Dock */}
-              <div className="hud-timeline-stepper">
+              <div ref={stepperRef} className="hud-timeline-stepper desktop-only">
                 <div className="hud-timeline-header">
                   <span>STAGES</span>
                   <span style={{ color: 'var(--accent-gold)', fontWeight: 800 }}>16</span>

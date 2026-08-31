@@ -22,6 +22,8 @@ export function useLenisScroll() {
       infinite: false
     });
 
+    window.__lenis = lenis;
+
     lenis.on('scroll', ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
@@ -32,6 +34,7 @@ export function useLenisScroll() {
 
     return () => {
       lenis.destroy();
+      window.__lenis = null;
       gsap.ticker.remove(lenis.raf);
     };
   }, []);

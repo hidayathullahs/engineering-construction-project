@@ -130,35 +130,51 @@
 /* Right Side: Interactive Milestone Stepper Dock (White Frosted) */
 .hud-timeline-stepper {
   position: absolute;
-  right: clamp(1rem, 2.5vw, 2.5rem);
-  top: 55%;
+  right: clamp(0.75rem, 2.5vw, 2.5rem);
+  top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  z-index: 20;
-  max-height: 48vh;
+  gap: 0.2rem;
+  z-index: 25;
+  max-height: clamp(340px, 64vh, 540px);
   overflow-y: auto;
-  padding: 0.75rem 0.5rem;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  overflow-x: hidden;
+  padding: 0.85rem 0.65rem;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(179, 142, 93, 0.35);
   border-radius: 8px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
-  min-width: 145px;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.18);
+  min-width: 175px;
+  max-width: 220px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-gold) rgba(15, 23, 42, 0.06);
+}
+
+.hud-timeline-stepper::-webkit-scrollbar {
+  width: 4px;
+}
+.hud-timeline-stepper::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.04);
+  border-radius: 2px;
+}
+.hud-timeline-stepper::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 2px;
 }
 
 .hud-timeline-header {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   color: var(--accent-gold);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 700;
-  padding: 0 0.35rem 0.35rem 0.35rem;
+  font-weight: 800;
+  padding: 0 0.35rem 0.4rem 0.35rem;
   border-bottom: 1px solid rgba(15, 23, 42, 0.1);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -168,14 +184,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.6rem;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0.28rem 0.45rem;
-  border-radius: 3px;
+  padding: 0.32rem 0.5rem;
+  border-radius: 4px;
   transition: all var(--duration-fast) ease;
   width: 100%;
+  text-align: left;
 }
 
 .timeline-step-label {
