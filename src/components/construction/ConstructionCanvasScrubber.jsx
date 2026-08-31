@@ -310,7 +310,28 @@ export function ConstructionCanvasScrubber() {
                     <span style={{ color: 'var(--accent-gold)', fontWeight: 800 }}>PROGRESS: {scrubProgress}%</span>
                     <span>16 COMPLETION</span>
                   </div>
-                  <div className="hud-scrub-track">
+                  <div
+                    className="hud-scrub-track"
+                    onClick={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      const clickX = e.clientX - rect.left;
+                      const ratio = Math.max(0, Math.min(1, clickX / rect.width));
+                      const targetFrame = Math.round(ratio * (totalFrames - 1));
+                      targetFrameRef.current = targetFrame;
+                      const container = containerRef.current;
+                      if (container) {
+                        const containerTop = container.getBoundingClientRect().top + window.scrollY;
+                        const scrollableDist = container.offsetHeight - window.innerHeight;
+                        const targetScroll = containerTop + ratio * scrollableDist;
+                        if (window.__lenis) {
+                          window.__lenis.scrollTo(targetScroll, { duration: 0.8 });
+                        } else {
+                          window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+                        }
+                      }
+                    }}
+                    title="Click to jump progress"
+                  >
                     <div
                       className="hud-scrub-fill"
                       style={{ width: `${scrubProgress}%` }}
