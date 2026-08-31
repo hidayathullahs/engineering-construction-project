@@ -24,7 +24,7 @@ export function HouseConstructionPage() {
   ];
 
   return (
-    <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+    <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem', overflowX: 'hidden' }}>
       <SEOHead
         title="House Construction in Ramanathapuram | Build My Dream"
         description="Professional house construction services in Ramanathapuram, Tamil Nadu. High-quality materials, certified structural engineering, and transparent pricing."

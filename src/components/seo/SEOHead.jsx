@@ -72,7 +72,7 @@ export function SEOHead({
       name: 'Build My Dream',
       alternateName: 'Build My Dream Home Builders',
       url: 'https://buildmydream.in',
-      logo: 'https://buildmydream.in/favicon.svg',
+      logo: 'https://buildmydream.in/logo.png',
       image: ogImage,
       description: 'Premier residential construction, architectural design, structural engineering, and turnkey home construction in Ramanathapuram, Tamil Nadu.',
       telephone: '+91-6385740155',

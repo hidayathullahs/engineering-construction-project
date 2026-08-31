@@ -137,13 +137,13 @@ export function HeroCinematic() {
             fontFamily: 'var(--font-body)',
             fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
             color: 'var(--text-secondary)',
-            maxWidth: '820px',
+            maxWidth: '840px',
             margin: '0 auto 2.25rem auto',
             lineHeight: 1.65,
             fontWeight: 400
           }}
         >
-          Design, engineering and construction solutions for homeowners looking to build thoughtfully designed, high-quality homes in <strong style={{ color: '#0F172A', fontWeight: 600 }}>Ramanathapuram</strong> and surrounding service areas.
+          Build My Dream brings architectural design, structural engineering and professional home construction together to help homeowners create thoughtfully designed homes in <strong style={{ color: '#0F172A', fontWeight: 600 }}>Ramanathapuram</strong> and surrounding service areas.
         </p>
 
         {/* Call-to-Action Group */}

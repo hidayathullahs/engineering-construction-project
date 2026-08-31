@@ -19,7 +19,7 @@ export function HomePage() {
     <main>
       <SEOHead
         title="Build My Dream | Home Builders in Ramanathapuram"
-        description="Premier home builders in Ramanathapuram, Tamil Nadu. We specialize in residential construction, architectural design, structural engineering, and turnkey home construction."
+        description="Build My Dream provides home construction, architectural design, structural engineering, interiors and turnkey building solutions in Ramanathapuram, Tamil Nadu."
         canonicalUrl="https://buildmydream.in/"
       />
 

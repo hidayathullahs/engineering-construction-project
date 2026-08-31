@@ -102,14 +102,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1.5rem'
-            }}
-            className="desktop-nav-links"
-          >
+          <nav className="desktop-nav-links">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
@@ -148,7 +141,6 @@ export function Navbar() {
                 fontWeight: 700,
                 color: '#0F172A',
                 textDecoration: 'none',
-                display: 'flex',
                 alignItems: 'center',
                 gap: '5px',
                 padding: '0.55rem 0.85rem',
@@ -175,7 +167,6 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle navigation menu"
               style={{
-                display: 'none',
                 background: 'rgba(255, 255, 255, 0.9)',
                 border: '1px solid rgba(15, 23, 42, 0.15)',
                 color: '#0F172A',

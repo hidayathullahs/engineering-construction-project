@@ -21,10 +21,12 @@
 - [x] Local SEO dominance for Ramanathapuram, Tamil Nadu (`/locations/ramanathapuram`)
 - [x] 6 dedicated sub-service pages (`/services/home-construction`, etc.)
 - [x] Educational guides hub & cost estimation articles (`/guides`)
+- [x] Dedicated Process Page (`/process`) with 14-stage roadmap & embedded visual scrubber
 - [x] Dynamic Schema.org JSON-LD & OpenGraph metadata engine (`SEOHead.jsx`)
 - [x] Official custom brand emblem logo integration across Navbar, Footer, and Favicon
 - [x] Configure Render SPA rewrite routing (`render.yaml`, `_redirects`, `public/_redirects`)
 - [x] Verify production build (`npm run build`)
 - [x] Automated 16-route direct navigation & browser refresh verification (`scripts/test_all_routes.js`)
+- [x] Multi-Device Viewport Audit (Desktop, Tablet, Mobile) with 0 horizontal overflow (`scripts/audit_viewports.js`)
 - [x] Capture visual screenshot suite (`scripts/capture_all_sections.js`)
 - [x] Deploy & push to GitHub repository

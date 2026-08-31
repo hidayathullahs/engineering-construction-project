@@ -13,6 +13,7 @@ import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
+import { ProcessPage } from './pages/ProcessPage';
 import { IndustriesPage } from './pages/IndustriesPage';
 import { TechnologyPage } from './pages/TechnologyPage';
 import { SustainabilityPage } from './pages/SustainabilityPage';
@@ -83,7 +84,7 @@ export function App() {
           {/* Educational Guides Hub & Articles */}
           <Route path="/guides" element={<GuidesHubPage />} />
           <Route path="/blog" element={<GuidesHubPage />} />
-          <Route path="/process" element={<HouseConstructionProcessGuide />} />
+          <Route path="/process" element={<ProcessPage />} />
           <Route path="/guides/house-construction-cost-in-ramanathapuram" element={<HouseConstructionCostRamanathapuram />} />
           <Route path="/guides/how-to-choose-a-home-builder-in-ramanathapuram" element={<HowToChooseHomeBuilderRamanathapuram />} />
           <Route path="/guides/house-construction-process-foundation-to-handover" element={<HouseConstructionProcessGuide />} />

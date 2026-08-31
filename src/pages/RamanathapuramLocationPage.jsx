@@ -84,7 +84,7 @@ export function RamanathapuramLocationPage() {
   ];
 
   return (
-    <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+    <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem', overflowX: 'hidden' }}>
       <SEOHead
         title="Home Builders in Ramanathapuram | Build My Dream"
         description="Looking for trusted home builders in Ramanathapuram, Tamil Nadu? Build My Dream provides premium house construction, architectural design, structural engineering, and turnkey home building."
