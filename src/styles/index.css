@@ -525,6 +525,12 @@ h1, h2, h3, h4, h5, h6 {
   [style*="minmax(280px"] {
     grid-template-columns: 1fr !important;
   }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.95rem 1.4rem;
+    font-size: 0.82rem;
+    box-sizing: border-box;
+  }
 }
 
 /* Accessibility: Reduced Motion */

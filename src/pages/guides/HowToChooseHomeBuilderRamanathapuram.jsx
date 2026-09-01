@@ -43,7 +43,7 @@ export function HowToChooseHomeBuilderRamanathapuram() {
           </h1>
 
           <div style={{ display: 'flex', gap: '1.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#64748B', marginBottom: '2.5rem', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', paddingBottom: '1.25rem' }}>
-            <span>By Build My Dream Engineering Cadre</span>
+            <span>By Build My Dream Engineering Team</span>
             <span>•</span>
             <span>5 Min Read</span>
           </div>

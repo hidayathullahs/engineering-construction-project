@@ -119,7 +119,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership Cadre */}
+      {/* Leadership Team */}
       <section className="section-pad">
         <div className="container">
           <div className="eyebrow">Studio Leadership</div>

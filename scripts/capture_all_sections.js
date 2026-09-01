@@ -12,8 +12,9 @@ async function captureAll() {
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 
-  console.log('Navigating to Homepage...');
-  await page.goto('http://localhost:3000/', { waitUntil: 'networkidle' });
+  const BASE_URL = process.env.BASE_URL || 'http://localhost:5173';
+  console.log('Navigating to Homepage at ' + BASE_URL);
+  await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(1000);
 
   // 1. Hero
@@ -112,32 +113,32 @@ async function captureAll() {
 
   // Pages
   console.log('Capturing About Page...');
-  await page.goto('http://localhost:3000/about', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE_URL}/about`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(600);
   await page.screenshot({ path: path.join(outDir, '17_about_page.png') });
 
   console.log('Capturing Services Page...');
-  await page.goto('http://localhost:3000/services', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE_URL}/services`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(600);
   await page.screenshot({ path: path.join(outDir, '18_services_page.png') });
 
   console.log('Capturing Projects Page...');
-  await page.goto('http://localhost:3000/projects', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE_URL}/projects`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(600);
   await page.screenshot({ path: path.join(outDir, '19_projects_page.png') });
 
   console.log('Capturing Project Detail Page...');
-  await page.goto('http://localhost:3000/projects/horizon-villa-residences', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE_URL}/projects/horizon-villa-residence`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(600);
   await page.screenshot({ path: path.join(outDir, '20_project_detail_page.png') });
 
   console.log('Capturing Technology Page (3D BIM)...');
-  await page.goto('http://localhost:3000/technology', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE_URL}/technology`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(1000);
   await page.screenshot({ path: path.join(outDir, '21_technology_page.png') });
 
   console.log('Capturing Contact Page...');
-  await page.goto('http://localhost:3000/contact', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE_URL}/contact`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(600);
   await page.screenshot({ path: path.join(outDir, '22_contact_page.png') });
 

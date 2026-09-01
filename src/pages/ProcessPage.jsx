@@ -24,7 +24,7 @@ export function ProcessPage() {
       title: 'Initial Consultation & Lifestyle Discovery',
       phase: 'PLANNING & DISCOVERY',
       desc: 'We begin with an in-depth workshop to understand your family lifestyle, spatial desires, aesthetic aspirations, and budget boundaries for your dream home.',
-      deliverable: 'Client Brief Dossier & Feasibility Assessment'
+      deliverable: 'Client Brief & Feasibility Assessment'
     },
     {
       step: '02',
@@ -115,7 +115,7 @@ export function ProcessPage() {
       title: '120-Point Zero-Punch Audit & Ceremonial Handover',
       phase: 'COMPLETION',
       desc: 'Exhaustive 120-point quality checklist covering every fitting, paint sheen, smart home automation, and deep cleaning before delivering keys and warranties.',
-      deliverable: '25-Year Structural Warranty & Handover Dossier'
+      deliverable: '25-Year Structural Warranty & Handover Package'
     }
   ];
 
@@ -262,7 +262,7 @@ export function ProcessPage() {
             LET'S PLAN YOUR <span className="text-gold">DREAM HOME JOURNEY.</span>
           </h2>
           <p style={{ color: '#94A3B8', fontSize: '1.1rem', marginBottom: '2.5rem', lineHeight: 1.6 }}>
-            Schedule an architectural and structural consultation with our engineering cadre in Ramanathapuram.
+            Schedule an architectural and structural consultation with our engineering team in Ramanathapuram.
           </p>
 
           <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>

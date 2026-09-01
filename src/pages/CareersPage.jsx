@@ -53,8 +53,8 @@ export function CareersPage() {
       {/* Values Grid */}
       <section className="section-pad" style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">
-          <div className="eyebrow">Our Cadre Culture</div>
-          <h2 className="section-title" style={{ marginBottom: '3rem', color: '#0F172A' }}>WHAT DEFINES A VERTEX ENGINEER</h2>
+          <div className="eyebrow">Our Culture & Values</div>
+          <h2 className="section-title" style={{ marginBottom: '3rem', color: '#0F172A' }}>WHAT DEFINES OUR TEAM</h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
             {CAREERS_DATA.values.map((val, idx) => (
@@ -125,6 +125,37 @@ export function CareersPage() {
               </div>
             ))}
           </div>
+
+          {/* Direct Application Banner */}
+          <div
+            className="hud-border glass-card"
+            style={{
+              marginTop: '3rem',
+              padding: '2.25rem',
+              borderRadius: '6px',
+              background: '#FFFFFF',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.75rem',
+              borderLeft: '4px solid var(--accent-gold)'
+            }}
+          >
+            <div className="eyebrow">Direct Engineering Applications</div>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', fontWeight: 800, color: '#0F172A' }}>
+              Don't see your specific role listed?
+            </h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+              We are constantly seeking talented civil engineers, residential architects, site supervisors, and interior draftsmen in Ramanathapuram.
+              Send your CV and portfolio directly to{' '}
+              <a href="mailto:hidayathullahbajar@gmail.com" style={{ color: 'var(--accent-gold)', fontWeight: 700, textDecoration: 'none' }}>
+                hidayathullahbajar@gmail.com
+              </a>{' '}
+              or call / WhatsApp our office at{' '}
+              <a href="tel:+916385740155" style={{ color: '#0F172A', fontWeight: 700, textDecoration: 'none' }}>
+                +91 63857 40155
+              </a>.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -166,10 +197,10 @@ export function CareersPage() {
               <div style={{ textAlign: 'center', padding: '2rem 0' }}>
                 <CheckCircle2 size={48} className="text-gold" style={{ margin: '0 auto 1rem auto' }} />
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 800, color: '#0F172A' }}>
-                  Application Dispatched
+                  Application Received!
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', fontSize: '0.95rem' }}>
-                  Our Senior Engineering Recruitment Panel will review your dossier within 48 business hours.
+                  Our engineering recruitment team will review your application within 48 business hours. You can also reach us directly at <a href="mailto:hidayathullahbajar@gmail.com" style={{ color: 'var(--accent-gold)', fontWeight: 700 }}>hidayathullahbajar@gmail.com</a>.
                 </p>
               </div>
             ) : (
@@ -185,7 +216,7 @@ export function CareersPage() {
                     type="text"
                     required
                     className="form-input"
-                    placeholder="e.g. Marcus Aurelius"
+                    placeholder="e.g. Ramesh Kumar"
                     value={candidateName}
                     onChange={(e) => setCandidateName(e.target.value)}
                   />
@@ -197,7 +228,7 @@ export function CareersPage() {
                     type="email"
                     required
                     className="form-input"
-                    placeholder="e.g. marcus@engineering.com"
+                    placeholder="e.g. ramesh@gmail.com"
                     value={candidateEmail}
                     onChange={(e) => setCandidateEmail(e.target.value)}
                   />
@@ -208,7 +239,7 @@ export function CareersPage() {
                   className="btn-primary"
                   style={{ width: '100%', padding: '1rem', marginTop: '1rem' }}
                 >
-                  Submit Confidential Dossier
+                  Submit Application
                 </button>
               </form>
             )}

@@ -24,7 +24,7 @@ export const SAFETY_QUALITY_DATA = {
       id: 'materials-testing',
       number: '03',
       title: 'Laboratory Material Verification & Core Logging',
-      description: 'Every concrete batch undergo on-site slump, air content, and temperature tests before discharge. Standard 7-day and 28-day compressive cylinder breaks are certified by accredited laboratories.'
+      description: 'Every concrete batch undergoes on-site slump, air content, and temperature tests before discharge. Standard 7-day and 28-day compressive cylinder breaks are certified by accredited laboratories.'
     },
     {
       id: 'structural-inspection',

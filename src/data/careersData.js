@@ -1,57 +1,57 @@
 export const CAREERS_DATA = {
-  headline: 'ENGINEER THE ICONS OF TOMORROW.',
-  subtitle: 'Join a world-class team of structural engineers, architects, project directors, and computational designers pioneering the future of complex infrastructure and luxury architecture.',
+  headline: 'BUILD BEAUTIFUL HOMES WITH US.',
+  subtitle: 'Join our dedicated team of residential architects, structural engineers, project managers, and interior specialists transforming dream home visions into reality in Ramanathapuram, Tamil Nadu.',
   values: [
-    { title: 'Intellectual Rigor', desc: 'We solve the engineering challenges others deem impossible through first-principles physics and computational mastery.' },
-    { title: 'Uncompromising Craft', desc: 'Whether boring a 40-meter foundation pile or aligning millimetric architectural louvers, precision defines our identity.' },
-    { title: 'Zero-Harm Culture', desc: 'We treat the safety and health of every team member, craftsman, and site visitor as our sacred highest priority.' },
-    { title: 'Generational Impact', desc: 'The structures you design and build today will stand for over a century, defining skylines and improving human lives.' }
+    { title: 'Engineering Precision', desc: 'We solve residential design and structural challenges through first-principles engineering and coastal foundation expertise.' },
+    { title: 'Uncompromising Craft', desc: 'From deep raft foundations to precision tile alignment and bespoke teak joinery, quality craftsmanship defines every home we build.' },
+    { title: 'Zero-Harm Safety', desc: 'We treat the safety and health of every craftsman, engineer, and homeowner as our highest priority on every job site.' },
+    { title: 'Generational Impact', desc: 'The homes we design and construct stand for generations, creating safe, beautiful sanctuaries for families across Tamil Nadu.' }
   ],
   openPositions: [
     {
       id: 'job-01',
-      title: 'Senior Structural Engineer (Post-Tensioned Systems)',
+      title: 'Senior Structural Engineer (Residential & Coastal Foundations)',
       department: 'Structural Engineering',
-      location: 'Global Headquarters / Hybrid',
+      location: 'Ramanathapuram, Tamil Nadu',
       type: 'Full-Time',
-      experience: '7+ Years',
-      description: 'Lead structural modeling, non-linear seismic analysis, and post-tensioned slab engineering for super-prime residential and commercial high-rise towers.'
+      experience: '5+ Years',
+      description: 'Lead structural analysis, foundation design for coastal soil conditions, and RCC framing engineering for custom residential villas and multi-storey homes.'
     },
     {
       id: 'job-02',
-      title: 'Lead BIM & Computational Design Coordinator',
-      department: 'Digital Delivery',
-      location: 'Regional Project Offices',
+      title: 'Lead Residential Architect & 3D Visualizer',
+      department: 'Architecture & Design',
+      location: 'Ramanathapuram, Tamil Nadu',
       type: 'Full-Time',
-      experience: '5+ Years',
-      description: 'Manage federated 4D/5D BIM coordination, automated clash matrices, and field-to-model point cloud reconciliation across landmark civic projects.'
+      experience: '3+ Years',
+      description: 'Develop custom floor plans, photorealistic 3D architectural elevations, and Vastu-compliant layouts tailored to modern family living.'
     },
     {
       id: 'job-03',
-      title: 'Senior Project Director (Major Infrastructure)',
-      department: 'Project Management',
-      location: 'Metropolitan Infrastructure Corridor',
+      title: 'Site Project Manager (Turnkey Home Construction)',
+      department: 'Site Execution',
+      location: 'Ramanathapuram & Kilakarai',
       type: 'Full-Time',
-      experience: '10+ Years',
-      description: 'Direct EPC turnkey operations for complex elevated viaducts and cable-stayed bridges with overall schedule, safety, and commercial accountability.'
+      experience: '5+ Years',
+      description: 'Direct day-to-day site operations, coordinate civil trades, manage milestone schedules, and maintain rigorous quality benchmarks from foundation to handover.'
     },
     {
       id: 'job-04',
-      title: 'Lead QA/QC & Materials Verification Manager',
-      department: 'Quality & Safety',
-      location: 'Site Based',
+      title: 'QA/QC Materials & Concrete Quality Inspector',
+      department: 'Quality Assurance',
+      location: 'Ramanathapuram Site Based',
       type: 'Full-Time',
-      experience: '6+ Years',
-      description: 'Oversee comprehensive concrete testing, NDT rebar scanning, geomatics laser auditing, and third-party regulatory compliance audits.'
+      experience: '3+ Years',
+      description: 'Conduct on-site slump tests, cube sampling, rebar verification, waterproofing audits, and ensure all materials comply with strict IS construction codes.'
     },
     {
       id: 'job-05',
-      title: 'Façade Engineering & Sustainable Envelope Specialist',
-      department: 'Architecture & Envelopes',
-      location: 'Global Headquarters',
+      title: 'Interior Architect & Modular Fitout Specialist',
+      department: 'Interior Architecture',
+      location: 'Ramanathapuram, Tamil Nadu',
       type: 'Full-Time',
-      experience: '5+ Years',
-      description: 'Design thermal performance envelopes, unitized curtain walls, bespoke thermowood shading louvers, and structural glass assemblies.'
+      experience: '3+ Years',
+      description: 'Design and supervise modular kitchen installations, custom wardrobes, false ceiling lighting, and premium Italian marble/granite finishes.'
     }
   ]
 };

@@ -1,11 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '../components/seo/SEOHead';
 import { INDUSTRIES_DATA } from '../data/industriesData';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export function IndustriesPage() {
   return (
     <div className="bg-blueprint-grid" style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '6.5rem' }}>
+      <SEOHead
+        title="Residential & Commercial Construction Sectors | Build My Dream"
+        description="Comprehensive building and engineering solutions for luxury residential villas, independent homes, and light commercial spaces in Ramanathapuram, Tamil Nadu."
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/industries"
+      />
+
       {/* Hero */}
       <section className="section-pad" style={{ borderBottom: '1px solid rgba(15, 23, 42, 0.08)' }}>
         <div className="container">

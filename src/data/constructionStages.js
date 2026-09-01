@@ -12,7 +12,7 @@ export const CONSTRUCTION_STAGES = [
     elevation: '±0.00 m',
     concreteVolume: '0 m³',
     steelTonnage: '0 T',
-    workforce: 'Architectural Cadre',
+    workforce: 'Architectural Team',
     description: 'Initial site assessment, topographic drone survey, solar path bioclimatic orientation, and architectural concept ideation.',
     specs: [
       { label: 'Site Geology', value: 'High-Bearing Bedrock' },
@@ -174,7 +174,7 @@ export const CONSTRUCTION_STAGES = [
     elevation: '+11.20 m',
     concreteVolume: '1,560 m³',
     steelTonnage: '202 T',
-    workforce: 'Waterproofing Cadre',
+    workforce: 'Waterproofing Specialists',
     description: 'SBS elastomeric membrane waterproofing, tapered rigid insulation for positive drainage, and rooftop solar armature.',
     specs: [
       { label: 'Thermal R-Value', value: 'R-45 High Efficiency' },
@@ -282,7 +282,7 @@ export const CONSTRUCTION_STAGES = [
     elevation: '+11.20 m',
     concreteVolume: '1,560 m³',
     steelTonnage: '214 T',
-    workforce: 'Executive Handover Cadre',
+    workforce: 'Project Delivery Team',
     description: 'Zero-punch commissioning, white-glove deep detailing, BIM 5D digital twin model delivery, and keys handover to the homeowner.',
     specs: [
       { label: 'Handover State', value: '100% Turnkey Ready' },
