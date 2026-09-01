@@ -11,7 +11,7 @@ export function SustainabilityPage() {
       <SEOHead
         title="Sustainable Home Construction in Tamil Nadu | Build My Dream"
         description="Bioclimatic residential architecture, passive house cooling, low-carbon materials, and solar energy integration for homes in Ramanathapuram, Tamil Nadu."
-        canonicalUrl="https://buildmydream.in/sustainability"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/sustainability"
       />
 
       {/* Hero */}

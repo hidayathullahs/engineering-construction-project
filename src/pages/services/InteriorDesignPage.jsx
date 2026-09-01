@@ -18,7 +18,7 @@ export function InteriorDesignPage() {
       <SEOHead
         title="Home Interior Design in Ramanathapuram | Build My Dream"
         description="Premium residential interior design and bespoke carpentry in Ramanathapuram, Tamil Nadu. Modular kitchens, Italian marble, custom wardrobes, and ambient lighting."
-        canonicalUrl="https://buildmydream.in/services/interior-design"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/services/interior-design"
       />
 
       <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>

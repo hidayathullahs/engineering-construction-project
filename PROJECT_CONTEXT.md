@@ -7,6 +7,11 @@
 - **Primary Market**: Ramanathapuram, Tamil Nadu, India
 - **Primary Business**: Residential home builders, house construction, architectural design, structural engineering, interior architecture, and turnkey home construction.
 - **Core Promise**: *"We help homeowners transform their dream home vision into a professionally designed, engineered and constructed reality in Ramanathapuram and surrounding regions."*
+- **Production Deployment URL**: `https://buildmydream-6q5x.onrender.com` (Current canonical origin)
+- **Custom Domain Status**: Not currently active (all sitemap, canonical, metadata, and robots entries mapped to Render origin)
+- **Google Search Console**: Verified via meta tag (`LeaKYTnSO-NuUtsXkhD5-rKkeBfkG23Fkim8H1qI3GY`)
+- **Sitemap**: `https://buildmydream-6q5x.onrender.com/sitemap.xml` (all 22 entries using Render production URL)
+- **Robots**: `https://buildmydream-6q5x.onrender.com/robots.txt` (pointing to Render sitemap)
 - **Direct Contacts**:
   - Phone: `+91 63857 40155`
   - Email: `hidayathullahbajar@gmail.com`

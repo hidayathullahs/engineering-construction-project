@@ -18,7 +18,7 @@ export function StructuralEngineeringPage() {
       <SEOHead
         title="Structural Engineering for Homes in Ramanathapuram | Build My Dream"
         description="Certified structural engineering and foundation design for residential homes in Ramanathapuram, Tamil Nadu. Seismic design, coastal corrosion protection, and FEA simulation."
-        canonicalUrl="https://buildmydream.in/services/structural-engineering"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/services/structural-engineering"
       />
 
       <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>

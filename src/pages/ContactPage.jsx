@@ -67,7 +67,7 @@ export function ContactPage() {
       <SEOHead
         title="Contact Home Builders in Ramanathapuram | Build My Dream"
         description="Contact Build My Dream for house construction, architectural design, and turnkey building inquiries in Ramanathapuram, Tamil Nadu. Phone: +91 63857 40155."
-        canonicalUrl="https://buildmydream.in/contact"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/contact"
       />
 
       {/* Hero Header */}

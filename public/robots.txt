@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://buildmydream.in/sitemap.xml
+Sitemap: https://buildmydream-6q5x.onrender.com/sitemap.xml

@@ -18,7 +18,7 @@ export function ArchitecturalDesignPage() {
       <SEOHead
         title="Architectural Design for Homes in Ramanathapuram | Build My Dream"
         description="Bespoke residential architectural design in Ramanathapuram, Tamil Nadu. Modern villa floorplans, 3D CGI rendering, Vastu compliance, and bioclimatic cooling."
-        canonicalUrl="https://buildmydream.in/services/architectural-design"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/services/architectural-design"
       />
 
       <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>

@@ -19,7 +19,7 @@ export function ServicesPage() {
       <SEOHead
         title="Home Construction Services in Ramanathapuram | Build My Dream"
         description="Comprehensive residential home building, architectural design, structural engineering, and turnkey construction services in Ramanathapuram, Tamil Nadu."
-        canonicalUrl="https://buildmydream.in/services"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/services"
       />
 
       {/* Hero Header */}

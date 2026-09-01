@@ -10,7 +10,7 @@ export function TechnologyPage() {
       <SEOHead
         title="Structural BIM & Engineering Technology | Build My Dream"
         description="Explore our 5D parametric BIM, interactive 3D structural simulations, and sub-millimeter laser geomatics for precision home building in Ramanathapuram."
-        canonicalUrl="https://buildmydream.in/technology"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/technology"
       />
 
       {/* Hero */}

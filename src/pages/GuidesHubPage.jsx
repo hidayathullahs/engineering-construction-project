@@ -36,7 +36,7 @@ export function GuidesHubPage() {
       <SEOHead
         title="Home Construction Guides & Cost Insights | Build My Dream"
         description="Expert residential construction guides, house construction cost breakdowns, and builder selection advice for homeowners in Ramanathapuram, Tamil Nadu."
-        canonicalUrl="https://buildmydream.in/guides"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/guides"
       />
 
       {/* Hero Header */}

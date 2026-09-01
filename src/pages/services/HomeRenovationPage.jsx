@@ -18,7 +18,7 @@ export function HomeRenovationPage() {
       <SEOHead
         title="Home Renovation in Ramanathapuram | Build My Dream"
         description="Comprehensive home renovation, structural retrofitting, and vertical extensions in Ramanathapuram, Tamil Nadu. Modernize your existing property with turnkey craftsmanship."
-        canonicalUrl="https://buildmydream.in/services/renovation"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/services/renovation"
       />
 
       <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>

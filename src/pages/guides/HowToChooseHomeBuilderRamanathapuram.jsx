@@ -18,7 +18,7 @@ export function HowToChooseHomeBuilderRamanathapuram() {
       <SEOHead
         title="How to Choose the Right Home Builder in Ramanathapuram | Build My Dream"
         description="Crucial checklist and tips for choosing the best residential home builder and building contractors in Ramanathapuram, Tamil Nadu."
-        canonicalUrl="https://buildmydream.in/guides/how-to-choose-a-home-builder-in-ramanathapuram"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/guides/how-to-choose-a-home-builder-in-ramanathapuram"
       />
 
       <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>

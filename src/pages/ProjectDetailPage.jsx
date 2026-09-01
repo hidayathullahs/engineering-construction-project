@@ -19,7 +19,7 @@ export function ProjectDetailPage() {
       <SEOHead
         title={`${project.title} | Build My Dream Projects`}
         description={`${project.title} - ${project.categoryLabel} residential construction and architectural design in ${project.location}. ${project.overview.slice(0, 140)}...`}
-        canonicalUrl={`https://buildmydream.in/projects/${project.slug}`}
+        canonicalUrl={`https://buildmydream-6q5x.onrender.com/projects/${project.slug}`}
       />
 
       {/* Back Link Bar */}

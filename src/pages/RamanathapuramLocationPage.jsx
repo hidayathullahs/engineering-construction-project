@@ -88,7 +88,7 @@ export function RamanathapuramLocationPage() {
       <SEOHead
         title="Home Builders in Ramanathapuram | Build My Dream"
         description="Looking for trusted home builders in Ramanathapuram, Tamil Nadu? Build My Dream provides premium house construction, architectural design, structural engineering, and turnkey home building."
-        canonicalUrl="https://buildmydream.in/locations/ramanathapuram"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/locations/ramanathapuram"
       />
 
       {/* Hero Header */}

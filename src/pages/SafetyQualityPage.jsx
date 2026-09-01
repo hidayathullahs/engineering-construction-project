@@ -9,7 +9,7 @@ export function SafetyQualityPage() {
       <SEOHead
         title="Safety & Quality Standards in Home Construction | Build My Dream"
         description="Learn about our 120-point quality assurance protocols, zero-harm site safety, and certified structural inspection benchmarks for homes in Ramanathapuram."
-        canonicalUrl="https://buildmydream.in/safety-quality"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/safety-quality"
       />
 
       {/* Hero */}

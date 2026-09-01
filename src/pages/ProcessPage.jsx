@@ -143,7 +143,7 @@ export function ProcessPage() {
       <SEOHead
         title="Our Home Construction Process | Foundation to Handover | Build My Dream"
         description="Explore the 14-stage disciplined residential construction process by Build My Dream. From architectural planning and soil geotechnics to foundation, structure, and turnkey handover."
-        canonicalUrl="https://buildmydream.in/process"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/process"
       />
 
       {/* Breadcrumbs */}

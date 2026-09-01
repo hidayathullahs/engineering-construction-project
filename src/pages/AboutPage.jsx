@@ -44,7 +44,7 @@ export function AboutPage() {
       <SEOHead
         title="About Build My Dream | Home Construction in Ramanathapuram"
         description="Learn about Build My Dream, premier residential architects and home builders in Ramanathapuram, Tamil Nadu. Discover our philosophy, engineering standards, and leadership."
-        canonicalUrl="https://buildmydream.in/about"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/about"
       />
 
       {/* Hero Banner */}

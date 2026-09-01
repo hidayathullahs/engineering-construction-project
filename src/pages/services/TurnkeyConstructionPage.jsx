@@ -18,7 +18,7 @@ export function TurnkeyConstructionPage() {
       <SEOHead
         title="Turnkey Home Construction in Ramanathapuram | Build My Dream"
         description="Complete turnkey home building solutions in Ramanathapuram, Tamil Nadu. Single-source accountability, guaranteed timeline, fixed pricing, and 25-year structural warranty."
-        canonicalUrl="https://buildmydream.in/services/turnkey-construction"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/services/turnkey-construction"
       />
 
       <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>

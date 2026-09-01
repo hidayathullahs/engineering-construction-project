@@ -9,7 +9,7 @@ export function HouseConstructionCostRamanathapuram() {
       <SEOHead
         title="House Construction Cost in Ramanathapuram [2026 Guide] | Build My Dream"
         description="Detailed guide to house construction cost per sqft in Ramanathapuram, Tamil Nadu. Learn about material grades, labour rates, foundation costs, and turnkey pricing."
-        canonicalUrl="https://buildmydream.in/guides/house-construction-cost-in-ramanathapuram"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/guides/house-construction-cost-in-ramanathapuram"
       />
 
       <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>

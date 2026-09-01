@@ -33,7 +33,7 @@ export function CareersPage() {
       <SEOHead
         title="Careers & Opportunities in Residential Construction | Build My Dream"
         description="Join our multidisciplinary team of residential architects, civil engineers, project managers, and interior designers at Build My Dream in Tamil Nadu."
-        canonicalUrl="https://buildmydream.in/careers"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/careers"
       />
 
       {/* Hero */}

@@ -1,4 +1,25 @@
 import React, { useEffect } from 'react';
+import { SITE_URL } from '../../config/siteConfig';
+
+/**
+ * Format canonical or absolute URL to ensure it always uses the current production origin
+ */
+const toProductionUrl = (url) => {
+  if (!url) return SITE_URL;
+  if (url.startsWith('https://buildmydream.in')) {
+    return url.replace('https://buildmydream.in', SITE_URL);
+  }
+  if (url.startsWith('http://buildmydream.in')) {
+    return url.replace('http://buildmydream.in', SITE_URL);
+  }
+  if (url.startsWith('https://www.buildmydream.in')) {
+    return url.replace('https://www.buildmydream.in', SITE_URL);
+  }
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
+  return `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+};
 
 /**
  * SEOHead Component
@@ -10,7 +31,7 @@ export function SEOHead({
   description,
   canonicalUrl,
   ogType = 'website',
-  ogImage = 'https://buildmydream.in/frames/ezgif-frame-300.jpg',
+  ogImage = `${SITE_URL}/frames/ezgif-frame-300.jpg`,
   schema
 }) {
   useEffect(() => {
@@ -48,12 +69,13 @@ export function SEOHead({
       setMetaTag('twitter:title', title);
     }
 
+    const resolvedOgImage = toProductionUrl(ogImage);
     setMetaTag('og:type', ogType, true);
-    setMetaTag('og:image', ogImage, true);
-    setMetaTag('twitter:image', ogImage);
+    setMetaTag('og:image', resolvedOgImage, true);
+    setMetaTag('twitter:image', resolvedOgImage);
     setMetaTag('twitter:card', 'summary_large_image');
 
-    const currentUrl = canonicalUrl || window.location.href;
+    const currentUrl = toProductionUrl(canonicalUrl || window.location.pathname);
     setMetaTag('og:url', currentUrl, true);
 
     // 4. Update Canonical Link
@@ -71,9 +93,9 @@ export function SEOHead({
       '@type': ['LocalBusiness', 'GeneralContractor', 'HomeAndConstructionBusiness'],
       name: 'Build My Dream',
       alternateName: 'Build My Dream Home Builders',
-      url: 'https://buildmydream.in',
-      logo: 'https://buildmydream.in/logo.png',
-      image: ogImage,
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      image: resolvedOgImage,
       description: 'Premier residential construction, architectural design, structural engineering, and turnkey home construction in Ramanathapuram, Tamil Nadu.',
       telephone: '+91-6385740155',
       email: 'hidayathullahbajar@gmail.com',

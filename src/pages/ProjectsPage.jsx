@@ -21,7 +21,7 @@ export function ProjectsPage() {
       <SEOHead
         title="Home Construction Projects in Ramanathapuram | Build My Dream"
         description="Explore custom home construction projects and luxury villas built by Build My Dream in Ramanathapuram, Tamil Nadu. View photos, floorplans, and engineering details."
-        canonicalUrl="https://buildmydream.in/projects"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/projects"
       />
 
       {/* Hero Banner */}

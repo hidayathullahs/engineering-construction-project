@@ -24,7 +24,7 @@ export function HouseConstructionProcessGuide() {
       <SEOHead
         title="House Construction Process From Foundation to Handover | Build My Dream"
         description="Complete step-by-step house construction process explained. From plot soil testing and deep foundation to RCC frame, brickwork, interiors, and key handover."
-        canonicalUrl="https://buildmydream.in/guides/house-construction-process-foundation-to-handover"
+        canonicalUrl="https://buildmydream-6q5x.onrender.com/guides/house-construction-process-foundation-to-handover"
       />
 
       <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid rgba(15, 23, 42, 0.08)', padding: '1rem 0' }}>
