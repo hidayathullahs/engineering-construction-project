@@ -28,6 +28,7 @@
   - Three.js WebGL interactive 5D BIM skeletal model viewer (`StructuralModelViewer.jsx`) with real-time orbit controls, layer filtering (`ALL`, `CORE`, `COLUMNS`, `SLABS`), and FEA stress simulation heatmap toggle.
 - **SEO & Structured Data Engine**:
   - Dynamic `<title>`, `<meta name="description">`, `<link rel="canonical">`, Open Graph, and Twitter Cards
+  - Google Search Console Verification Meta Tag: `<meta name="google-site-verification" content="LeaKYTnSO-NuUtsXkhD5-rKkeBfkG23Fkim8H1qI3GY" />` configured permanently in `<head>` of `index.html`
   - Schema.org JSON-LD structured data (`LocalBusiness`, `GeneralContractor`, `BreadcrumbList`, `Service`, `FAQPage`)
   - `public/sitemap.xml` and `public/robots.txt`
 
