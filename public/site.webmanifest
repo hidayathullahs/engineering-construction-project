@@ -1,0 +1,23 @@
+{
+  "name": "BUILD MY DREAM - Home Builders Ramanathapuram",
+  "short_name": "Build My Dream",
+  "description": "Residential home construction, architectural design, structural engineering, and turnkey building in Ramanathapuram, Tamil Nadu.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF9",
+  "theme_color": "#0B132B",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

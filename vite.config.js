@@ -12,6 +12,15 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    chunkSizeWarningLimit: 1500
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-three': ['three'],
+          'vendor-motion': ['gsap', 'lenis'],
+          'vendor-icons': ['lucide-react']
+        }
+      }
+    }
   }
 });

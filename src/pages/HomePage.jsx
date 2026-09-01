@@ -6,6 +6,7 @@ import { KeyMetricsSection } from '../components/sections/KeyMetricsSection';
 import { FeaturedProjectsSection } from '../components/sections/FeaturedProjectsSection';
 import { ConstructionCanvasScrubber } from '../components/construction/ConstructionCanvasScrubber';
 import { ServicesShowcaseSection } from '../components/sections/ServicesShowcaseSection';
+import { ConstructionCostEstimator } from '../components/calculator/ConstructionCostEstimator';
 import { EngineeringProcessSection } from '../components/sections/EngineeringProcessSection';
 import { TechnologyPreviewSection } from '../components/sections/TechnologyPreviewSection';
 import { SafetyQualitySection } from '../components/sections/SafetyQualitySection';
@@ -41,7 +42,10 @@ export function HomePage() {
       {/* 06: Services Showcase */}
       <ServicesShowcaseSection />
 
-      {/* 07: 8-Stage Engineering Delivery Process */}
+      {/* 07: Interactive Ramanathapuram House Construction Cost Estimator */}
+      <ConstructionCostEstimator />
+
+      {/* 08: 8-Stage Engineering Delivery Process */}
       <EngineeringProcessSection />
 
       {/* 08: Technology & Interactive 3D Structural BIM */}
