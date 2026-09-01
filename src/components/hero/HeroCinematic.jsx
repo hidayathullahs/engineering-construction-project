@@ -262,9 +262,13 @@ export function HeroCinematic() {
       }}
       className="bg-blueprint-grid"
     >
-      {/* Background Architectural Image with Silky Parallax */}
+      {/* Active Architectural LiDAR / Laser Scanning Beam */}
+      <div className="hero-laser-scanner" />
+
+      {/* Background Architectural Image with Silky Parallax & Ambient Drift */}
       <div
         ref={bgImageRef}
+        className="hero-bg-ambient"
         style={{
           position: 'absolute',
           inset: '-30px',
@@ -351,6 +355,59 @@ export function HeroCinematic() {
 
       {/* Main Hero Editorial Content */}
       <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center', maxWidth: '1120px' }}>
+        {/* Left Floating Architectural Badge (Desktop Only) */}
+        <div
+          className="desktop-only hero-floating-pill"
+          style={{
+            position: 'absolute',
+            left: '-3.5rem',
+            top: '30%',
+            background: 'rgba(255, 255, 255, 0.94)',
+            border: '1px solid rgba(179, 142, 93, 0.35)',
+            borderRadius: '24px',
+            padding: '0.45rem 1rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            boxShadow: '0 8px 24px rgba(15, 23, 42, 0.05)',
+            pointerEvents: 'none',
+            zIndex: 8,
+            backdropFilter: 'blur(10px)'
+          }}
+        >
+          <div className="hero-beacon-dot" />
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: '#475569', fontWeight: 700, letterSpacing: '0.06em' }}>
+            IS 456:2000 RCC CERTIFIED
+          </span>
+        </div>
+
+        {/* Right Floating Architectural Badge (Desktop Only) */}
+        <div
+          className="desktop-only hero-floating-pill"
+          style={{
+            position: 'absolute',
+            right: '-3.5rem',
+            top: '40%',
+            animationDelay: '-2.2s',
+            background: 'rgba(255, 255, 255, 0.94)',
+            border: '1px solid rgba(179, 142, 93, 0.35)',
+            borderRadius: '24px',
+            padding: '0.45rem 1rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            boxShadow: '0 8px 24px rgba(15, 23, 42, 0.05)',
+            pointerEvents: 'none',
+            zIndex: 8,
+            backdropFilter: 'blur(10px)'
+          }}
+        >
+          <Sparkles size={12} className="text-gold" />
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: '#475569', fontWeight: 700, letterSpacing: '0.06em' }}>
+            SINGLE-SOURCE ACCOUNTABILITY
+          </span>
+        </div>
+
         {/* Eyebrow Pill Badge */}
         <div
           ref={pillBadgeRef}
@@ -368,6 +425,7 @@ export function HeroCinematic() {
             willChange: 'transform, opacity'
           }}
         >
+          <div className="hero-beacon-dot" />
           <Sparkles size={14} className="text-gold" />
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', letterSpacing: '0.12em', color: 'var(--accent-gold)', textTransform: 'uppercase', fontWeight: 800 }}>
             BUILD MY DREAM · RAMANATHAPURAM
@@ -422,13 +480,13 @@ export function HeroCinematic() {
             gap: '1.25rem',
             justifyContent: 'center',
             flexWrap: 'wrap',
-            marginBottom: '3.5rem',
+            marginBottom: '2.5rem',
             willChange: 'transform, opacity'
           }}
         >
           <Link
             to="/contact"
-            className="btn-primary"
+            className="btn-primary btn-primary-sheen"
             style={{
               padding: '1.1rem 2.5rem',
               fontSize: '0.95rem',
@@ -472,8 +530,9 @@ export function HeroCinematic() {
           <div
             ref={(el) => (cardsRef.current[0] = el)}
             className="glass-card hud-border hero-metric-card"
-            style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.96)' }}
+            style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.96)', position: 'relative' }}
           >
+            <div style={{ position: 'absolute', top: '10px', right: '12px', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'rgba(179, 142, 93, 0.4)', userSelect: 'none', fontWeight: 700 }}>+</div>
             <div
               ref={stat1Ref}
               style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 900, color: '#0F172A', letterSpacing: '-0.02em' }}
@@ -492,8 +551,9 @@ export function HeroCinematic() {
           <div
             ref={(el) => (cardsRef.current[1] = el)}
             className="glass-card hud-border hero-metric-card"
-            style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.96)' }}
+            style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.96)', position: 'relative' }}
           >
+            <div style={{ position: 'absolute', top: '10px', right: '12px', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'rgba(179, 142, 93, 0.4)', userSelect: 'none', fontWeight: 700 }}>+</div>
             <div
               ref={stat2Ref}
               style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 900, color: '#0F172A', letterSpacing: '-0.02em' }}
@@ -512,8 +572,9 @@ export function HeroCinematic() {
           <div
             ref={(el) => (cardsRef.current[2] = el)}
             className="glass-card hud-border hero-metric-card"
-            style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.96)' }}
+            style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.96)', position: 'relative' }}
           >
+            <div style={{ position: 'absolute', top: '10px', right: '12px', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'rgba(179, 142, 93, 0.4)', userSelect: 'none', fontWeight: 700 }}>+</div>
             <div
               ref={stat3Ref}
               style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 900, color: '#0F172A', letterSpacing: '-0.02em' }}
@@ -532,8 +593,9 @@ export function HeroCinematic() {
           <div
             ref={(el) => (cardsRef.current[3] = el)}
             className="glass-card hud-border hero-metric-card"
-            style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.96)' }}
+            style={{ padding: '1.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.96)', position: 'relative' }}
           >
+            <div style={{ position: 'absolute', top: '10px', right: '12px', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'rgba(179, 142, 93, 0.4)', userSelect: 'none', fontWeight: 700 }}>+</div>
             <div
               ref={stat4Ref}
               style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', fontWeight: 900, color: '#0F172A', letterSpacing: '-0.02em' }}

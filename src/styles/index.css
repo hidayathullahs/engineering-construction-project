@@ -361,18 +361,129 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Subtle architectural gradient text sheen */
 .hero-gold-gradient {
-  background: linear-gradient(135deg, #A8834F 0%, #D4AF37 35%, #B38E5D 70%, #967243 100%);
-  background-size: 200% auto;
+  background: linear-gradient(
+    120deg,
+    #9C743D 0%,
+    #C8A36E 20%,
+    #F5DEB3 38%,
+    #FFF4DE 46%,
+    #F5DEB3 54%,
+    #C8A36E 72%,
+    #9C743D 100%
+  );
+  background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: heroGoldShimmer 8s ease infinite;
+  animation: heroGoldLuster 5s ease-in-out infinite;
 }
 
-@keyframes heroGoldShimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes heroGoldLuster {
+  0% { background-position: 100% 0; }
+  50% { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* Ambient Cinematic Background Drift */
+.hero-bg-ambient {
+  animation: heroBgDrift 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes heroBgDrift {
+  0% { transform: scale(1.02) translate3d(0, 0, 0); }
+  50% { transform: scale(1.06) translate3d(-8px, -5px, 0); }
+  100% { transform: scale(1.02) translate3d(0, 0, 0); }
+}
+
+/* Active Architectural LiDAR / Laser Scanning Beam */
+.hero-laser-scanner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(179, 142, 93, 0.15) 15%,
+    rgba(179, 142, 93, 0.75) 50%,
+    rgba(179, 142, 93, 0.15) 85%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px rgba(179, 142, 93, 0.45);
+  pointer-events: none;
+  z-index: 3;
+  animation: laserScanDown 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes laserScanDown {
+  0% { top: 5%; opacity: 0; }
+  12% { opacity: 0.9; }
+  88% { opacity: 0.9; }
+  100% { top: 92%; opacity: 0; }
+}
+
+/* Glowing Pulsing Beacon */
+.hero-beacon-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-gold);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-beacon-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-gold);
+  animation: beaconWave 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes beaconWave {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* Automated Sweeping Sheen for Primary CTA */
+.btn-primary-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary-sheen::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: btnSheenSweep 3.8s ease-in-out infinite;
+}
+
+@keyframes btnSheenSweep {
+  0%, 35% { left: -70%; }
+  75%, 100% { left: 150%; }
+}
+
+/* Floating Architectural Tech Pill with Ambient Float */
+.hero-floating-pill {
+  animation: floatSubtle 4.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes floatSubtle {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
 }
 
 /* Luxury Metric Card Hover Motion */
