@@ -107,12 +107,15 @@ export function ConstructionCanvasScrubber() {
     };
   }, [renderCanvas, totalFrames]);
 
-  // Auto-scroll the active stage button inside the right-hand stepper list
+  // Auto-scroll the active stage button inside the right-hand stepper list (container only)
   useEffect(() => {
     if (stepperRef.current) {
       const activeEl = stepperRef.current.querySelector('.timeline-step-btn.active');
       if (activeEl) {
-        activeEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        const stepper = stepperRef.current;
+        const activeOffsetTop = activeEl.offsetTop;
+        const targetScroll = activeOffsetTop - stepper.clientHeight / 2 + activeEl.clientHeight / 2;
+        stepper.scrollTo({ top: Math.max(0, targetScroll), behavior: 'smooth' });
       }
     }
   }, [activeStage]);

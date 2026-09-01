@@ -343,6 +343,116 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFFFFF;
 }
 
+/* ==========================================================================
+   HERO ARCHITECTURAL CLEAN MOTION DESIGN SYSTEM
+   ========================================================================== */
+
+/* Masked reveal container for kinetic headline */
+.hero-line-mask {
+  overflow: hidden;
+  display: block;
+  padding-bottom: 0.12em;
+}
+
+.hero-line-inner {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* Subtle architectural gradient text sheen */
+.hero-gold-gradient {
+  background: linear-gradient(135deg, #A8834F 0%, #D4AF37 35%, #B38E5D 70%, #967243 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heroGoldShimmer 8s ease infinite;
+}
+
+@keyframes heroGoldShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Luxury Metric Card Hover Motion */
+.hero-metric-card {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.hero-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-metric-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  border-color: rgba(179, 142, 93, 0.45) !important;
+}
+
+.hero-metric-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Subtle Architectural Datum Laser Line */
+.hero-datum-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 5%, rgba(179, 142, 93, 0.2) 30%, rgba(179, 142, 93, 0.35) 50%, rgba(179, 142, 93, 0.2) 70%, transparent 95%);
+  pointer-events: none;
+  z-index: 2;
+  will-change: transform, opacity;
+}
+
+/* Precision Plumb-Line Scroll Indicator */
+.hero-plumb-pill {
+  width: 22px;
+  height: 34px;
+  border: 1.5px solid rgba(179, 142, 93, 0.45);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-plumb-pill:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(2px);
+}
+
+.hero-plumb-dot {
+  width: 3px;
+  height: 8px;
+  background-color: var(--accent-gold);
+  border-radius: 2px;
+  margin-top: 5px;
+  animation: plumbGlide 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes plumbGlide {
+  0% { transform: translateY(0); opacity: 0; }
+  25% { opacity: 1; }
+  75% { transform: translateY(13px); opacity: 0; }
+  100% { transform: translateY(13px); opacity: 0; }
+}
+
 /* Custom Architectural Cursor */
 .custom-cursor {
   position: fixed;
