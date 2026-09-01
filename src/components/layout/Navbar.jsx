@@ -26,8 +26,9 @@ export function Navbar() {
   }, [location]);
 
   const navLinks = [
+    { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
+    { name: 'Services', path: '/services', hasDropdown: true },
     { name: 'Ramanathapuram', path: '/locations/ramanathapuram' },
     { name: 'Projects', path: '/projects' },
     { name: 'Guides', path: '/guides' },
@@ -119,12 +120,31 @@ export function Navbar() {
                     color: isActive ? 'var(--accent-gold)' : '#475569',
                     transition: 'color 0.2s ease',
                     position: 'relative',
-                    padding: '0.25rem 0'
+                    padding: '0.25rem 0',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px'
                   }}
-                  onMouseEnter={(e) => (e.target.style.color = 'var(--text-primary)')}
-                  onMouseLeave={(e) => (e.target.style.color = isActive ? 'var(--accent-gold)' : '#475569')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? 'var(--accent-gold)' : '#475569')}
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  {link.hasDropdown && (
+                    <span style={{ fontSize: '0.65rem', opacity: 0.7, transform: 'translateY(-1px)' }}>⌵</span>
+                  )}
+                  {isActive && (
+                    <span
+                      style={{
+                        position: 'absolute',
+                        bottom: '-4px',
+                        left: '0',
+                        right: '0',
+                        height: '2px',
+                        backgroundColor: 'var(--accent-gold)',
+                        borderRadius: '2px'
+                      }}
+                    />
+                  )}
                 </Link>
               );
             })}
