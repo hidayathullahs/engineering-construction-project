@@ -6,17 +6,19 @@ import { SITE_URL } from '../../config/siteConfig';
  */
 const toProductionUrl = (url) => {
   if (!url) return SITE_URL;
-  if (url.startsWith('https://buildmydream.in')) {
-    return url.replace('https://buildmydream.in', SITE_URL);
-  }
-  if (url.startsWith('http://buildmydream.in')) {
-    return url.replace('http://buildmydream.in', SITE_URL);
-  }
-  if (url.startsWith('https://www.buildmydream.in')) {
-    return url.replace('https://www.buildmydream.in', SITE_URL);
+  if (url.startsWith(SITE_URL)) {
+    return url;
   }
   if (url.startsWith('http://') || url.startsWith('https://')) {
-    return url;
+    try {
+      const parsed = new URL(url);
+      if (parsed.hostname.includes('buildmydream')) {
+        return `${SITE_URL}${parsed.pathname}${parsed.search}${parsed.hash}`;
+      }
+      return url;
+    } catch {
+      return url;
+    }
   }
   return `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
 };

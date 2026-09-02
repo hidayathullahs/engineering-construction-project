@@ -115,6 +115,7 @@ export function App() {
 
             {/* Local SEO Landing Page */}
             <Route path="/locations/ramanathapuram" element={<RamanathapuramLocationPage />} />
+            <Route path="/ramanathapuram" element={<RamanathapuramLocationPage />} />
 
             {/* Dedicated Sub-Service Pages */}
             <Route path="/services/home-construction" element={<HouseConstructionPage />} />

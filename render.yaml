@@ -1,9 +1,9 @@
-# Render Static Site Configuration with SPA Rewrite Rule
+# Render Static Site Blueprint Configuration
 # Documentation: https://render.com/docs/blueprint-spec
 
 services:
   - type: web
-    name: build-my-dream
+    name: buildmydream-6q5x
     runtime: static
     buildCommand: npm run build
     staticPublishPath: ./dist
